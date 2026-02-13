@@ -54,7 +54,7 @@ public class NodeWalker : MonoBehaviour
 
                 float planarDistance = Vector2.Distance(new Vector2(flatA.x, flatA.z), new Vector2(flatB.x, flatB.z));
                 
-                if (planarDistance > overlapTolerance || Math.Abs(delta.x - delta.z) < 0.01f)
+                if (planarDistance > overlapTolerance || Math.Abs(delta.x - delta.z) < 0.01f || !B.Walkable)
                     continue;
                 
                 A.ConnectedNodes.Add(B);

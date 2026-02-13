@@ -7,6 +7,7 @@ public class Node : MonoBehaviour
 {
     public Direction CurrentDirection = Direction.UP;
     public List<Node> ConnectedNodes;
+    public bool Walkable;
 
     
     public Vector3 Position
