@@ -42,11 +42,29 @@ public class NodeWalker : MonoBehaviour
         for (var index = 0; index < path.Count; index++)
         {
             var node = path[index];
+            var currentY = transform.position.y;
+            var targetY = node.Position.y;
+            
             transform.parent = node.transform;
             _currentNode = node;
+            
+            if (Mathf.Abs(currentY - targetY) > 0.01f)
+            {
+                var currentScreen = _camera.WorldToViewportPoint(transform.position);
+                var targetScreen = _camera.WorldToViewportPoint(node.Position);
+                (targetScreen.z, currentScreen.z) = (currentScreen.z, targetScreen.z);
 
-            transform.MoveTo(node.Position, moveSpeed, EaseType.Linear);
-            yield return new WaitForSeconds(moveSpeed);
+                var projected = _camera.ViewportToWorldPoint(targetY > currentY ? currentScreen : targetScreen);
+                if (targetY > currentY) transform.position = projected;
+                transform.MoveTo(targetY < currentY ? projected : node.Position, moveSpeed, EaseType.Linear);
+                yield return new WaitForSeconds(moveSpeed);
+                if (targetY < currentY) transform.position = node.Position;
+            }
+            else
+            {
+                transform.MoveTo(node.Position, moveSpeed, EaseType.Linear);
+                yield return new WaitForSeconds(moveSpeed);
+            }
         }
     }
 }
