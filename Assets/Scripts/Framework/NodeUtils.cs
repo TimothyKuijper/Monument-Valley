@@ -61,7 +61,7 @@ public static class NodeUtils
         return closest;
     }
     
-    public static Node FindClosestNodeToMouse(Camera cam)
+    public static Node RaycastNode(Camera cam)
     {
         var ray = cam.ScreenPointToRay(Input.mousePosition);
         return !Physics.Raycast(ray, out RaycastHit hit) ? null : hit.collider.GetComponent<Node>();
