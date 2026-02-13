@@ -156,6 +156,7 @@ MonoBehaviour:
   - {fileID: 1210584405}
   - {fileID: 1926546157}
   - {fileID: 1598256105}
+  Walkable: 1
   verticalOffset: 0.8
 --- !u!65 &27088605
 BoxCollider:
@@ -322,6 +323,7 @@ MonoBehaviour:
   ConnectedNodes:
   - {fileID: 791296748}
   - {fileID: 1667332203}
+  Walkable: 1
   verticalOffset: 0.8
 --- !u!23 &87830987
 MeshRenderer:
@@ -416,6 +418,7 @@ MonoBehaviour:
   ConnectedNodes:
   - {fileID: 1314794182}
   - {fileID: 550577836}
+  Walkable: 1
   verticalOffset: 0.8
 --- !u!65 &122664261
 BoxCollider:
@@ -582,6 +585,7 @@ MonoBehaviour:
   ConnectedNodes:
   - {fileID: 791296748}
   - {fileID: 1667332203}
+  Walkable: 1
   verticalOffset: 0.8
 --- !u!23 &130282416
 MeshRenderer:
@@ -676,6 +680,7 @@ MonoBehaviour:
   ConnectedNodes:
   - {fileID: 1621680700}
   - {fileID: 1610558643}
+  Walkable: 1
   verticalOffset: 0.8
 --- !u!65 &191387141
 BoxCollider:
@@ -805,6 +810,7 @@ MonoBehaviour:
   CurrentDirection: 0
   ConnectedNodes:
   - {fileID: 1874717586}
+  Walkable: 1
   verticalOffset: 0.8
 --- !u!65 &223518993
 BoxCollider:
@@ -1214,6 +1220,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  Walkable: 1
   verticalOffset: 0.8
 --- !u!1 &377298940
 GameObject:
@@ -1287,6 +1294,7 @@ MonoBehaviour:
   ConnectedNodes:
   - {fileID: 791296748}
   - {fileID: 1667332203}
+  Walkable: 1
   verticalOffset: 0.8
 --- !u!23 &377298944
 MeshRenderer:
@@ -1598,6 +1606,7 @@ MonoBehaviour:
   ConnectedNodes:
   - {fileID: 1508956780}
   - {fileID: 1645529104}
+  Walkable: 1
   verticalOffset: 0.8
 --- !u!65 &493366928
 BoxCollider:
@@ -1729,6 +1738,7 @@ MonoBehaviour:
   - {fileID: 1743943185}
   - {fileID: 874560361}
   - {fileID: 1696085999}
+  Walkable: 1
   verticalOffset: 0.8
 --- !u!65 &502084098
 BoxCollider:
@@ -1949,6 +1959,7 @@ MonoBehaviour:
   ConnectedNodes:
   - {fileID: 1743943185}
   - {fileID: 122664260}
+  Walkable: 1
   verticalOffset: 0.8
 --- !u!65 &550577837
 BoxCollider:
@@ -2276,6 +2287,7 @@ MonoBehaviour:
   ConnectedNodes:
   - {fileID: 1978140111}
   - {fileID: 1598256105}
+  Walkable: 1
   verticalOffset: 0.8
 --- !u!65 &610520563
 BoxCollider:
@@ -2584,6 +2596,7 @@ MonoBehaviour:
   ConnectedNodes:
   - {fileID: 1480943584}
   - {fileID: 1667332203}
+  Walkable: 1
   verticalOffset: 0.2
 --- !u!64 &631620139
 MeshCollider:
@@ -2659,6 +2672,7 @@ MonoBehaviour:
   ConnectedNodes:
   - {fileID: 2035302773}
   - {fileID: 1108587018}
+  Walkable: 1
   verticalOffset: 0.8
 --- !u!65 &650046624
 BoxCollider:
@@ -2958,6 +2972,7 @@ MonoBehaviour:
   ConnectedNodes:
   - {fileID: 1978140111}
   - {fileID: 2035302773}
+  Walkable: 1
   verticalOffset: 0.8
 --- !u!65 &708082045
 BoxCollider:
@@ -3124,6 +3139,7 @@ MonoBehaviour:
   ConnectedNodes:
   - {fileID: 791296748}
   - {fileID: 1667332203}
+  Walkable: 1
   verticalOffset: 0.8
 --- !u!23 &750070836
 MeshRenderer:
@@ -3308,6 +3324,7 @@ MonoBehaviour:
   ConnectedNodes:
   - {fileID: 1707482454}
   - {fileID: 1320271824}
+  Walkable: 1
   verticalOffset: 0.8
 --- !u!65 &791296749
 BoxCollider:
@@ -3437,6 +3454,7 @@ MonoBehaviour:
   CurrentDirection: 0
   ConnectedNodes:
   - {fileID: 1252751003}
+  Walkable: 1
   verticalOffset: 0.8
 --- !u!65 &809129716
 BoxCollider:
@@ -3616,6 +3634,7 @@ MonoBehaviour:
   ConnectedNodes:
   - {fileID: 1201122543}
   - {fileID: 1202211245}
+  Walkable: 1
   verticalOffset: 0.8
 --- !u!65 &857667009
 BoxCollider:
@@ -3746,6 +3765,7 @@ MonoBehaviour:
   ConnectedNodes:
   - {fileID: 502084097}
   - {fileID: 1202211245}
+  Walkable: 1
   verticalOffset: 0.8
 --- !u!65 &874560362
 BoxCollider:
@@ -3966,6 +3986,7 @@ MonoBehaviour:
   ConnectedNodes:
   - {fileID: 1778679580}
   - {fileID: 1645529104}
+  Walkable: 1
   verticalOffset: 0.8
 --- !u!65 &897112159
 BoxCollider:
@@ -4096,6 +4117,7 @@ MonoBehaviour:
   ConnectedNodes:
   - {fileID: 1778679580}
   - {fileID: 1926546157}
+  Walkable: 1
   verticalOffset: 0.8
 --- !u!65 &918827149
 BoxCollider:
@@ -4355,6 +4377,7 @@ MonoBehaviour:
   ConnectedNodes:
   - {fileID: 1933407954}
   - {fileID: 1304489168}
+  Walkable: 1
   verticalOffset: 0.8
 --- !u!65 &936039942
 BoxCollider:
@@ -4868,6 +4891,7 @@ MonoBehaviour:
   ConnectedNodes:
   - {fileID: 1114781878}
   - {fileID: 650046623}
+  Walkable: 1
   verticalOffset: 0.8
 --- !u!65 &1108587019
 BoxCollider:
@@ -4998,6 +5022,7 @@ MonoBehaviour:
   ConnectedNodes:
   - {fileID: 1108587018}
   - {fileID: 1521524790}
+  Walkable: 1
   verticalOffset: 0.8
 --- !u!65 &1114781879
 BoxCollider:
@@ -5128,6 +5153,7 @@ MonoBehaviour:
   ConnectedNodes:
   - {fileID: 857667008}
   - {fileID: 1994237072}
+  Walkable: 1
   verticalOffset: 0.8
 --- !u!65 &1201122544
 BoxCollider:
@@ -5258,6 +5284,7 @@ MonoBehaviour:
   ConnectedNodes:
   - {fileID: 874560361}
   - {fileID: 857667008}
+  Walkable: 1
   verticalOffset: 0.8
 --- !u!65 &1202211246
 BoxCollider:
@@ -5388,6 +5415,7 @@ MonoBehaviour:
   ConnectedNodes:
   - {fileID: 1610558643}
   - {fileID: 27088604}
+  Walkable: 1
   verticalOffset: 0.8
 --- !u!65 &1210584406
 BoxCollider:
@@ -5550,6 +5578,7 @@ MonoBehaviour:
   ConnectedNodes:
   - {fileID: 1696085999}
   - {fileID: 809129715}
+  Walkable: 1
   verticalOffset: 0.8
 --- !u!65 &1252751004
 BoxCollider:
@@ -5680,6 +5709,7 @@ MonoBehaviour:
   ConnectedNodes:
   - {fileID: 1445117989}
   - {fileID: 936039941}
+  Walkable: 1
   verticalOffset: 0.8
 --- !u!65 &1304489169
 BoxCollider:
@@ -5810,6 +5840,7 @@ MonoBehaviour:
   ConnectedNodes:
   - {fileID: 122664260}
   - {fileID: 1759642072}
+  Walkable: 1
   verticalOffset: 0.8
 --- !u!65 &1314794183
 BoxCollider:
@@ -5940,6 +5971,7 @@ MonoBehaviour:
   ConnectedNodes:
   - {fileID: 1445117989}
   - {fileID: 791296748}
+  Walkable: 1
   verticalOffset: 0.8
 --- !u!65 &1320271825
 BoxCollider:
@@ -6106,6 +6138,7 @@ MonoBehaviour:
   ConnectedNodes:
   - {fileID: 791296748}
   - {fileID: 1667332203}
+  Walkable: 1
   verticalOffset: 0.8
 --- !u!23 &1396154450
 MeshRenderer:
@@ -6290,6 +6323,7 @@ MonoBehaviour:
   ConnectedNodes:
   - {fileID: 1320271824}
   - {fileID: 1304489168}
+  Walkable: 1
   verticalOffset: 0.8
 --- !u!65 &1445117990
 BoxCollider:
@@ -6419,6 +6453,7 @@ MonoBehaviour:
   CurrentDirection: 0
   ConnectedNodes:
   - {fileID: 1673957288}
+  Walkable: 1
   verticalOffset: 0.8
 --- !u!65 &1446323932
 BoxCollider:
@@ -6669,6 +6704,7 @@ MonoBehaviour:
   ConnectedNodes:
   - {fileID: 631620138}
   - {fileID: 1743943185}
+  Walkable: 1
   verticalOffset: 0.2
 --- !u!64 &1480943585
 MeshCollider:
@@ -6744,6 +6780,7 @@ MonoBehaviour:
   ConnectedNodes:
   - {fileID: 1673957288}
   - {fileID: 493366927}
+  Walkable: 1
   verticalOffset: 0.8
 --- !u!65 &1508956781
 BoxCollider:
@@ -6874,6 +6911,7 @@ MonoBehaviour:
   ConnectedNodes:
   - {fileID: 1114781878}
   - {fileID: 2117295963}
+  Walkable: 1
   verticalOffset: 0.8
 --- !u!65 &1521524791
 BoxCollider:
@@ -7004,6 +7042,7 @@ MonoBehaviour:
   ConnectedNodes:
   - {fileID: 610520562}
   - {fileID: 27088604}
+  Walkable: 1
   verticalOffset: 0.8
 --- !u!65 &1598256106
 BoxCollider:
@@ -7134,6 +7173,7 @@ MonoBehaviour:
   ConnectedNodes:
   - {fileID: 191387140}
   - {fileID: 1210584405}
+  Walkable: 1
   verticalOffset: 0.8
 --- !u!65 &1610558644
 BoxCollider:
@@ -7264,6 +7304,7 @@ MonoBehaviour:
   ConnectedNodes:
   - {fileID: 191387140}
   - {fileID: 1759642072}
+  Walkable: 1
   verticalOffset: 0.8
 --- !u!65 &1621680701
 BoxCollider:
@@ -7394,6 +7435,7 @@ MonoBehaviour:
   ConnectedNodes:
   - {fileID: 897112158}
   - {fileID: 493366927}
+  Walkable: 1
   verticalOffset: 0.8
 --- !u!65 &1645529105
 BoxCollider:
@@ -7522,6 +7564,7 @@ MonoBehaviour:
   ConnectedNodes:
   - {fileID: 631620138}
   - {fileID: 1707482454}
+  Walkable: 1
   verticalOffset: 0.2
 --- !u!64 &1667332204
 MeshCollider:
@@ -7597,6 +7640,7 @@ MonoBehaviour:
   ConnectedNodes:
   - {fileID: 1508956780}
   - {fileID: 1446323931}
+  Walkable: 1
   verticalOffset: 0.8
 --- !u!65 &1673957289
 BoxCollider:
@@ -7727,6 +7771,7 @@ MonoBehaviour:
   ConnectedNodes:
   - {fileID: 1252751003}
   - {fileID: 502084097}
+  Walkable: 1
   verticalOffset: 0.8
 --- !u!65 &1696086000
 BoxCollider:
@@ -7893,6 +7938,7 @@ MonoBehaviour:
   ConnectedNodes:
   - {fileID: 791296748}
   - {fileID: 1667332203}
+  Walkable: 1
   verticalOffset: 0.8
 --- !u!23 &1702920521
 MeshRenderer:
@@ -7987,6 +8033,7 @@ MonoBehaviour:
   ConnectedNodes:
   - {fileID: 791296748}
   - {fileID: 1667332203}
+  Walkable: 1
   verticalOffset: 0.8
 --- !u!65 &1707482455
 BoxCollider:
@@ -8153,6 +8200,7 @@ MonoBehaviour:
   ConnectedNodes:
   - {fileID: 791296748}
   - {fileID: 1667332203}
+  Walkable: 1
   verticalOffset: 0.8
 --- !u!23 &1725490736
 MeshRenderer:
@@ -8338,6 +8386,7 @@ MonoBehaviour:
   - {fileID: 1480943584}
   - {fileID: 502084097}
   - {fileID: 550577836}
+  Walkable: 1
   verticalOffset: 0.8
 --- !u!65 &1743943186
 BoxCollider:
@@ -8468,6 +8517,7 @@ MonoBehaviour:
   ConnectedNodes:
   - {fileID: 1621680700}
   - {fileID: 1314794182}
+  Walkable: 1
   verticalOffset: 0.8
 --- !u!65 &1759642073
 BoxCollider:
@@ -8598,6 +8648,7 @@ MonoBehaviour:
   ConnectedNodes:
   - {fileID: 897112158}
   - {fileID: 918827148}
+  Walkable: 1
   verticalOffset: 0.8
 --- !u!65 &1778679581
 BoxCollider:
@@ -8854,6 +8905,7 @@ MonoBehaviour:
   ConnectedNodes:
   - {fileID: 791296748}
   - {fileID: 1667332203}
+  Walkable: 1
   verticalOffset: 0.8
 --- !u!23 &1796550017
 MeshRenderer:
@@ -9128,6 +9180,7 @@ MonoBehaviour:
   ConnectedNodes:
   - {fileID: 223518992}
   - {fileID: 2117295963}
+  Walkable: 1
   verticalOffset: 0.8
 --- !u!65 &1874717587
 BoxCollider:
@@ -9258,6 +9311,7 @@ MonoBehaviour:
   ConnectedNodes:
   - {fileID: 918827148}
   - {fileID: 27088604}
+  Walkable: 1
   verticalOffset: 0.8
 --- !u!65 &1926546158
 BoxCollider:
@@ -9388,6 +9442,7 @@ MonoBehaviour:
   ConnectedNodes:
   - {fileID: 1994237072}
   - {fileID: 936039941}
+  Walkable: 1
   verticalOffset: 0.8
 --- !u!65 &1933407955
 BoxCollider:
@@ -9698,6 +9753,7 @@ MonoBehaviour:
   ConnectedNodes:
   - {fileID: 610520562}
   - {fileID: 708082044}
+  Walkable: 1
   verticalOffset: 0.8
 --- !u!65 &1978140112
 BoxCollider:
@@ -9828,6 +9884,7 @@ MonoBehaviour:
   ConnectedNodes:
   - {fileID: 1933407954}
   - {fileID: 1201122543}
+  Walkable: 1
   verticalOffset: 0.8
 --- !u!65 &1994237073
 BoxCollider:
@@ -10070,6 +10127,7 @@ MonoBehaviour:
   ConnectedNodes:
   - {fileID: 650046623}
   - {fileID: 708082044}
+  Walkable: 1
   verticalOffset: 0.8
 --- !u!65 &2035302774
 BoxCollider:
@@ -10200,6 +10258,7 @@ MonoBehaviour:
   ConnectedNodes:
   - {fileID: 1521524790}
   - {fileID: 1874717586}
+  Walkable: 1
   verticalOffset: 0.8
 --- !u!65 &2117295964
 BoxCollider:
