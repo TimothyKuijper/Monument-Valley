@@ -10,6 +10,7 @@ public class NodeWalker : MonoBehaviour
 
     private Node _currentNode;
     private Camera _camera;
+    private Coroutine _moveRoutine;
 
     private void Start()
     {
@@ -30,7 +31,9 @@ public class NodeWalker : MonoBehaviour
         var path = NodeUtils.BFS(_currentNode, target);
         if (path == null) return;
 
-        StartCoroutine(MovePath(path));
+        if (_moveRoutine != null) StopCoroutine(_moveRoutine);
+        _moveRoutine = null;
+        _moveRoutine = StartCoroutine(MovePath(path));
     }
 
 

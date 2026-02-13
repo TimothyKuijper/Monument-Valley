@@ -1,22 +1,27 @@
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public static class NodeBank
 {
     private const float overlapTolerance = 0.9f;
 
+    public static List<Node> sceneNodes => cachedNodes ??= Object.FindObjectsByType<Node>(FindObjectsSortMode.None).ToList();
+    private static List<Node> cachedNodes;
+
+    public static void ResetNodeCache() => cachedNodes = null;
+
     public static void RebuildGraph(Camera camera)
     {
-        var nodes = UnityEngine.Object.FindObjectsByType<Node>(FindObjectsSortMode.None);
-
-        foreach (var n in nodes)
+        foreach (var n in sceneNodes)
             n.ConnectedNodes.Clear();
 
-        foreach (var A in nodes)
+        foreach (var A in sceneNodes)
         {
             if (!IsWalkable(A)) continue;
             var flatA = A.Position.Flatten(camera.transform);
 
-            foreach (var B in nodes)
+            foreach (var B in sceneNodes)
             {
                 if (A == B || !IsWalkable(B)) continue;
 
