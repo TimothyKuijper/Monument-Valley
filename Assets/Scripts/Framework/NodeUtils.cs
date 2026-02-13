@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Object = UnityEngine.Object;
@@ -15,7 +14,7 @@ public static class NodeUtils
 
         while (queue.Count > 0)
         {
-            Node current = queue.Dequeue();
+            var current = queue.Dequeue();
 
             if (current == goal)
                 break;
@@ -32,7 +31,7 @@ public static class NodeUtils
             return null;
 
         var path = new List<Node>();
-        Node temp = goal;
+        var temp = goal;
 
         while (temp != null)
         {
@@ -47,8 +46,8 @@ public static class NodeUtils
     public static Node FindClosestNode(this Transform transform)
     {
         var nodes = Object.FindObjectsByType<Node>(FindObjectsSortMode.None);
-        Node closest = null;
         var min = float.MaxValue;
+        Node closest = null;
 
         foreach (var n in nodes)
         {
@@ -64,9 +63,7 @@ public static class NodeUtils
     
     public static Node FindClosestNodeToMouse(Camera cam)
     {
-        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-        if (!Physics.Raycast(ray, out RaycastHit hit)) return null;
-        Debug.Log("Hit!");
-        return hit.collider.GetComponent<Node>();
+        var ray = cam.ScreenPointToRay(Input.mousePosition);
+        return !Physics.Raycast(ray, out RaycastHit hit) ? null : hit.collider.GetComponent<Node>();
     }
 }
