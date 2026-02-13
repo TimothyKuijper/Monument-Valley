@@ -1,4 +1,5 @@
 using System;
+using UnityEngine;
 
 namespace Yakanashe.Yautl
 {
@@ -12,6 +13,8 @@ namespace Yakanashe.Yautl
         bool IsComplete { get; }
         bool LoopPingPong { get; }
         int LoopCount { get; }
+        object Owner { get; }
+
         
         ITween Play();
         ITween Stop();

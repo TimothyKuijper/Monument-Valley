@@ -32,18 +32,21 @@ public class NodeWalker : MonoBehaviour
         if (path == null) return;
 
         if (_moveRoutine != null) StopCoroutine(_moveRoutine);
-        _moveRoutine = null;
+        TweenRunner.Instance.KillAllFrom(transform);
         _moveRoutine = StartCoroutine(MovePath(path));
     }
 
 
-    private IEnumerator MovePath(List<Node> path)
+    private IEnumerator MovePath(IReadOnlyList<Node> path)
     {
-        foreach (var node in path)
+        for (var index = 0; index < path.Count; index++)
         {
+            var node = path[index];
+            transform.parent = node.transform;
+            _currentNode = node;
+
             transform.MoveTo(node.Position, moveSpeed, EaseType.Linear);
             yield return new WaitForSeconds(moveSpeed);
-            _currentNode = node;
         }
     }
 }

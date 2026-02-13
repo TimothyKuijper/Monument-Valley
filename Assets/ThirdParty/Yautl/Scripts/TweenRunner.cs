@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Yakanashe.Yautl
@@ -40,6 +41,19 @@ namespace Yakanashe.Yautl
         public void Remove(ITween tween)
         {
             activeTweens.Remove(tween);
+        }
+
+        public void KillAllFrom(Transform owner)
+        {
+            for (int i = activeTweens.Count - 1; i >= 0; i--)
+            {
+                var tween = activeTweens[i];
+
+                if (ReferenceEquals(tween.Owner, owner))
+                {
+                    activeTweens.RemoveAt(i);
+                }
+            }
         }
     }
 }
