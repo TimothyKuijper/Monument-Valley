@@ -4,7 +4,7 @@ using Object = UnityEngine.Object;
 
 public static class NodeUtils
 {
-    public static List<Node> BFS(Node start, Node goal)
+    public static List<Node> BFS(Node start, Node destination)
     {
         var queue = new Queue<Node>();
         var cameFrom = new Dictionary<Node, Node>();
@@ -16,7 +16,7 @@ public static class NodeUtils
         {
             var current = queue.Dequeue();
 
-            if (current == goal)
+            if (current == destination)
                 break;
 
             foreach (var neighbor in current.ConnectedNodes)
@@ -27,11 +27,11 @@ public static class NodeUtils
             }
         }
 
-        if (!cameFrom.ContainsKey(goal))
+        if (!cameFrom.ContainsKey(destination))
             return null;
 
         var path = new List<Node>();
-        var temp = goal;
+        var temp = destination;
 
         while (temp != null)
         {
@@ -45,17 +45,17 @@ public static class NodeUtils
     
     public static Node FindClosestNode(this Transform transform)
     {
-        var nodes = Object.FindObjectsByType<Node>(FindObjectsSortMode.None);
+        var nodes = NodeBank.SceneNodes;
         var min = float.MaxValue;
         Node closest = null;
 
-        foreach (var n in nodes)
+        foreach (var node in nodes)
         {
-            float d = Vector3.Distance(transform.position, n.Position);
-            if (!(d < min)) continue;
+            float distance = Vector3.Distance(transform.position, node.Position);
+            if (!(distance < min)) continue;
             
-            min = d;
-            closest = n;
+            min = distance;
+            closest = node;
         }
 
         return closest;

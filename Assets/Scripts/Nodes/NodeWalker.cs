@@ -6,7 +6,7 @@ using Yakanashe.Yautl;
 
 public class NodeWalker : MonoBehaviour
 {
-    public float moveSpeed = 0.2f;
+    [SerializeField] private float moveSpeed = 0.3f;
 
     private Node _currentNode;
     private Camera _camera;
@@ -19,23 +19,17 @@ public class NodeWalker : MonoBehaviour
         transform.position = _currentNode.Position;
     }
 
-    private void Update()
+    public void MoveTo(Node destination)
     {
-        if (!Input.GetMouseButtonDown(0)) return;
-
-        var target = NodeUtils.RaycastNode(_camera);
-        if (target == null || target == _currentNode) return;
-
         NodeBank.RebuildGraph(_camera);
 
-        var path = NodeUtils.BFS(_currentNode, target);
+        var path = NodeUtils.BFS(_currentNode, destination);
         if (path == null) return;
 
         if (_moveRoutine != null) StopCoroutine(_moveRoutine);
         TweenRunner.Instance.KillAllFrom(transform);
         _moveRoutine = StartCoroutine(MovePath(path));
     }
-
 
     private IEnumerator MovePath(IReadOnlyList<Node> path)
     {
@@ -44,6 +38,8 @@ public class NodeWalker : MonoBehaviour
             var node = path[index];
             var currentY = transform.position.y;
             var targetY = node.Position.y;
+            
+            if (!_currentNode.CanReach(node, _camera)) break;
             
             transform.parent = node.transform;
             _currentNode = node;

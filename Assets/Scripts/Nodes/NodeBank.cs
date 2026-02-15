@@ -4,47 +4,57 @@ using UnityEngine;
 
 public static class NodeBank
 {
-    private const float overlapTolerance = 0.9f;
-
-    public static List<Node> sceneNodes => cachedNodes ??= Object.FindObjectsByType<Node>(FindObjectsSortMode.None).ToList();
+    public static List<Node> SceneNodes => cachedNodes ??= Object.FindObjectsByType<Node>(FindObjectsSortMode.None).ToList();
     private static List<Node> cachedNodes;
+    
+    private const float overlapTolerance = 0.9f;
 
     public static void ResetNodeCache() => cachedNodes = null;
 
     public static void RebuildGraph(Camera camera)
     {
-        foreach (var n in sceneNodes)
-            n.ConnectedNodes.Clear();
+        foreach (var node in SceneNodes)
+            node.ConnectedNodes.Clear();
 
-        foreach (var A in sceneNodes)
+        foreach (var baseNode in SceneNodes)
         {
-            if (!IsWalkable(A)) continue;
-            var flatA = A.Position.Flatten(camera.transform);
+            if (!IsWalkable(baseNode)) continue;
+            var flatBase = baseNode.Position.Flatten(camera.transform);
 
-            foreach (var B in sceneNodes)
+            foreach (var comparerNode in SceneNodes)
             {
-                if (A == B || !IsWalkable(B)) continue;
+                if (baseNode == comparerNode || !IsWalkable(comparerNode)) continue;
 
-                var flatB = B.Position.Flatten(camera.transform);
-                var delta = B.Position - A.Position;
+                var flatComparer = comparerNode.Position.Flatten(camera.transform);
+                var delta = comparerNode.Position - baseNode.Position;
 
-                float planarDistance = Vector2.Distance(new Vector2(flatA.x, flatA.z), new Vector2(flatB.x, flatB.z));
+                var planarDistance = Vector2.Distance(new Vector2(flatBase.x, flatBase.z), new Vector2(flatComparer.x, flatComparer.z));
 
-                if (planarDistance > overlapTolerance || Mathf.Abs(delta.x - delta.z) < 0.01f || !B.Walkable)
+                if (planarDistance > overlapTolerance || Mathf.Abs(delta.x - delta.z) < 0.01f)
                     continue;
 
-                A.ConnectedNodes.Add(B);
-                Debug.DrawLine(A.Position, B.Position, Color.green, 1f);
+                baseNode.ConnectedNodes.Add(comparerNode);
+                Debug.DrawLine(baseNode.Position, comparerNode.Position, Color.green, 1f);
             }
         }
     }
 
-    private static bool IsWalkable(Node n)
+    public static bool CanReach(this Node current, Node target, Camera camera)
     {
-        if (n == null) return false;
-        if (!n.gameObject.activeInHierarchy) return false;
+        if (!IsWalkable(target)) return false;
 
-        return n.CurrentDirection == Direction.UP;
+        var flatA = current.Position.Flatten(camera.transform);
+        var flatB = target.Position.Flatten(camera.transform);
+        var planarDistance = Vector2.Distance(new Vector2(flatA.x, flatA.z), new Vector2(flatB.x, flatB.z));
+        
+        return planarDistance < overlapTolerance;
+    }
+
+    private static bool IsWalkable(Node node)
+    {
+        if (node == null || !node.gameObject.activeInHierarchy || !node.Walkable) return false;
+
+        return node.CurrentDirection == Direction.UP;
     }
 
     private static Vector3 Flatten(this Vector3 worldPos, Transform transform)
