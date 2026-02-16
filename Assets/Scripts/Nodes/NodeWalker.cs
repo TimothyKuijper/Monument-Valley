@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using Yakanashe.Yautl;
 
 public class NodeWalker : MonoBehaviour
@@ -12,7 +13,9 @@ public class NodeWalker : MonoBehaviour
     private Camera _camera;
     private Coroutine _moveRoutine;
 
-    private void Start()
+    public UnityEvent OnPathComplete = new();
+    
+    private void Awake()
     {
         _camera = FindAnyObjectByType<Camera>();
         _currentNode = transform.FindClosestNode();
@@ -21,6 +24,8 @@ public class NodeWalker : MonoBehaviour
 
     public void MoveTo(Node destination)
     {
+        _currentNode.Occupied = false;
+
         NodeBank.RebuildGraph(_camera);
 
         var path = NodeUtils.BFS(_currentNode, destination);
@@ -42,7 +47,9 @@ public class NodeWalker : MonoBehaviour
             if (!_currentNode.CanReach(node, _camera)) break;
             
             transform.parent = node.transform;
+            _currentNode.Occupied = false;
             _currentNode = node;
+            _currentNode.Occupied = true;
             
             if (Mathf.Abs(currentY - targetY) > 0.01f)
             {
@@ -62,5 +69,7 @@ public class NodeWalker : MonoBehaviour
                 yield return new WaitForSeconds(moveSpeed);
             }
         }
+
+        OnPathComplete.Invoke();
     }
 }

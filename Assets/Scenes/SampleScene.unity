@@ -157,6 +157,7 @@ MonoBehaviour:
   - {fileID: 1926546157}
   - {fileID: 1598256105}
   Walkable: 1
+  Occupied: 0
   verticalOffset: 0.8
 --- !u!65 &27088605
 BoxCollider:
@@ -324,6 +325,7 @@ MonoBehaviour:
   - {fileID: 791296748}
   - {fileID: 1667332203}
   Walkable: 1
+  Occupied: 0
   verticalOffset: 0.8
 --- !u!23 &87830987
 MeshRenderer:
@@ -419,6 +421,7 @@ MonoBehaviour:
   - {fileID: 1314794182}
   - {fileID: 550577836}
   Walkable: 1
+  Occupied: 0
   verticalOffset: 0.8
 --- !u!65 &122664261
 BoxCollider:
@@ -586,6 +589,7 @@ MonoBehaviour:
   - {fileID: 791296748}
   - {fileID: 1667332203}
   Walkable: 1
+  Occupied: 0
   verticalOffset: 0.8
 --- !u!23 &130282416
 MeshRenderer:
@@ -794,6 +798,7 @@ MonoBehaviour:
   - {fileID: 1621680700}
   - {fileID: 1610558643}
   Walkable: 1
+  Occupied: 0
   verticalOffset: 0.8
 --- !u!65 &191387141
 BoxCollider:
@@ -924,6 +929,7 @@ MonoBehaviour:
   ConnectedNodes:
   - {fileID: 1874717586}
   Walkable: 1
+  Occupied: 0
   verticalOffset: 0.8
 --- !u!65 &223518993
 BoxCollider:
@@ -1194,13 +1200,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.27984518, y: 0.3647056, z: -0.11591566, w: 0.88047725}
+  m_LocalRotation: {x: 0.27984408, y: 0.364714, z: -0.11591833, w: 0.88047373}
   m_LocalPosition: {x: -20, y: 20, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 35.264, y: 45, z: 0}
+  m_LocalEulerAnglesHint: {x: 35.264, y: 45.0011, z: 0}
 --- !u!114 &330585547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1338,6 +1344,7 @@ MonoBehaviour:
   CurrentDirection: 0
   ConnectedNodes: []
   Walkable: 1
+  Occupied: 0
   verticalOffset: 0.8
 --- !u!1 &377298940
 GameObject:
@@ -1412,6 +1419,7 @@ MonoBehaviour:
   - {fileID: 791296748}
   - {fileID: 1667332203}
   Walkable: 1
+  Occupied: 0
   verticalOffset: 0.8
 --- !u!23 &377298944
 MeshRenderer:
@@ -1724,6 +1732,7 @@ MonoBehaviour:
   - {fileID: 1508956780}
   - {fileID: 1645529104}
   Walkable: 1
+  Occupied: 0
   verticalOffset: 0.8
 --- !u!65 &493366928
 BoxCollider:
@@ -1867,6 +1876,7 @@ MonoBehaviour:
   - {fileID: 874560361}
   - {fileID: 1696085999}
   Walkable: 1
+  Occupied: 0
   verticalOffset: 0.8
 --- !u!65 &502084098
 BoxCollider:
@@ -2088,6 +2098,7 @@ MonoBehaviour:
   - {fileID: 1743943185}
   - {fileID: 122664260}
   Walkable: 1
+  Occupied: 0
   verticalOffset: 0.8
 --- !u!65 &550577837
 BoxCollider:
@@ -2510,6 +2521,7 @@ MonoBehaviour:
   - {fileID: 1978140111}
   - {fileID: 1598256105}
   Walkable: 1
+  Occupied: 0
   verticalOffset: 0.8
 --- !u!65 &610520563
 BoxCollider:
@@ -2819,6 +2831,7 @@ MonoBehaviour:
   - {fileID: 1480943584}
   - {fileID: 1667332203}
   Walkable: 1
+  Occupied: 0
   verticalOffset: 0.2
 --- !u!64 &631620139
 MeshCollider:
@@ -2922,6 +2935,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 6393677786651583731, guid: 28444a09e84f6bf568936f93a278ad82, type: 3}
+      propertyPath: path
+      value: 
+      objectReference: {fileID: 498369688}
+    - target: {fileID: 6393677786651583731, guid: 28444a09e84f6bf568936f93a278ad82, type: 3}
+      propertyPath: nodeWalker
+      value: 
+      objectReference: {fileID: 2143050440}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2964,6 +2985,7 @@ MonoBehaviour:
   - {fileID: 2035302773}
   - {fileID: 1108587018}
   Walkable: 1
+  Occupied: 0
   verticalOffset: 0.8
 --- !u!65 &650046624
 BoxCollider:
@@ -3264,6 +3286,7 @@ MonoBehaviour:
   - {fileID: 1978140111}
   - {fileID: 2035302773}
   Walkable: 1
+  Occupied: 0
   verticalOffset: 0.8
 --- !u!65 &708082045
 BoxCollider:
@@ -3521,6 +3544,7 @@ MonoBehaviour:
   - {fileID: 791296748}
   - {fileID: 1667332203}
   Walkable: 1
+  Occupied: 0
   verticalOffset: 0.8
 --- !u!23 &750070836
 MeshRenderer:
@@ -3706,6 +3730,7 @@ MonoBehaviour:
   - {fileID: 1707482454}
   - {fileID: 1320271824}
   Walkable: 1
+  Occupied: 0
   verticalOffset: 0.8
 --- !u!65 &791296749
 BoxCollider:
@@ -3836,6 +3861,7 @@ MonoBehaviour:
   ConnectedNodes:
   - {fileID: 1252751003}
   Walkable: 1
+  Occupied: 0
   verticalOffset: 0.8
 --- !u!65 &809129716
 BoxCollider:
@@ -4106,6 +4132,7 @@ MonoBehaviour:
   - {fileID: 1201122543}
   - {fileID: 1202211245}
   Walkable: 1
+  Occupied: 0
   verticalOffset: 0.8
 --- !u!65 &857667009
 BoxCollider:
@@ -4237,6 +4264,7 @@ MonoBehaviour:
   - {fileID: 502084097}
   - {fileID: 1202211245}
   Walkable: 1
+  Occupied: 0
   verticalOffset: 0.8
 --- !u!65 &874560362
 BoxCollider:
@@ -4458,6 +4486,7 @@ MonoBehaviour:
   - {fileID: 1778679580}
   - {fileID: 1645529104}
   Walkable: 1
+  Occupied: 0
   verticalOffset: 0.8
 --- !u!65 &897112159
 BoxCollider:
@@ -4589,6 +4618,7 @@ MonoBehaviour:
   - {fileID: 1778679580}
   - {fileID: 1926546157}
   Walkable: 1
+  Occupied: 0
   verticalOffset: 0.8
 --- !u!65 &918827149
 BoxCollider:
@@ -4812,6 +4842,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NodeWalker
   moveSpeed: 0.3
+  OnPathComplete:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &924769952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4862,6 +4895,7 @@ MonoBehaviour:
   - {fileID: 1933407954}
   - {fileID: 1304489168}
   Walkable: 1
+  Occupied: 0
   verticalOffset: 0.8
 --- !u!65 &936039942
 BoxCollider:
@@ -5353,6 +5387,7 @@ MonoBehaviour:
   - {fileID: 1114781878}
   - {fileID: 650046623}
   Walkable: 1
+  Occupied: 0
   verticalOffset: 0.8
 --- !u!65 &1108587019
 BoxCollider:
@@ -5484,6 +5519,7 @@ MonoBehaviour:
   - {fileID: 1108587018}
   - {fileID: 1521524790}
   Walkable: 1
+  Occupied: 0
   verticalOffset: 0.8
 --- !u!65 &1114781879
 BoxCollider:
@@ -5615,6 +5651,7 @@ MonoBehaviour:
   - {fileID: 857667008}
   - {fileID: 1994237072}
   Walkable: 1
+  Occupied: 0
   verticalOffset: 0.8
 --- !u!65 &1201122544
 BoxCollider:
@@ -5746,6 +5783,7 @@ MonoBehaviour:
   - {fileID: 874560361}
   - {fileID: 857667008}
   Walkable: 1
+  Occupied: 0
   verticalOffset: 0.8
 --- !u!65 &1202211246
 BoxCollider:
@@ -5877,6 +5915,7 @@ MonoBehaviour:
   - {fileID: 1610558643}
   - {fileID: 27088604}
   Walkable: 1
+  Occupied: 0
   verticalOffset: 0.8
 --- !u!65 &1210584406
 BoxCollider:
@@ -6040,6 +6079,7 @@ MonoBehaviour:
   - {fileID: 1696085999}
   - {fileID: 809129715}
   Walkable: 1
+  Occupied: 0
   verticalOffset: 0.8
 --- !u!65 &1252751004
 BoxCollider:
@@ -6171,6 +6211,7 @@ MonoBehaviour:
   - {fileID: 1445117989}
   - {fileID: 936039941}
   Walkable: 1
+  Occupied: 0
   verticalOffset: 0.8
 --- !u!65 &1304489169
 BoxCollider:
@@ -6302,6 +6343,7 @@ MonoBehaviour:
   - {fileID: 122664260}
   - {fileID: 1759642072}
   Walkable: 1
+  Occupied: 0
   verticalOffset: 0.8
 --- !u!65 &1314794183
 BoxCollider:
@@ -6433,6 +6475,7 @@ MonoBehaviour:
   - {fileID: 1445117989}
   - {fileID: 791296748}
   Walkable: 1
+  Occupied: 0
   verticalOffset: 0.8
 --- !u!65 &1320271825
 BoxCollider:
@@ -6600,6 +6643,7 @@ MonoBehaviour:
   - {fileID: 791296748}
   - {fileID: 1667332203}
   Walkable: 1
+  Occupied: 0
   verticalOffset: 0.8
 --- !u!23 &1396154450
 MeshRenderer:
@@ -6785,6 +6829,7 @@ MonoBehaviour:
   - {fileID: 1320271824}
   - {fileID: 1304489168}
   Walkable: 1
+  Occupied: 0
   verticalOffset: 0.8
 --- !u!65 &1445117990
 BoxCollider:
@@ -6915,6 +6960,7 @@ MonoBehaviour:
   ConnectedNodes:
   - {fileID: 1673957288}
   Walkable: 1
+  Occupied: 0
   verticalOffset: 0.8
 --- !u!65 &1446323932
 BoxCollider:
@@ -7166,6 +7212,7 @@ MonoBehaviour:
   - {fileID: 631620138}
   - {fileID: 1743943185}
   Walkable: 1
+  Occupied: 0
   verticalOffset: 0.2
 --- !u!64 &1480943585
 MeshCollider:
@@ -7242,6 +7289,7 @@ MonoBehaviour:
   - {fileID: 1673957288}
   - {fileID: 493366927}
   Walkable: 1
+  Occupied: 0
   verticalOffset: 0.8
 --- !u!65 &1508956781
 BoxCollider:
@@ -7373,6 +7421,7 @@ MonoBehaviour:
   - {fileID: 1114781878}
   - {fileID: 2117295963}
   Walkable: 1
+  Occupied: 0
   verticalOffset: 0.8
 --- !u!65 &1521524791
 BoxCollider:
@@ -7504,6 +7553,7 @@ MonoBehaviour:
   - {fileID: 610520562}
   - {fileID: 27088604}
   Walkable: 1
+  Occupied: 0
   verticalOffset: 0.8
 --- !u!65 &1598256106
 BoxCollider:
@@ -7635,6 +7685,7 @@ MonoBehaviour:
   - {fileID: 191387140}
   - {fileID: 1210584405}
   Walkable: 1
+  Occupied: 0
   verticalOffset: 0.8
 --- !u!65 &1610558644
 BoxCollider:
@@ -7766,6 +7817,7 @@ MonoBehaviour:
   - {fileID: 191387140}
   - {fileID: 1759642072}
   Walkable: 1
+  Occupied: 0
   verticalOffset: 0.8
 --- !u!65 &1621680701
 BoxCollider:
@@ -7897,6 +7949,7 @@ MonoBehaviour:
   - {fileID: 897112158}
   - {fileID: 493366927}
   Walkable: 1
+  Occupied: 0
   verticalOffset: 0.8
 --- !u!65 &1645529105
 BoxCollider:
@@ -8026,6 +8079,7 @@ MonoBehaviour:
   - {fileID: 631620138}
   - {fileID: 1707482454}
   Walkable: 1
+  Occupied: 0
   verticalOffset: 0.2
 --- !u!64 &1667332204
 MeshCollider:
@@ -8104,6 +8158,7 @@ MonoBehaviour:
   - {fileID: 1508956780}
   - {fileID: 1446323931}
   Walkable: 1
+  Occupied: 0
   verticalOffset: 0.8
 --- !u!65 &1673957289
 BoxCollider:
@@ -8235,6 +8290,7 @@ MonoBehaviour:
   - {fileID: 1252751003}
   - {fileID: 502084097}
   Walkable: 1
+  Occupied: 0
   verticalOffset: 0.8
 --- !u!65 &1696086000
 BoxCollider:
@@ -8366,6 +8422,7 @@ MonoBehaviour:
   - {fileID: 791296748}
   - {fileID: 1667332203}
   Walkable: 1
+  Occupied: 0
   verticalOffset: 0.8
 --- !u!65 &1707482455
 BoxCollider:
@@ -8533,6 +8590,7 @@ MonoBehaviour:
   - {fileID: 791296748}
   - {fileID: 1667332203}
   Walkable: 1
+  Occupied: 0
   verticalOffset: 0.8
 --- !u!23 &1725490736
 MeshRenderer:
@@ -8719,6 +8777,7 @@ MonoBehaviour:
   - {fileID: 502084097}
   - {fileID: 550577836}
   Walkable: 1
+  Occupied: 0
   verticalOffset: 0.8
 --- !u!65 &1743943186
 BoxCollider:
@@ -8850,6 +8909,7 @@ MonoBehaviour:
   - {fileID: 1621680700}
   - {fileID: 1314794182}
   Walkable: 1
+  Occupied: 0
   verticalOffset: 0.8
 --- !u!65 &1759642073
 BoxCollider:
@@ -8981,6 +9041,7 @@ MonoBehaviour:
   - {fileID: 897112158}
   - {fileID: 918827148}
   Walkable: 1
+  Occupied: 0
   verticalOffset: 0.8
 --- !u!65 &1778679581
 BoxCollider:
@@ -9238,6 +9299,7 @@ MonoBehaviour:
   - {fileID: 791296748}
   - {fileID: 1667332203}
   Walkable: 1
+  Occupied: 0
   verticalOffset: 0.8
 --- !u!23 &1796550017
 MeshRenderer:
@@ -9603,6 +9665,7 @@ MonoBehaviour:
   - {fileID: 223518992}
   - {fileID: 2117295963}
   Walkable: 1
+  Occupied: 0
   verticalOffset: 0.8
 --- !u!65 &1874717587
 BoxCollider:
@@ -9746,6 +9809,7 @@ MonoBehaviour:
   CurrentDirection: 0
   ConnectedNodes: []
   Walkable: 1
+  Occupied: 0
   verticalOffset: 0.2
 --- !u!23 &1884176675
 MeshRenderer:
@@ -9953,6 +10017,7 @@ MonoBehaviour:
   - {fileID: 918827148}
   - {fileID: 27088604}
   Walkable: 1
+  Occupied: 0
   verticalOffset: 0.8
 --- !u!65 &1926546158
 BoxCollider:
@@ -10084,6 +10149,7 @@ MonoBehaviour:
   - {fileID: 1994237072}
   - {fileID: 936039941}
   Walkable: 1
+  Occupied: 0
   verticalOffset: 0.8
 --- !u!65 &1933407955
 BoxCollider:
@@ -10395,6 +10461,7 @@ MonoBehaviour:
   - {fileID: 610520562}
   - {fileID: 708082044}
   Walkable: 1
+  Occupied: 0
   verticalOffset: 0.8
 --- !u!65 &1978140112
 BoxCollider:
@@ -10526,6 +10593,7 @@ MonoBehaviour:
   - {fileID: 1933407954}
   - {fileID: 1201122543}
   Walkable: 1
+  Occupied: 0
   verticalOffset: 0.8
 --- !u!65 &1994237073
 BoxCollider:
@@ -10859,6 +10927,7 @@ MonoBehaviour:
   - {fileID: 650046623}
   - {fileID: 708082044}
   Walkable: 1
+  Occupied: 0
   verticalOffset: 0.8
 --- !u!65 &2035302774
 BoxCollider:
@@ -10990,6 +11059,7 @@ MonoBehaviour:
   - {fileID: 1521524790}
   - {fileID: 1874717586}
   Walkable: 1
+  Occupied: 0
   verticalOffset: 0.8
 --- !u!65 &2117295964
 BoxCollider:
@@ -11084,6 +11154,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 559827663}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2143050440 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7323846569174205219, guid: 28444a09e84f6bf568936f93a278ad82, type: 3}
+  m_PrefabInstance: {fileID: 639589261}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85bef2915a2381d439068d67b0376c8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NodeWalker
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

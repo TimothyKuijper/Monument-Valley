@@ -17,7 +17,7 @@ namespace Environment.Enemies
 
             transform.hasChanged = false;
 
-            var nodes = NodeBank.sceneNodes;
+            var nodes = NodeBank.SceneNodes;
             if (nodes == null || nodes.Count == 0)
                 return;
 

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
@@ -38,8 +39,9 @@ public static class NodeUtils
             path.Add(temp);
             temp = cameFrom[temp];
         }
-
+        
         path.Reverse();
+        //path.RemoveAt(0);
         return path;
     }
     
