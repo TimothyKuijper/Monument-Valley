@@ -1,20 +1,22 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 using static UnityEngine.Rendering.DebugUI;
 
 public class MovingPlatform : MonoBehaviour
 {
-    enum PlatformDirection
+    public enum PlatformDirection
     {
         Left, Up, Right
     }
     [SerializeField] private PlatformDirection direction;
+    public PlatformDirection Direction => direction;
 
     [SerializeField][Range(0, 100)] private int minDirection;
     [SerializeField][Range(0, 100)] private int maxDirection;
 
     private Vector3 _startPosition;
-    private int currentValue = 0;
+    private float currentValue = 0;
 
 
     private void Start()
@@ -23,24 +25,19 @@ public class MovingPlatform : MonoBehaviour
     }
 
 
-    private void Update() // TEST
+
+    public void SetNewPlatformPosition(float value, bool rounded = false)
     {
-        if (Input.GetKeyDown(KeyCode.W)) SetNewPlatformPosition(1);
-        if (Input.GetKeyDown(KeyCode.S)) SetNewPlatformPosition(-1);
-    }
-
-
-
-    public void SetNewPlatformPosition(int directionValue = 1)
-    {
-        currentValue = Mathf.Clamp(currentValue + directionValue, -minDirection, maxDirection);
+        currentValue = rounded ? (int)value : value;
         var position = GetPositionAlongPath(currentValue);
         transform.position = position;
     }
 
+    public void FinalizePlatformPosition() => SetNewPlatformPosition(currentValue, true);
 
 
-    private Vector3 GetDirectionPosition(Vector3 position, int value)
+
+    private Vector3 GetDirectionPosition(Vector3 position, float value)
     {
         switch (direction)
         {
@@ -65,7 +62,7 @@ public class MovingPlatform : MonoBehaviour
         return position;
     }
 
-    private Vector3 GetPositionAlongPath(int value = 1)
+    private Vector3 GetPositionAlongPath(float value = 1)
     {
         var clampedValue = Mathf.Clamp(value, -minDirection, maxDirection);
         var position = GetDirectionPosition(_startPosition, clampedValue);
