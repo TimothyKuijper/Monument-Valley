@@ -32,7 +32,7 @@ public class Node : MonoBehaviour
     [SerializeField] private float verticalOffset = 0.8f;
     private void OnDrawGizmos()
     {
-        Gizmos.color = Walkable ? Color.blue : Color.orange;
+        Gizmos.color = Walkable ? Color.green : Color.red;
         Gizmos.DrawSphere(Position, 0.2f);
     }
 }
