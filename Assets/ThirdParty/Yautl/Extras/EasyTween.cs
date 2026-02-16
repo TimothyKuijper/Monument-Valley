@@ -15,7 +15,7 @@ namespace Yakanashe.Yautl
         {
             if (Input.GetKeyDown(KeyCode.P))
             {
-                tween = new Tween<Vector3>(() => transform.position, value => transform.position = value, endPosition, duration, easeType, Vector3.Lerp);
+                tween = new Tween<Vector3>(transform, () => transform.position, value => transform.position = value, endPosition, duration, easeType, Vector3.Lerp);
                 tween.OnComplete(OnTweenEnd);
                 tween.SetLoops(-1, true);
                 tween.Play();

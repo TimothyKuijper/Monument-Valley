@@ -10,6 +10,7 @@ namespace Yakanashe.Yautl
         public float Duration { get; private set; }
         public float ElapsedTime { get; private set; }
         public int LoopCount { get; private set; }
+        public object Owner { get; }
         public bool LoopPingPong { get; private set; }
 
         public float Progress => Mathf.Clamp01(ElapsedTime / Duration);
@@ -31,13 +32,14 @@ namespace Yakanashe.Yautl
         private bool _pingPongReverse;
         private int _loopsDone;
 
-        public Tween(Func<T> getter, Action<T> setter, T to, float duration, EaseType easeType, Func<T, T, float, T> lerpFunc)
+        public Tween(object owner, Func<T> getter, Action<T> setter, T to, float duration, EaseType easeType, Func<T, T, float, T> lerpFunc)
         {
             _getter = getter ?? throw new ArgumentNullException(nameof(getter));
             _setter = setter ?? throw new ArgumentNullException(nameof(setter));
             _lerpFunc = lerpFunc ?? throw new ArgumentNullException(nameof(lerpFunc));
             Duration = duration;
             _easeType = easeType;
+            Owner = owner;
 
             _startValue = _getter();
             _endValue = to;
