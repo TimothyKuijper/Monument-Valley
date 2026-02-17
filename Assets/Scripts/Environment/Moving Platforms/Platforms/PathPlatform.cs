@@ -1,39 +1,57 @@
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
-using static UnityEngine.Rendering.DebugUI;
 
-public class MovingPlatform : MonoBehaviour
+public class PathPlatform : MovingPlatform
 {
     public enum PlatformDirection
     {
         Left, Up, Right
     }
+
+    [Header("Editing Settings")]
     [SerializeField] private PlatformDirection direction;
     public PlatformDirection Direction => direction;
 
     [SerializeField][Range(0, 100)] private int minDirection;
     [SerializeField][Range(0, 100)] private int maxDirection;
 
+    [Header("Variables")]
+    [SerializeField] private float dragSpeed = 4f;
+    [SerializeField] private float enableDistance = .1f;
+
     private Vector3 _startPosition;
-    private float currentValue = 0;
+    private Vector3 _nextPosition;
+    private float _currentValue = 0;
 
 
     private void Start()
     {
         _startPosition = transform.position;
+        _nextPosition = _startPosition;
     }
 
 
+    private void Update()
+    {
+        if (transform.position == _nextPosition) return;
+
+        var positionLerp = Vector3.Lerp(transform.position, _nextPosition, dragSpeed * Time.deltaTime);
+        transform.position = positionLerp;
+
+        if (Vector3.Distance(transform.position, _nextPosition) < enableDistance)
+        {
+            isMoving = false;
+            return;
+        }
+        isMoving = true;
+    }
 
     public void SetNewPlatformPosition(float value, bool rounded = false)
     {
-        currentValue = rounded ? (int)value : value;
-        var position = GetPositionAlongPath(currentValue);
-        transform.position = position;
+        _currentValue = rounded ? (int)value : value;
+        _nextPosition = GetPositionAlongPath(_currentValue);
     }
 
-    public void FinalizePlatformPosition() => SetNewPlatformPosition(currentValue, true);
+    public void FinalizePlatformPosition() => SetNewPlatformPosition(_currentValue, true);
 
 
 

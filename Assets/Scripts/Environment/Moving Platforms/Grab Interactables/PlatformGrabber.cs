@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class PlatformGrabber : PlatformInteractable
 {
-    private MovingPlatform platform;
-    private MovingPlatform.PlatformDirection direction;
+    private PathPlatform platform;
+    private PathPlatform.PlatformDirection direction;
 
 
     private void Start()
@@ -13,7 +13,7 @@ public class PlatformGrabber : PlatformInteractable
             Debug.LogError("Please put moving platform " +  gameObject.name + " as a child of a MovingPlatform object.");
             return;
         }
-        platform = GetComponentInParent<MovingPlatform>();
+        platform = GetComponentInParent<PathPlatform>();
         direction = platform.Direction;
 
         stopInteractEvent.AddListener(() => platform.FinalizePlatformPosition());
@@ -26,13 +26,13 @@ public class PlatformGrabber : PlatformInteractable
         var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition) - Camera.main.transform.position - transform.localPosition;
         switch (direction)
         {
-            case MovingPlatform.PlatformDirection.Left:
+            case PathPlatform.PlatformDirection.Left:
                 platform.SetNewPlatformPosition(mousePos.x);
                 break;
-            case MovingPlatform.PlatformDirection.Up:
+            case PathPlatform.PlatformDirection.Up:
                 platform.SetNewPlatformPosition(mousePos.y);
                 break;
-            case MovingPlatform.PlatformDirection.Right:
+            case PathPlatform.PlatformDirection.Right:
                 platform.SetNewPlatformPosition(mousePos.z);
                 break;
         }
