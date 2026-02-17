@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class PathPlatform : MovingPlatform
 {
+    [Header("Pathing")]
+    [SerializeField] protected float pathSnapDistance = .1f;
+
     public enum PlatformDirection
     {
         Left, Up, Right
@@ -13,10 +16,6 @@ public class PathPlatform : MovingPlatform
 
     [SerializeField][Range(0, 100)] private int minDirection;
     [SerializeField][Range(0, 100)] private int maxDirection;
-
-    [Header("Variables")]
-    [SerializeField] private float dragSpeed = 4f;
-    [SerializeField] private float enableDistance = .1f;
 
     private Vector3 _startPosition;
     private Vector3 _nextPosition;
@@ -34,11 +33,14 @@ public class PathPlatform : MovingPlatform
     {
         if (transform.position == _nextPosition) return;
 
-        var positionLerp = Vector3.Lerp(transform.position, _nextPosition, dragSpeed * Time.deltaTime);
+        _time = Time.deltaTime * dragSpeed;
+        var positionLerp = Vector3.Lerp(transform.position, _nextPosition, _time);
+
         transform.position = positionLerp;
 
-        if (Vector3.Distance(transform.position, _nextPosition) < enableDistance)
+        if (Vector3.Distance(transform.position, _nextPosition) < pathSnapDistance)
         {
+            transform.position = _nextPosition;
             isMoving = false;
             return;
         }

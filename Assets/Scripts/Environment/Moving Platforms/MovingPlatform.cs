@@ -2,6 +2,11 @@ using UnityEngine;
 
 public class MovingPlatform : MonoBehaviour
 {
+    [Header("Base")]
+    [SerializeField] protected float dragSpeed = 0.1f;
+    protected float _time;
+
+
     private bool moving;
     public bool isMoving
     {

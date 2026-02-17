@@ -10,7 +10,7 @@ public class PlatformGrabber : PlatformInteractable
     {
         if (transform.parent == null)
         {
-            Debug.LogError("Please put moving platform " +  gameObject.name + " as a child of a MovingPlatform object.");
+            Debug.LogError("Please put path platform grabber " +  gameObject.name + " as a child of a MovingPlatform object.");
             return;
         }
         platform = GetComponentInParent<PathPlatform>();
