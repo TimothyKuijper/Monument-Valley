@@ -26,8 +26,6 @@ public class PlatformRotator : PlatformInteractable
 
     private void Update()
     {
-        transform.rotation = Quaternion.identity;
-
         if (clickRotate) return;
         if (currentInteractable != this) return;
 
@@ -35,11 +33,11 @@ public class PlatformRotator : PlatformInteractable
         var targetPos = Camera.main.ScreenToViewportPoint(Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position));
         var dotProduct = Vector2.Dot(rotateAxis, GetVectorDir());
         var angle = Vector2.SignedAngle(rotateAxis, targetPos) + 180f;
-        print(angle);
+
         platform.SetNewPlatformRotation(angle);
     }
 
-    private Vector3 GetVectorDir()
+    public Vector3 GetVectorDir()
     {
         switch (rotation)
         {
@@ -53,11 +51,12 @@ public class PlatformRotator : PlatformInteractable
         return Vector3.up;
     }
 
-    private Vector3 GetVectorSelfDir()
+    public Vector3 GetVectorSelfDir()
     {
         if (rotation == RotationPlatform.PlatformRotation.Y) return Vector3.forward;
         return Vector3.up;
     }
+
 
 
     private void OnDrawGizmos()
@@ -67,11 +66,10 @@ public class PlatformRotator : PlatformInteractable
 
         Gizmos.color = Color.deepPink;
         var targetPos = Camera.main.ScreenToWorldPoint(Input.mousePosition) - Camera.main.transform.position;
-        var inverse = transform.InverseTransformDirection(targetPos);
         var dir = transform.position + GetVectorSelfDir() * 4;
         var dir3 = Camera.main.WorldToViewportPoint(dir);
 
-        Gizmos.DrawLine(transform.position, inverse);
+        Gizmos.DrawLine(transform.position, targetPos);
         Gizmos.DrawLine(transform.position, dir);
     }
 }
