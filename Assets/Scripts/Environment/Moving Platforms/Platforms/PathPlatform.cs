@@ -38,7 +38,7 @@ public class PathPlatform : MovingPlatform
 
         transform.position = positionLerp;
 
-        if (Vector3.Distance(transform.position, _nextPosition) < pathSnapDistance)
+        if (Vector3.Distance(transform.position, _nextPosition) < pathSnapDistance && _nextPosition == GetPositionAlongPath(_currentValue, true))
         {
             transform.position = _nextPosition;
             isMoving = false;
@@ -49,8 +49,8 @@ public class PathPlatform : MovingPlatform
 
     public void SetNewPlatformPosition(float value, bool rounded = false)
     {
-        _currentValue = rounded ? (int)value : value;
-        _nextPosition = GetPositionAlongPath(_currentValue);
+        _currentValue = value;
+        _nextPosition = GetPositionAlongPath(_currentValue, rounded);
     }
 
     public void FinalizePlatformPosition() => SetNewPlatformPosition(_currentValue, true);
@@ -82,9 +82,10 @@ public class PathPlatform : MovingPlatform
         return position;
     }
 
-    private Vector3 GetPositionAlongPath(float value = 1)
+    private Vector3 GetPositionAlongPath(float value = 1, bool rounded = false)
     {
-        var clampedValue = Mathf.Clamp(value, -minDirection, maxDirection);
+        var usedValue = rounded ? (int)value : value;
+        var clampedValue = Mathf.Clamp(usedValue, -minDirection, maxDirection);
         var position = GetDirectionPosition(_startPosition, clampedValue);
         return position;
     }
