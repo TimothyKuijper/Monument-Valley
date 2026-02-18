@@ -33,9 +33,9 @@ public class RotationPlatform : MovingPlatform
             isMoving = false;
             return;
         }
-        
-        var rotationLerp = Quaternion.Lerp(transform.rotation, _nextRotation, _time);
+
         _time += Time.deltaTime * dragSpeed;
+        var rotationLerp = Quaternion.Lerp(transform.rotation, _nextRotation, _time);
 
         transform.rotation = rotationLerp;
         isMoving = true;
@@ -44,7 +44,7 @@ public class RotationPlatform : MovingPlatform
 
     public void SetNewPlatformRotation(float newRotation, bool rounded = false)
     {
-        _time = 0;
+        _time = Time.deltaTime;
         _currentValue = rounded ? GetNearestRotation(newRotation) : newRotation;
         _nextRotation = GetPlatformQuaternion(_currentValue);
     }

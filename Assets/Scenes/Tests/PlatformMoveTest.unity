@@ -8256,7 +8256,7 @@ MonoBehaviour:
   stopInteractEvent:
     m_PersistentCalls:
       m_Calls: []
-  clickRotate: 1
+  clickRotate: 0
 --- !u!1 &1794506590
 GameObject:
   m_ObjectHideFlags: 0

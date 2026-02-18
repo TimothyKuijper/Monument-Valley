@@ -24,25 +24,54 @@ public class PlatformRotator : PlatformInteractable
 
 
 
-    //private void Update()
-    //{
-    //    if (clickRotate) return;
-    //    if (currentInteractable != this) return;
+    private void Update()
+    {
+        transform.rotation = Quaternion.identity;
 
-    //    var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition) - Camera.main.transform.position - transform.localPosition;
-    //    var mouseAngle = Vector3.Angle(transform.localPosition, mousePos);
-    //    print(mouseAngle);
-    //    switch (rotation)
-    //    {
-    //        case RotationPlatform.PlatformRotation.X:
-    //            platform.SetNewPlatformRotation(mouseAngle);
-    //            break;
-    //        case RotationPlatform.PlatformRotation.Y:
-    //            platform.SetNewPlatformRotation(mouseAngle);
-    //            break;
-    //        case RotationPlatform.PlatformRotation.Z:
-    //            platform.SetNewPlatformRotation(mouseAngle);
-    //            break;
-    //    }
-    //}
+        if (clickRotate) return;
+        if (currentInteractable != this) return;
+
+        var rotateAxis = Camera.main.WorldToViewportPoint(transform.position + GetVectorDir());
+        var targetPos = Camera.main.ScreenToViewportPoint(Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position));
+        var dotProduct = Vector2.Dot(rotateAxis, GetVectorDir());
+        var angle = Vector2.SignedAngle(rotateAxis, targetPos) + 180f;
+        print(angle);
+        platform.SetNewPlatformRotation(angle);
+    }
+
+    private Vector3 GetVectorDir()
+    {
+        switch (rotation)
+        {
+            case RotationPlatform.PlatformRotation.X:
+                return Vector3.right;
+            case RotationPlatform.PlatformRotation.Y:
+                return Vector3.up;
+            case RotationPlatform.PlatformRotation.Z:
+                return Vector3.forward;
+        }
+        return Vector3.up;
+    }
+
+    private Vector3 GetVectorSelfDir()
+    {
+        if (rotation == RotationPlatform.PlatformRotation.Y) return Vector3.forward;
+        return Vector3.up;
+    }
+
+
+    private void OnDrawGizmos()
+    {
+        if (clickRotate) return;
+        if (currentInteractable != this) return;
+
+        Gizmos.color = Color.deepPink;
+        var targetPos = Camera.main.ScreenToWorldPoint(Input.mousePosition) - Camera.main.transform.position;
+        var inverse = transform.InverseTransformDirection(targetPos);
+        var dir = transform.position + GetVectorSelfDir() * 4;
+        var dir3 = Camera.main.WorldToViewportPoint(dir);
+
+        Gizmos.DrawLine(transform.position, inverse);
+        Gizmos.DrawLine(transform.position, dir);
+    }
 }
