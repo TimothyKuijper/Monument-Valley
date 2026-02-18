@@ -4,6 +4,9 @@ using static PathPlatform;
 
 public class RotationPlatform : MovingPlatform
 {
+    [Header("Rotating")]
+    [SerializeField] private float straightRotationSpeed = 12f;
+
     public enum PlatformRotation
     {
         X, Y, Z
@@ -13,6 +16,7 @@ public class RotationPlatform : MovingPlatform
     [SerializeField] private PlatformRotation rotationDir;
     public PlatformRotation RotationDir => rotationDir;
 
+    private bool _isStraight;
     private Quaternion _nextRotation;
     private float _currentValue = 0;
 
@@ -28,9 +32,16 @@ public class RotationPlatform : MovingPlatform
 
     private void Update()
     {
-        if (transform.rotation.eulerAngles == _nextRotation.eulerAngles || _time >= dragSpeed)
+        if ((transform.rotation.eulerAngles == _nextRotation.eulerAngles || _time >= dragSpeed) && _isStraight == false)
         {
             isMoving = false;
+            return;
+        }
+
+        isMoving = true;
+        if (_isStraight)
+        {
+            transform.rotation = Quaternion.Lerp(transform.rotation, _nextRotation, Time.deltaTime * straightRotationSpeed);
             return;
         }
 
@@ -38,13 +49,13 @@ public class RotationPlatform : MovingPlatform
         var rotationLerp = Quaternion.Lerp(transform.rotation, _nextRotation, _time);
 
         transform.rotation = rotationLerp;
-        isMoving = true;
     }
 
 
     public void SetNewPlatformRotation(float newRotation, bool rounded = false)
     {
         _time = Time.deltaTime;
+        _isStraight = !rounded;
         _currentValue = rounded ? GetNearestRotation(newRotation) : newRotation;
         _nextRotation = GetPlatformQuaternion(_currentValue);
     }

@@ -37,6 +37,8 @@ public class PlatformRotator : PlatformInteractable
         platform.SetNewPlatformRotation(angle);
     }
 
+
+
     public Vector3 GetVectorDir()
     {
         switch (rotation)
@@ -51,12 +53,6 @@ public class PlatformRotator : PlatformInteractable
         return Vector3.up;
     }
 
-    public Vector3 GetVectorSelfDir()
-    {
-        if (rotation == RotationPlatform.PlatformRotation.Y) return Vector3.forward;
-        return Vector3.up;
-    }
-
 
 
     private void OnDrawGizmos()
@@ -66,8 +62,8 @@ public class PlatformRotator : PlatformInteractable
 
         Gizmos.color = Color.deepPink;
         var targetPos = Camera.main.ScreenToWorldPoint(Input.mousePosition) - Camera.main.transform.position;
-        var dir = transform.position + GetVectorSelfDir() * 4;
-        var dir3 = Camera.main.WorldToViewportPoint(dir);
+        var selfDir = rotation == RotationPlatform.PlatformRotation.Y ? Vector3.forward : Vector3.up;
+        var dir = transform.position + selfDir * 4;
 
         Gizmos.DrawLine(transform.position, targetPos);
         Gizmos.DrawLine(transform.position, dir);
