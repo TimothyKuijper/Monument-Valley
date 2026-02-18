@@ -3,7 +3,7 @@ using UnityEngine;
 public class PathPlatform : MovingPlatform
 {
     [Header("Pathing")]
-    [SerializeField] protected float pathSnapDistance = .1f;
+    [SerializeField] private float pathSnapDistance = .1f;
 
     public enum PlatformDirection
     {
