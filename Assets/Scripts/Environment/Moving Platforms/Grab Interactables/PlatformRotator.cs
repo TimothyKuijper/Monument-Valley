@@ -20,6 +20,7 @@ public class PlatformRotator : PlatformInteractable
 
         if (clickRotate) startInteractEvent.AddListener(() => platform.SnapRotate());
         stopInteractEvent.AddListener(() => platform.FinalizePlatformRotation());
+        platform.onWalkOn.AddListener(SetWalkOn);
     }
 
 

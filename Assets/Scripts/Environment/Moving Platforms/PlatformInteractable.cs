@@ -9,6 +9,8 @@ public class PlatformInteractable : MonoBehaviour, IPointerDownHandler, IPointer
     public UnityEvent startInteractEvent;
     public UnityEvent stopInteractEvent;
 
+    public bool canDrag = true;
+
     const string StandardLayer = "Grab Interactable";
 
 
@@ -19,6 +21,8 @@ public class PlatformInteractable : MonoBehaviour, IPointerDownHandler, IPointer
 
     public void OnPointerDown(PointerEventData eventData)
     {
+        if (canDrag == false) return;
+
         var clickObject = eventData.pointerCurrentRaycast.gameObject;
         if (clickObject != gameObject) return;
 
@@ -32,5 +36,11 @@ public class PlatformInteractable : MonoBehaviour, IPointerDownHandler, IPointer
 
         currentInteractable = null;
         stopInteractEvent.Invoke();
+    }
+
+    public void SetWalkOn(bool walkOn)
+    {
+        canDrag = !walkOn;
+        if (walkOn) OnPointerUp(null);
     }
 }

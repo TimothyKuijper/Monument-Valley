@@ -1,6 +1,5 @@
 using System.Linq;
 using UnityEngine;
-using static PathPlatform;
 
 public class RotationPlatform : MovingPlatform
 {
@@ -32,7 +31,7 @@ public class RotationPlatform : MovingPlatform
 
     private void Update()
     {
-        if ((transform.rotation.eulerAngles == _nextRotation.eulerAngles || _time >= dragSpeed) && _isStraight == false)
+        if ((transform.rotation.eulerAngles == _nextRotation.eulerAngles || _time >= dragTime) && _isStraight == false)
         {
             isMoving = false;
             return;
@@ -45,7 +44,7 @@ public class RotationPlatform : MovingPlatform
             return;
         }
 
-        _time += Time.deltaTime * dragSpeed;
+        _time += Time.deltaTime * dragTime;
         var rotationLerp = Quaternion.Lerp(transform.rotation, _nextRotation, _time);
 
         transform.rotation = rotationLerp;

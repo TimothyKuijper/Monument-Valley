@@ -17,6 +17,7 @@ public class PlatformGrabber : PlatformInteractable
         direction = platform.Direction;
 
         stopInteractEvent.AddListener(() => platform.FinalizePlatformPosition());
+        platform.onWalkOn.AddListener(SetWalkOn);
     }
 
     private void Update()

@@ -33,7 +33,7 @@ public class PathPlatform : MovingPlatform
     {
         if (transform.position == _nextPosition) return;
 
-        _time = Time.deltaTime * dragSpeed;
+        _time = Time.deltaTime * dragTime;
         var positionLerp = Vector3.Lerp(transform.position, _nextPosition, _time);
 
         transform.position = positionLerp;
