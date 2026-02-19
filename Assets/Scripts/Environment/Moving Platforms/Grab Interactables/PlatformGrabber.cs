@@ -34,7 +34,7 @@ public class PlatformGrabber : PlatformInteractable
                 platform.SetNewPlatformPosition(mousePos.y);
                 break;
             case PathPlatform.PlatformDirection.Right:
-                platform.SetNewPlatformPosition(mousePos.z);
+                platform.SetNewPlatformPosition(-mousePos.x);
                 break;
         }
     }
