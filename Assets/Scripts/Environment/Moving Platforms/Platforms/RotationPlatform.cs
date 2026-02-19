@@ -99,6 +99,20 @@ public class RotationPlatform : MovingPlatform
         return rotation.eulerAngles.x;
     }
 
+    public Vector3 GetPlatformVectorDir()
+    {
+        switch (rotationDir)
+        {
+            case RotationPlatform.PlatformRotation.X:
+                return Vector3.right;
+            case RotationPlatform.PlatformRotation.Y:
+                return Vector3.up;
+            case RotationPlatform.PlatformRotation.Z:
+                return Vector3.forward;
+        }
+        return Vector3.up;
+    }
+
 
 
     private void OnDrawGizmos()
