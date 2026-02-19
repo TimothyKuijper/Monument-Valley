@@ -24,7 +24,7 @@ public class PlatformGrabber : PlatformInteractable
     {
         if (currentInteractable != this) return;
 
-        var mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition) - Camera.main.transform.position - transform.localPosition;
+        var mousePos = Input.mousePosition - _camera.WorldToScreenPoint(transform.position);
         switch (direction)
         {
             case PathPlatform.PlatformDirection.Left:

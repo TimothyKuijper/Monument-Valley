@@ -103,11 +103,11 @@ public class RotationPlatform : MovingPlatform
     {
         switch (rotationDir)
         {
-            case RotationPlatform.PlatformRotation.X:
+            case PlatformRotation.X:
                 return Vector3.right;
-            case RotationPlatform.PlatformRotation.Y:
+            case PlatformRotation.Y:
                 return Vector3.up;
-            case RotationPlatform.PlatformRotation.Z:
+            case PlatformRotation.Z:
                 return Vector3.forward;
         }
         return Vector3.up;

@@ -57,22 +57,49 @@ public class PathPlatform : MovingPlatform
 
 
 
-    private Vector3 GetDirectionPosition(Vector3 position, float value)
+    public Vector3 GetDirectionPosition(Vector3 position, float value)
     {
         switch (direction)
         {
             case PlatformDirection.Left:
-                position += Vector3.right * value;
-                break;
+                return position += Vector3.right * value;
             case PlatformDirection.Up:
-                position += Vector3.up * value;
-                break;
+                return position += Vector3.up * value;
             case PlatformDirection.Right:
-                position += Vector3.forward * value;
-                break;
+                return position += Vector3.forward * value;
         }
         return position;
     }
+
+    public Vector3 GetDirectionVector()
+    {
+        switch (direction)
+        {
+            case PlatformDirection.Left:
+                return Vector3.right;
+            case PlatformDirection.Up:
+                return Vector3.up;
+            case PlatformDirection.Right:
+                return Vector3.forward;
+        }
+        return Vector3.right;
+    }
+
+    public float GetPositionVector(Vector3 position)
+    {
+        switch (direction)
+        {
+            case PlatformDirection.Left:
+                return position.x;
+            case PlatformDirection.Up:
+                return position.y;
+            case PlatformDirection.Right:
+                return position.z;
+        }
+        return position.x;
+    }
+
+
 
     private Vector3 GetEndPosition(bool max = true)
     {
