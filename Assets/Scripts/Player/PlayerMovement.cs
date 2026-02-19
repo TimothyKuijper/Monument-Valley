@@ -17,7 +17,8 @@ public class PlayerMovement : MonoBehaviour
 
         var target = NodeUtils.RaycastNode(_camera);
         if (target == null) return;
-        
+
+        NodeBank.RebuildGraph(_camera);
         nodeWalker.MoveTo(target);
     }
 }
