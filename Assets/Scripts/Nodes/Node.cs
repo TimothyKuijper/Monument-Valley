@@ -6,7 +6,7 @@ using UnityEngine;
 public class Node : MonoBehaviour
 {
     public Direction CurrentDirection = Direction.UP;
-    public List<Node> ConnectedNodes;
+    public List<Node> ConnectedNodes = new();
     public bool Walkable = true;
     public bool Occupied;
 
@@ -37,6 +37,7 @@ public class Node : MonoBehaviour
         Gizmos.color = Walkable && !Occupied ? Color.green : Color.red;
         Gizmos.DrawSphere(Position, 0.2f);
 
+        if (ConnectedNodes.Count == 0) return;
         foreach (var neighbour in ConnectedNodes)
         {
             if (!neighbour) continue;
