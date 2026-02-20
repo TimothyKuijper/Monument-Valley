@@ -40,8 +40,10 @@ public class PlatformRotator : PlatformInteractable
 
 
 
-    private void OnDrawGizmos()
+    private new void OnDrawGizmos()
     {
+        base.OnDrawGizmos();
+
         if (clickRotate) return;
         if (currentInteractable != this) return;
 

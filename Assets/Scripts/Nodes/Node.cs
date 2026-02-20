@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Node : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class Node : MonoBehaviour
     public List<Node> ConnectedNodes = new();
     public bool Walkable = true;
     public bool Occupied;
+
+    public UnityEvent onEnter;
+    public UnityEvent onExit;
 
 
     public Vector3 Position
