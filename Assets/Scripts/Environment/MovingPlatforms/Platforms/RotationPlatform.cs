@@ -1,0 +1,130 @@
+using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
+
+public class RotationPlatform : MovingPlatform
+{
+    [Header("Rotating")]
+    [SerializeField] private float straightRotationSpeed = 12f;
+
+    public enum PlatformRotation
+    {
+        X, Y, Z
+    }
+
+    [Header("Editing Settings")]
+    [SerializeField] private PlatformRotation rotationDir;
+    public PlatformRotation RotationDir => rotationDir;
+
+    [SerializeField] private List<RotationPlatform> unisonPlatforms = new List<RotationPlatform>();
+    [SerializeField] private List<RotationPlatform> oppositePlatforms = new List<RotationPlatform>();
+
+    private bool _isStraight;
+    private Quaternion _nextRotation;
+    private float _currentValue = 0;
+
+    private int[] RoundRotations = new int[4] { 0, 90, 180, 270 };
+
+
+    private void Start()
+    {
+        _nextRotation = transform.rotation;
+    }
+
+
+
+    private void Update()
+    {
+        if ((transform.rotation.eulerAngles == _nextRotation.eulerAngles || _time >= dragTime) && _isStraight == false)
+        {
+            isMoving = false;
+            return;
+        }
+
+        isMoving = true;
+        if (_isStraight)
+        {
+            transform.rotation = Quaternion.Lerp(transform.rotation, _nextRotation, Time.deltaTime * straightRotationSpeed);
+            return;
+        }
+
+        _time += Time.deltaTime * dragTime;
+        var rotationLerp = Quaternion.Lerp(transform.rotation, _nextRotation, _time);
+
+        transform.rotation = rotationLerp;
+    }
+
+
+    public void SetNewPlatformRotation(float newRotation, bool rounded = false)
+    {
+        _time = Time.deltaTime;
+        _isStraight = !rounded;
+        _currentValue = rounded ? GetNearestRotation(newRotation) : newRotation;
+        _nextRotation = GetPlatformQuaternion(_currentValue);
+
+        foreach (var platform in unisonPlatforms) platform.SetNewPlatformRotation(newRotation, rounded);
+        foreach (var platform in oppositePlatforms) platform.SetNewPlatformRotation(-newRotation, rounded);
+    }
+
+    public void SnapRotate() => SetNewPlatformRotation(_currentValue + 90, true);
+
+    public void FinalizePlatformRotation() => SetNewPlatformRotation(_currentValue, true);
+
+
+
+    public float GetNearestRotation(float rotation)
+    {
+        if (rotation >= 360f) return 0;
+        return RoundRotations.OrderBy(x => Mathf.Abs(rotation - x)).First();
+    }
+
+    public Quaternion GetPlatformQuaternion(float rotation)
+    {
+        switch (rotationDir)
+        {
+            case PlatformRotation.X:
+                return Quaternion.Euler(rotation, 0, 0);
+            case PlatformRotation.Y:
+                return Quaternion.Euler(0, rotation, 0);
+            case PlatformRotation.Z:
+                return Quaternion.Euler(0, 0, rotation);
+        }
+        return Quaternion.Euler(Vector3.zero);
+    }
+
+    public float GetPlatformRotation(Quaternion rotation)
+    {
+        switch (rotationDir)
+        {
+            case PlatformRotation.X:
+                return rotation.eulerAngles.x;
+            case PlatformRotation.Y:
+                return rotation.eulerAngles.y;
+            case PlatformRotation.Z:
+                return rotation.eulerAngles.z;
+        }
+        return rotation.eulerAngles.x;
+    }
+
+    public Vector3 GetPlatformVectorDir()
+    {
+        switch (rotationDir)
+        {
+            case PlatformRotation.X:
+                return Vector3.right;
+            case PlatformRotation.Y:
+                return Vector3.up;
+            case PlatformRotation.Z:
+                return Vector3.forward;
+        }
+        return Vector3.up;
+    }
+
+
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, 1);
+    }
+}
