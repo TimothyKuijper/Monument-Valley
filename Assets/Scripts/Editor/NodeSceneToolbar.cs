@@ -31,7 +31,6 @@ public class NodeSceneBuilder : Overlay
 
     private static HashSet<Vector3> paintedPositions = new();
 
-    // =========================================================
 
     public override VisualElement CreatePanelContent()
     {
@@ -72,10 +71,6 @@ public class NodeSceneBuilder : Overlay
         return root;
     }
 
-    // =========================================================
-    // Animation
-    // =========================================================
-
     private static void Animate()
     {
         float target = radialActive ? 1f : 0f;
@@ -83,7 +78,6 @@ public class NodeSceneBuilder : Overlay
         SceneView.RepaintAll();
     }
 
-    // =========================================================
 
     private static void OnSceneGUI(SceneView view)
     {
@@ -111,9 +105,7 @@ public class NodeSceneBuilder : Overlay
         }
     }
 
-    // =========================================================
-    // RADIAL
-    // =========================================================
+
 
     private static void HandleRadialInput(Event e)
     {
@@ -147,7 +139,7 @@ public class NodeSceneBuilder : Overlay
         if (index < palette.prefabs.Count && index != selectedIndex)
         {
             selectedIndex = index;
-            DestroyGhost(); // ensure ghost matches selection
+            DestroyGhost();
         }
     }
 
@@ -227,9 +219,6 @@ public class NodeSceneBuilder : Overlay
         GUI.DrawTexture(rect, preview, ScaleMode.ScaleToFit, true);
     }
 
-    // =========================================================
-    // PLACE (NO DRAG)
-    // =========================================================
 
     private static void PaintAtMouse()
     {
@@ -244,9 +233,6 @@ public class NodeSceneBuilder : Overlay
         RebuildGraph();
     }
 
-    // =========================================================
-    // GHOST
-    // =========================================================
 
     private static bool UpdateGhost()
     {
@@ -298,7 +284,6 @@ public class NodeSceneBuilder : Overlay
         }
     }
 
-    // =========================================================
 
     private static Vector3 GetSnappedPosition()
     {
@@ -317,7 +302,7 @@ public class NodeSceneBuilder : Overlay
             return Snap(hit.point);
         }
 
-        return new Vector3(-1, -1, -1); // skip if nothing hit
+        return new Vector3(-1, -1, -1);
     }
 
     private static Vector3 GetDominantAxis(Vector3 normal)
