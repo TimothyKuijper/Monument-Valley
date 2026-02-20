@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Teslacoil
-  m_Shader: {fileID: -6465566751694194690, guid: 0b793b0c23d7cbc4791242d9994686c3, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: b5bd05596b3f5f742ab0d22d4c438b39, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -86,7 +86,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _emission:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: e69b99afe6087784f9024fb689b15e27, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _metal:
@@ -140,12 +140,12 @@ Material:
     - _WorkflowMode: 1
     - _XRMotionVectorsPass: 1
     - _ZWrite: 1
-    - _emisionstrengt: 0
+    - _emisionstrengt: 2.41
     - _gradiant: 24.39
-    - _speed: 0
+    - _speed: 30
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0.7209291, g: 0.35686275, b: 0.9372549, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
