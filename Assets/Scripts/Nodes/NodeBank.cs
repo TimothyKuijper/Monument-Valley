@@ -34,7 +34,6 @@ public static class NodeBank
                     continue;
 
                 baseNode.ConnectedNodes.Add(comparerNode);
-                Debug.DrawLine(baseNode.Position, comparerNode.Position, Color.green, 1f);
             }
         }
     }

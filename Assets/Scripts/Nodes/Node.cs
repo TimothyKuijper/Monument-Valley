@@ -10,7 +10,7 @@ public class Node : MonoBehaviour
     public bool Walkable = true;
     public bool Occupied;
 
-    
+
     public Vector3 Position
     {
         get
@@ -31,9 +31,16 @@ public class Node : MonoBehaviour
     }
 
     [SerializeField] private float verticalOffset = 0.8f;
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Walkable && !Occupied ? Color.green : Color.red;
         Gizmos.DrawSphere(Position, 0.2f);
+
+        foreach (var neighbour in ConnectedNodes)
+        {
+            if (!neighbour) continue;
+            Debug.DrawLine(Position, neighbour.Position, Color.white, 0.01f);
+        }
     }
 }
