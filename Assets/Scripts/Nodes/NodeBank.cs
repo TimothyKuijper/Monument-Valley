@@ -18,12 +18,12 @@ public static class NodeBank
 
         foreach (var baseNode in SceneNodes)
         {
-            if (!IsWalkable(baseNode)) continue;
+            if (!IsWalkable(baseNode, true)) continue;
             var flatBase = baseNode.Position.Flatten(camera.transform);
 
             foreach (var comparerNode in SceneNodes)
             {
-                if (baseNode == comparerNode || !IsWalkable(comparerNode)) continue;
+                if (baseNode == comparerNode || !IsWalkable(comparerNode, true)) continue; 
 
                 var flatComparer = comparerNode.Position.Flatten(camera.transform);
                 var delta = comparerNode.Position - baseNode.Position;
@@ -50,9 +50,9 @@ public static class NodeBank
         return planarDistance < overlapTolerance;
     }
 
-    private static bool IsWalkable(Node node)
+    private static bool IsWalkable(Node node, bool omitOccupancy = false)
     {
-        if (node == null || !node.gameObject.activeInHierarchy || !node.Walkable) return false;
+        if (node == null || !node.gameObject.activeInHierarchy || !node.Walkable || (!omitOccupancy && node.Occupied)) return false;
 
         return node.CurrentDirection == Direction.UP;
     }

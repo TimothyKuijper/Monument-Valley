@@ -8,6 +8,7 @@ public class Node : MonoBehaviour
     public Direction CurrentDirection = Direction.UP;
     public List<Node> ConnectedNodes;
     public bool Walkable = true;
+    public bool Occupied;
 
     
     public Vector3 Position
@@ -32,7 +33,7 @@ public class Node : MonoBehaviour
     [SerializeField] private float verticalOffset = 0.8f;
     private void OnDrawGizmos()
     {
-        Gizmos.color = Walkable ? Color.green : Color.red;
+        Gizmos.color = Walkable && !Occupied ? Color.green : Color.red;
         Gizmos.DrawSphere(Position, 0.2f);
     }
 }
