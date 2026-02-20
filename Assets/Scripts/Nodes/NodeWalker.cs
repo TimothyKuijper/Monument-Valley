@@ -49,9 +49,11 @@ public class NodeWalker : MonoBehaviour
             
             transform.parent = node.transform;
             _currentNode.Occupied = false;
+            _currentNode.onExit.Invoke();
             _currentNode = node;
             _currentNode.Occupied = true;
-            
+            _currentNode.onEnter.Invoke();
+
             if (Mathf.Abs(currentY - targetY) > 0.01f)
             {
                 var currentScreen = _camera.WorldToViewportPoint(transform.position);

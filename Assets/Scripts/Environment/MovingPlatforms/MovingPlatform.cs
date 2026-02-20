@@ -44,10 +44,11 @@ public class MovingPlatform : MonoBehaviour
         {
             var child = transform.GetChild(childIdx);
             Node childNode;
-            // if (child.gameObject.TryGetComponent<Node>(out childNode)) // ADD LATER
-            // childNode.onEnter.AddListener(() => onWalkOn.Invoke(true));
-            // childNode.onExit.AddListener(() => onWalkOn.Invoke(false));
-            // nodes.Add(childNode);
+            if (child.gameObject.TryGetComponent<Node>(out childNode)) // ADD LATER
+            {
+                childNode.onEnter.AddListener(() => onWalkOn.Invoke(true));
+                childNode.onExit.AddListener(() => onWalkOn.Invoke(false));
+            }
         }
     }
 }

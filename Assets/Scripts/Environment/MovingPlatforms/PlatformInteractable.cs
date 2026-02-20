@@ -13,7 +13,8 @@ public class PlatformInteractable : MonoBehaviour, IPointerDownHandler, IPointer
 
     public bool canDrag = true;
 
-    const string StandardLayer = "Grab Interactable";
+    private const string StandardLayer = "Grab Interactable";
+    private const float DebugGizmoSize = .5f;
 
 
     private void Awake()
@@ -45,5 +46,13 @@ public class PlatformInteractable : MonoBehaviour, IPointerDownHandler, IPointer
     {
         canDrag = !walkOn;
         if (walkOn) OnPointerUp(null);
+    }
+
+
+
+    protected void OnDrawGizmos()
+    {
+        Gizmos.color = canDrag ? Color.yellow : Color.red;
+        Gizmos.DrawSphere(transform.position, DebugGizmoSize);
     }
 }
