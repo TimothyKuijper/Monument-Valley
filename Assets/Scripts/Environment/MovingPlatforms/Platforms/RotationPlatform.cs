@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -14,6 +15,9 @@ public class RotationPlatform : MovingPlatform
     [Header("Editing Settings")]
     [SerializeField] private PlatformRotation rotationDir;
     public PlatformRotation RotationDir => rotationDir;
+
+    [SerializeField] private List<RotationPlatform> unisonPlatforms = new List<RotationPlatform>();
+    [SerializeField] private List<RotationPlatform> oppositePlatforms = new List<RotationPlatform>();
 
     private bool _isStraight;
     private Quaternion _nextRotation;
@@ -57,6 +61,9 @@ public class RotationPlatform : MovingPlatform
         _isStraight = !rounded;
         _currentValue = rounded ? GetNearestRotation(newRotation) : newRotation;
         _nextRotation = GetPlatformQuaternion(_currentValue);
+
+        foreach (var platform in unisonPlatforms) platform.SetNewPlatformRotation(newRotation, rounded);
+        foreach (var platform in oppositePlatforms) platform.SetNewPlatformRotation(-newRotation, rounded);
     }
 
     public void SnapRotate() => SetNewPlatformRotation(_currentValue + 90, true);
@@ -97,6 +104,20 @@ public class RotationPlatform : MovingPlatform
                 return rotation.eulerAngles.z;
         }
         return rotation.eulerAngles.x;
+    }
+
+    public Vector3 GetPlatformVectorDir()
+    {
+        switch (rotationDir)
+        {
+            case PlatformRotation.X:
+                return Vector3.right;
+            case PlatformRotation.Y:
+                return Vector3.up;
+            case PlatformRotation.Z:
+                return Vector3.forward;
+        }
+        return Vector3.up;
     }
 
 

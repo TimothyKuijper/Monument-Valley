@@ -30,28 +30,12 @@ public class PlatformRotator : PlatformInteractable
         if (clickRotate) return;
         if (currentInteractable != this) return;
 
-        var rotateAxis = Camera.main.WorldToViewportPoint(transform.position + GetVectorDir());
-        var targetPos = Camera.main.ScreenToViewportPoint(Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position));
-        var dotProduct = Vector2.Dot(rotateAxis, GetVectorDir());
+        var rotateAxis = _camera.WorldToScreenPoint(transform.position + platform.GetPlatformVectorDir());
+        var targetPos = Input.mousePosition - _camera.WorldToScreenPoint(transform.position);
+        var dotProduct = Vector2.Dot(rotateAxis, platform.GetPlatformVectorDir());
         var angle = Vector2.SignedAngle(rotateAxis, targetPos) + 180f;
 
         platform.SetNewPlatformRotation(angle);
-    }
-
-
-
-    public Vector3 GetVectorDir()
-    {
-        switch (rotation)
-        {
-            case RotationPlatform.PlatformRotation.X:
-                return Vector3.right;
-            case RotationPlatform.PlatformRotation.Y:
-                return Vector3.up;
-            case RotationPlatform.PlatformRotation.Z:
-                return Vector3.forward;
-        }
-        return Vector3.up;
     }
 
 
@@ -62,7 +46,7 @@ public class PlatformRotator : PlatformInteractable
         if (currentInteractable != this) return;
 
         Gizmos.color = Color.deepPink;
-        var targetPos = Camera.main.ScreenToWorldPoint(Input.mousePosition) - Camera.main.transform.position;
+        var targetPos = _camera.ScreenToWorldPoint(Input.mousePosition);
         var selfDir = rotation == RotationPlatform.PlatformRotation.Y ? Vector3.forward : Vector3.up;
         var dir = transform.position + selfDir * 4;
 

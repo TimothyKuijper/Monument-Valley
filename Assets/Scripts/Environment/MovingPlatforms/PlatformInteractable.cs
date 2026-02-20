@@ -9,6 +9,8 @@ public class PlatformInteractable : MonoBehaviour, IPointerDownHandler, IPointer
     public UnityEvent startInteractEvent;
     public UnityEvent stopInteractEvent;
 
+    protected Camera _camera;
+
     public bool canDrag = true;
 
     const string StandardLayer = "Grab Interactable";
@@ -17,6 +19,7 @@ public class PlatformInteractable : MonoBehaviour, IPointerDownHandler, IPointer
     private void Awake()
     {
         gameObject.layer = LayerMask.NameToLayer(StandardLayer);
+        _camera = FindAnyObjectByType<Camera>();
     }
 
     public void OnPointerDown(PointerEventData eventData)
