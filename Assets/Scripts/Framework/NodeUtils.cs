@@ -41,7 +41,6 @@ public static class NodeUtils
         }
         
         path.Reverse();
-        //path.RemoveAt(0);
         return path;
     }
     

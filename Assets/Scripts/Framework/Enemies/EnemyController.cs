@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using UnityEngine;
 
 namespace Framework.Enemies
@@ -9,6 +11,7 @@ namespace Framework.Enemies
     
         private Camera _camera;
         private Node _target;
+        private Node _tempNode;
 
         private void Start()
         {
@@ -16,9 +19,14 @@ namespace Framework.Enemies
             ChangeTarget();
         }
 
-        private void ChangeTarget()
+        private void ChangeTarget(Node node = null)
         {
             _target = _target == path.endNode ? path.startNode : path.endNode;
+            _tempNode = node;
+            if (node != null && node.Occupied)
+            {
+                return;
+            }
             nodeWalker.MoveTo(_target);
         }
     }

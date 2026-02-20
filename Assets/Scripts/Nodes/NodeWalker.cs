@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 using Yakanashe.Yautl;
@@ -13,7 +14,7 @@ public class NodeWalker : MonoBehaviour
     private Camera _camera;
     private Coroutine _moveRoutine;
 
-    public UnityEvent OnPathComplete = new();
+    public UnityEvent<Node> OnPathComplete = new();
     
     private void Awake()
     {
@@ -36,7 +37,7 @@ public class NodeWalker : MonoBehaviour
         _moveRoutine = StartCoroutine(MovePath(path));
     }
 
-    private IEnumerator MovePath(IReadOnlyList<Node> path)
+    private IEnumerator MovePath(List<Node> path)
     {
         for (var index = 0; index < path.Count; index++)
         {
@@ -70,6 +71,14 @@ public class NodeWalker : MonoBehaviour
             }
         }
 
-        OnPathComplete.Invoke();
+        var nextNodeIndex = path.IndexOf(_currentNode) + 1;
+        if (nextNodeIndex > path.Count - 1)
+        {
+            OnPathComplete.Invoke(path[path.IndexOf(_currentNode) - 1]);
+        }
+        else
+        {
+            OnPathComplete.Invoke(path[nextNodeIndex]);  
+        }
     }
 }
