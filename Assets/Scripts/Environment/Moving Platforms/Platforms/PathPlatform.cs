@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PathPlatform : MovingPlatform
@@ -16,6 +17,9 @@ public class PathPlatform : MovingPlatform
 
     [SerializeField][Range(0, 100)] private int minDirection;
     [SerializeField][Range(0, 100)] private int maxDirection;
+
+    [SerializeField] private List<PathPlatform> unisonPlatforms = new List<PathPlatform>();
+    [SerializeField] private List<PathPlatform> oppositePlatforms = new List<PathPlatform>();
 
     private Vector3 _startPosition;
     private Vector3 _nextPosition;
@@ -51,6 +55,9 @@ public class PathPlatform : MovingPlatform
     {
         _currentValue = value;
         _nextPosition = GetPositionAlongPath(_currentValue, rounded);
+
+        foreach (var platform in unisonPlatforms) platform.SetNewPlatformPosition(value, rounded);
+        foreach (var platform in oppositePlatforms) platform.SetNewPlatformPosition(-value, rounded);
     }
 
     public void FinalizePlatformPosition() => SetNewPlatformPosition(_currentValue, true);
