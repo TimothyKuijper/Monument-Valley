@@ -50,9 +50,12 @@ public class NodeWalker : MonoBehaviour
             transform.parent = node.transform;
             _currentNode.Occupied = false;
             _currentNode.onExit.Invoke();
+            _currentNode.onChangeWalkable.RemoveListener(ResetMovement);
+
             _currentNode = node;
             _currentNode.Occupied = true;
             _currentNode.onEnter.Invoke();
+            _currentNode.onChangeWalkable.AddListener(ResetMovement);
 
             if (Mathf.Abs(currentY - targetY) > 0.01f)
             {
@@ -70,17 +73,29 @@ public class NodeWalker : MonoBehaviour
             {
                 transform.MoveTo(node.Position, moveSpeed, EaseType.Linear);
                 yield return new WaitForSeconds(moveSpeed);
+                transform.position = node.Position;
             }
         }
 
         var nextNodeIndex = path.IndexOf(_currentNode) + 1;
         if (nextNodeIndex > path.Count - 1)
         {
-            OnPathComplete.Invoke(path[path.IndexOf(_currentNode) - 1]);
+            OnPathComplete.Invoke(path[path.IndexOf(_currentNode)]);
         }
         else
         {
-            OnPathComplete.Invoke(path[nextNodeIndex]);  
+            OnPathComplete.Invoke(path[nextNodeIndex]);
         }
+    }
+
+
+
+    private void ResetMovement(bool isWalkable)
+    {
+        if (isWalkable) return;
+
+        if (_moveRoutine != null) StopCoroutine(_moveRoutine);
+        TweenRunner.Instance.KillAllFrom(transform);
+        transform.position = _currentNode.Position;
     }
 }
