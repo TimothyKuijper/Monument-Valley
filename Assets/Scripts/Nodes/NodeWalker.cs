@@ -80,7 +80,7 @@ public class NodeWalker : MonoBehaviour
         var nextNodeIndex = path.IndexOf(_currentNode) + 1;
         if (nextNodeIndex > path.Count - 1)
         {
-            OnPathComplete.Invoke(path[path.IndexOf(_currentNode)]);
+            OnPathComplete.Invoke(path[path.IndexOf(_currentNode) - 1]);
         }
         else
         {
