@@ -8,11 +8,22 @@ public class Node : MonoBehaviour
 {
     public Direction CurrentDirection = Direction.UP;
     public List<Node> ConnectedNodes = new();
-    public bool Walkable = true;
     public bool Occupied;
+
+    [SerializeField] private bool _walkable = true;
+    public bool Walkable
+    {
+        get => _walkable;
+        set
+        {
+            _walkable = value;
+            onChangeWalkable.Invoke(value);
+        }
+    }
 
     public UnityEvent onEnter;
     public UnityEvent onExit;
+    public UnityEvent<bool> onChangeWalkable;
 
 
     public Vector3 Position
