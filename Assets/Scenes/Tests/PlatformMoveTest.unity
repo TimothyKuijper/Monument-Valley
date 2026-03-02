@@ -258,7 +258,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
-  Walkable: 1
+  Occupied: 0
+  _walkable: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeWalkable:
+    m_PersistentCalls:
+      m_Calls: []
   verticalOffset: 0.8
 --- !u!65 &48926592
 BoxCollider:
@@ -387,7 +397,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
-  Walkable: 1
+  Occupied: 0
+  _walkable: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeWalkable:
+    m_PersistentCalls:
+      m_Calls: []
   verticalOffset: 0.8
 --- !u!65 &59022086
 BoxCollider:
@@ -706,7 +726,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
-  Walkable: 1
+  Occupied: 0
+  _walkable: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeWalkable:
+    m_PersistentCalls:
+      m_Calls: []
   verticalOffset: 0.8
 --- !u!1 &149914868
 GameObject:
@@ -835,7 +865,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
-  Walkable: 1
+  Occupied: 0
+  _walkable: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeWalkable:
+    m_PersistentCalls:
+      m_Calls: []
   verticalOffset: 0.8
 --- !u!1 &154989733
 GameObject:
@@ -964,7 +1004,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
-  Walkable: 1
+  Occupied: 0
+  _walkable: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeWalkable:
+    m_PersistentCalls:
+      m_Calls: []
   verticalOffset: 0.8
 --- !u!1 &174238275
 GameObject:
@@ -1015,7 +1065,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
-  Walkable: 1
+  Occupied: 0
+  _walkable: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeWalkable:
+    m_PersistentCalls:
+      m_Calls: []
   verticalOffset: 0.8
 --- !u!65 &174238278
 BoxCollider:
@@ -1520,7 +1580,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
-  Walkable: 1
+  Occupied: 0
+  _walkable: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeWalkable:
+    m_PersistentCalls:
+      m_Calls: []
   verticalOffset: 0.8
 --- !u!65 &289153525
 BoxCollider:
@@ -1634,6 +1704,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NodeWalker
   moveSpeed: 0.3
+  OnPathComplete:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &296001222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1791,7 +1864,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
-  Walkable: 1
+  Occupied: 0
+  _walkable: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeWalkable:
+    m_PersistentCalls:
+      m_Calls: []
   verticalOffset: 0.8
 --- !u!65 &299807750
 BoxCollider:
@@ -2027,13 +2110,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.23911765, y: 0.3696438, z: -0.09904577, w: 0.89239913}
+  m_LocalRotation: {x: 0.27984518, y: 0.3647056, z: -0.11591566, w: 0.88047725}
   m_LocalPosition: {x: -6.7, y: 6.7, z: -6.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 30, y: 45, z: 0}
+  m_LocalEulerAnglesHint: {x: 35.264, y: 45, z: 0}
 --- !u!114 &330585547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2255,7 +2338,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
-  Walkable: 1
+  Occupied: 0
+  _walkable: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeWalkable:
+    m_PersistentCalls:
+      m_Calls: []
   verticalOffset: 0.8
 --- !u!65 &359636346
 BoxCollider:
@@ -2384,7 +2477,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
-  Walkable: 1
+  Occupied: 0
+  _walkable: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeWalkable:
+    m_PersistentCalls:
+      m_Calls: []
   verticalOffset: 0.8
 --- !u!65 &360166759
 BoxCollider:
@@ -2513,7 +2616,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
-  Walkable: 1
+  Occupied: 0
+  _walkable: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeWalkable:
+    m_PersistentCalls:
+      m_Calls: []
   verticalOffset: 0.8
 --- !u!65 &361458261
 BoxCollider:
@@ -2832,7 +2945,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
-  Walkable: 1
+  Occupied: 0
+  _walkable: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeWalkable:
+    m_PersistentCalls:
+      m_Calls: []
   verticalOffset: 0.8
 --- !u!1 &397030594
 GameObject:
@@ -3254,7 +3377,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
-  Walkable: 1
+  Occupied: 0
+  _walkable: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeWalkable:
+    m_PersistentCalls:
+      m_Calls: []
   verticalOffset: 0.8
 --- !u!65 &443395489
 BoxCollider:
@@ -3650,7 +3783,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
-  Walkable: 1
+  Occupied: 0
+  _walkable: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeWalkable:
+    m_PersistentCalls:
+      m_Calls: []
   verticalOffset: 0.8
 --- !u!65 &494126538
 BoxCollider:
@@ -3779,7 +3922,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
-  Walkable: 1
+  Occupied: 0
+  _walkable: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeWalkable:
+    m_PersistentCalls:
+      m_Calls: []
   verticalOffset: 0.8
 --- !u!65 &494598154
 BoxCollider:
@@ -3908,7 +4061,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
-  Walkable: 1
+  Occupied: 0
+  _walkable: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeWalkable:
+    m_PersistentCalls:
+      m_Calls: []
   verticalOffset: 0.8
 --- !u!65 &497142562
 BoxCollider:
@@ -4115,7 +4278,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
-  Walkable: 1
+  Occupied: 0
+  _walkable: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeWalkable:
+    m_PersistentCalls:
+      m_Calls: []
   verticalOffset: 0.8
 --- !u!1 &577143679
 GameObject:
@@ -4166,7 +4339,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
-  Walkable: 1
+  Occupied: 0
+  _walkable: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeWalkable:
+    m_PersistentCalls:
+      m_Calls: []
   verticalOffset: 0.8
 --- !u!65 &577143682
 BoxCollider:
@@ -4373,7 +4556,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
-  Walkable: 1
+  Occupied: 0
+  _walkable: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeWalkable:
+    m_PersistentCalls:
+      m_Calls: []
   verticalOffset: 0.8
 --- !u!1 &623543279
 GameObject:
@@ -4482,7 +4675,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
-  Walkable: 1
+  Occupied: 0
+  _walkable: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeWalkable:
+    m_PersistentCalls:
+      m_Calls: []
   verticalOffset: 0.8
 --- !u!65 &627190747
 BoxCollider:
@@ -4723,7 +4926,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
-  Walkable: 1
+  Occupied: 0
+  _walkable: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeWalkable:
+    m_PersistentCalls:
+      m_Calls: []
   verticalOffset: 0.8
 --- !u!65 &654155326
 BoxCollider:
@@ -4852,7 +5065,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
-  Walkable: 1
+  Occupied: 0
+  _walkable: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeWalkable:
+    m_PersistentCalls:
+      m_Calls: []
   verticalOffset: 0.8
 --- !u!65 &667864883
 BoxCollider:
@@ -5060,7 +5283,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
-  Walkable: 1
+  Occupied: 0
+  _walkable: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeWalkable:
+    m_PersistentCalls:
+      m_Calls: []
   verticalOffset: 0.8
 --- !u!65 &688562371
 BoxCollider:
@@ -5433,7 +5666,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
-  Walkable: 1
+  Occupied: 0
+  _walkable: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeWalkable:
+    m_PersistentCalls:
+      m_Calls: []
   verticalOffset: 0.8
 --- !u!65 &703398029
 BoxCollider:
@@ -5640,7 +5883,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
-  Walkable: 1
+  Occupied: 0
+  _walkable: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeWalkable:
+    m_PersistentCalls:
+      m_Calls: []
   verticalOffset: 0.8
 --- !u!1 &708750457
 GameObject:
@@ -5769,7 +6022,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
-  Walkable: 1
+  Occupied: 0
+  _walkable: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeWalkable:
+    m_PersistentCalls:
+      m_Calls: []
   verticalOffset: 0.8
 --- !u!1 &741291488
 GameObject:
@@ -5820,7 +6083,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
-  Walkable: 1
+  Occupied: 0
+  _walkable: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeWalkable:
+    m_PersistentCalls:
+      m_Calls: []
   verticalOffset: 0.8
 --- !u!65 &741291491
 BoxCollider:
@@ -6138,7 +6411,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
-  Walkable: 1
+  Occupied: 0
+  _walkable: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeWalkable:
+    m_PersistentCalls:
+      m_Calls: []
   verticalOffset: 0.8
 --- !u!65 &785086750
 BoxCollider:
@@ -6267,7 +6550,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
-  Walkable: 1
+  Occupied: 0
+  _walkable: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeWalkable:
+    m_PersistentCalls:
+      m_Calls: []
   verticalOffset: 0.8
 --- !u!65 &789601264
 BoxCollider:
@@ -6841,7 +7134,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
-  Walkable: 1
+  Occupied: 0
+  _walkable: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeWalkable:
+    m_PersistentCalls:
+      m_Calls: []
   verticalOffset: 0.8
 --- !u!65 &839673933
 BoxCollider:
@@ -7145,7 +7448,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
-  Walkable: 1
+  Occupied: 0
+  _walkable: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeWalkable:
+    m_PersistentCalls:
+      m_Calls: []
   verticalOffset: 0.8
 --- !u!65 &915594863
 BoxCollider:
@@ -7518,7 +7831,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
-  Walkable: 1
+  Occupied: 0
+  _walkable: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeWalkable:
+    m_PersistentCalls:
+      m_Calls: []
   verticalOffset: 0.8
 --- !u!65 &989001826
 BoxCollider:
@@ -7725,7 +8048,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
-  Walkable: 1
+  Occupied: 0
+  _walkable: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeWalkable:
+    m_PersistentCalls:
+      m_Calls: []
   verticalOffset: 0.8
 --- !u!1 &1018002617
 GameObject:
@@ -7966,7 +8299,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
-  Walkable: 1
+  Occupied: 0
+  _walkable: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeWalkable:
+    m_PersistentCalls:
+      m_Calls: []
   verticalOffset: 0.8
 --- !u!1 &1030107106
 GameObject:
@@ -8320,7 +8663,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
-  Walkable: 1
+  Occupied: 0
+  _walkable: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeWalkable:
+    m_PersistentCalls:
+      m_Calls: []
   verticalOffset: 0.8
 --- !u!1 &1057395590
 GameObject:
@@ -8561,7 +8914,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
-  Walkable: 1
+  Occupied: 0
+  _walkable: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeWalkable:
+    m_PersistentCalls:
+      m_Calls: []
   verticalOffset: 0.8
 --- !u!1 &1132615094
 GameObject:
@@ -8612,7 +8975,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
-  Walkable: 1
+  Occupied: 0
+  _walkable: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeWalkable:
+    m_PersistentCalls:
+      m_Calls: []
   verticalOffset: 0.8
 --- !u!65 &1132615097
 BoxCollider:
@@ -8819,7 +9192,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
-  Walkable: 1
+  Occupied: 0
+  _walkable: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeWalkable:
+    m_PersistentCalls:
+      m_Calls: []
   verticalOffset: 0.8
 --- !u!1 &1150371209
 GameObject:
@@ -8870,7 +9253,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
-  Walkable: 1
+  Occupied: 0
+  _walkable: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeWalkable:
+    m_PersistentCalls:
+      m_Calls: []
   verticalOffset: 0.8
 --- !u!65 &1150371212
 BoxCollider:
@@ -9067,7 +9460,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
-  Walkable: 1
+  Occupied: 0
+  _walkable: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeWalkable:
+    m_PersistentCalls:
+      m_Calls: []
   verticalOffset: 0.8
 --- !u!65 &1191328982
 BoxCollider:
@@ -9196,7 +9599,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
-  Walkable: 1
+  Occupied: 0
+  _walkable: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeWalkable:
+    m_PersistentCalls:
+      m_Calls: []
   verticalOffset: 0.8
 --- !u!65 &1232268199
 BoxCollider:
@@ -9681,7 +10094,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
-  Walkable: 1
+  Occupied: 0
+  _walkable: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeWalkable:
+    m_PersistentCalls:
+      m_Calls: []
   verticalOffset: 0.8
 --- !u!65 &1263147763
 BoxCollider:
@@ -9922,7 +10345,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
-  Walkable: 1
+  Occupied: 0
+  _walkable: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeWalkable:
+    m_PersistentCalls:
+      m_Calls: []
   verticalOffset: 0.8
 --- !u!65 &1309908526
 BoxCollider:
@@ -10183,7 +10616,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
-  Walkable: 1
+  Occupied: 0
+  _walkable: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeWalkable:
+    m_PersistentCalls:
+      m_Calls: []
   verticalOffset: 0.8
 --- !u!65 &1327933881
 BoxCollider:
@@ -10312,7 +10755,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
-  Walkable: 1
+  Occupied: 0
+  _walkable: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeWalkable:
+    m_PersistentCalls:
+      m_Calls: []
   verticalOffset: 0.8
 --- !u!65 &1351107521
 BoxCollider:
@@ -10519,7 +10972,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
-  Walkable: 1
+  Occupied: 0
+  _walkable: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeWalkable:
+    m_PersistentCalls:
+      m_Calls: []
   verticalOffset: 0.8
 --- !u!1 &1399440708
 GameObject:
@@ -10570,7 +11033,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
-  Walkable: 1
+  Occupied: 0
+  _walkable: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeWalkable:
+    m_PersistentCalls:
+      m_Calls: []
   verticalOffset: 0.8
 --- !u!65 &1399440711
 BoxCollider:
@@ -10777,7 +11250,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
-  Walkable: 1
+  Occupied: 0
+  _walkable: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeWalkable:
+    m_PersistentCalls:
+      m_Calls: []
   verticalOffset: 0.8
 --- !u!1 &1419814712
 GameObject:
@@ -10828,7 +11311,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
-  Walkable: 1
+  Occupied: 0
+  _walkable: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeWalkable:
+    m_PersistentCalls:
+      m_Calls: []
   verticalOffset: 0.8
 --- !u!65 &1419814715
 BoxCollider:
@@ -11202,7 +11695,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
-  Walkable: 1
+  Occupied: 0
+  _walkable: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeWalkable:
+    m_PersistentCalls:
+      m_Calls: []
   verticalOffset: 0.8
 --- !u!65 &1473154733
 BoxCollider:
@@ -11409,7 +11912,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
-  Walkable: 1
+  Occupied: 0
+  _walkable: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeWalkable:
+    m_PersistentCalls:
+      m_Calls: []
   verticalOffset: 0.8
 --- !u!1 &1491823553
 GameObject:
@@ -11460,7 +11973,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
-  Walkable: 1
+  Occupied: 0
+  _walkable: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeWalkable:
+    m_PersistentCalls:
+      m_Calls: []
   verticalOffset: 0.8
 --- !u!65 &1491823556
 BoxCollider:
@@ -11667,7 +12190,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
-  Walkable: 1
+  Occupied: 0
+  _walkable: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeWalkable:
+    m_PersistentCalls:
+      m_Calls: []
   verticalOffset: 0.8
 --- !u!1 &1524639740
 GameObject:
@@ -11718,7 +12251,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
-  Walkable: 1
+  Occupied: 0
+  _walkable: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeWalkable:
+    m_PersistentCalls:
+      m_Calls: []
   verticalOffset: 0.8
 --- !u!65 &1524639743
 BoxCollider:
@@ -11847,7 +12390,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
-  Walkable: 1
+  Occupied: 0
+  _walkable: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeWalkable:
+    m_PersistentCalls:
+      m_Calls: []
   verticalOffset: 0.8
 --- !u!65 &1533136732
 BoxCollider:
@@ -12054,7 +12607,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
-  Walkable: 1
+  Occupied: 0
+  _walkable: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeWalkable:
+    m_PersistentCalls:
+      m_Calls: []
   verticalOffset: 0.8
 --- !u!1 &1556368708
 GameObject:
@@ -12237,7 +12800,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
-  Walkable: 1
+  Occupied: 0
+  _walkable: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeWalkable:
+    m_PersistentCalls:
+      m_Calls: []
   verticalOffset: 0.8
 --- !u!65 &1568797122
 BoxCollider:
@@ -12366,7 +12939,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
-  Walkable: 1
+  Occupied: 0
+  _walkable: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeWalkable:
+    m_PersistentCalls:
+      m_Calls: []
   verticalOffset: 0.8
 --- !u!65 &1578175294
 BoxCollider:
@@ -12495,7 +13078,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
-  Walkable: 1
+  Occupied: 0
+  _walkable: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeWalkable:
+    m_PersistentCalls:
+      m_Calls: []
   verticalOffset: 0.8
 --- !u!65 &1622036401
 BoxCollider:
@@ -12702,7 +13295,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
-  Walkable: 1
+  Occupied: 0
+  _walkable: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeWalkable:
+    m_PersistentCalls:
+      m_Calls: []
   verticalOffset: 0.8
 --- !u!1 &1710324955
 GameObject:
@@ -12997,7 +13600,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
-  Walkable: 1
+  Occupied: 0
+  _walkable: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeWalkable:
+    m_PersistentCalls:
+      m_Calls: []
   verticalOffset: 0.8
 --- !u!65 &1720885855
 BoxCollider:
@@ -13126,7 +13739,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
-  Walkable: 1
+  Occupied: 0
+  _walkable: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeWalkable:
+    m_PersistentCalls:
+      m_Calls: []
   verticalOffset: 0.8
 --- !u!65 &1722346238
 BoxCollider:
@@ -13333,7 +13956,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
-  Walkable: 1
+  Occupied: 0
+  _walkable: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeWalkable:
+    m_PersistentCalls:
+      m_Calls: []
   verticalOffset: 0.8
 --- !u!1 &1738291554
 GameObject:
@@ -13384,7 +14017,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
-  Walkable: 1
+  Occupied: 0
+  _walkable: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeWalkable:
+    m_PersistentCalls:
+      m_Calls: []
   verticalOffset: 0.8
 --- !u!65 &1738291557
 BoxCollider:
@@ -13645,7 +14288,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
-  Walkable: 1
+  Occupied: 0
+  _walkable: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeWalkable:
+    m_PersistentCalls:
+      m_Calls: []
   verticalOffset: 0.8
 --- !u!65 &1754898167
 BoxCollider:
@@ -13852,7 +14505,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
-  Walkable: 1
+  Occupied: 0
+  _walkable: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeWalkable:
+    m_PersistentCalls:
+      m_Calls: []
   verticalOffset: 0.8
 --- !u!1 &1776738201
 GameObject:
@@ -14177,7 +14840,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RotationPlatform
   dragTime: 0.06
-  _disableOnPlatform: 0
+  _disableOnPlatform: 1
   onWalkOn:
     m_PersistentCalls:
       m_Calls: []
@@ -14370,7 +15033,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
-  Walkable: 1
+  Occupied: 0
+  _walkable: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeWalkable:
+    m_PersistentCalls:
+      m_Calls: []
   verticalOffset: 0.8
 --- !u!65 &1824568755
 BoxCollider:
@@ -14611,7 +15284,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
-  Walkable: 1
+  Occupied: 0
+  _walkable: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeWalkable:
+    m_PersistentCalls:
+      m_Calls: []
   verticalOffset: 0.8
 --- !u!65 &1861773731
 BoxCollider:
@@ -14740,7 +15423,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
-  Walkable: 1
+  Occupied: 0
+  _walkable: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeWalkable:
+    m_PersistentCalls:
+      m_Calls: []
   verticalOffset: 0.8
 --- !u!65 &1864850135
 BoxCollider:
@@ -15001,7 +15694,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
-  Walkable: 1
+  Occupied: 0
+  _walkable: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeWalkable:
+    m_PersistentCalls:
+      m_Calls: []
   verticalOffset: 0.8
 --- !u!65 &1892160036
 BoxCollider:
@@ -15208,7 +15911,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
-  Walkable: 1
+  Occupied: 0
+  _walkable: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeWalkable:
+    m_PersistentCalls:
+      m_Calls: []
   verticalOffset: 0.8
 --- !u!1 &1961230401
 GameObject:
@@ -15337,7 +16050,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
-  Walkable: 1
+  Occupied: 0
+  _walkable: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeWalkable:
+    m_PersistentCalls:
+      m_Calls: []
   verticalOffset: 0.8
 --- !u!1 &1974976890
 GameObject:
@@ -15388,7 +16111,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
-  Walkable: 1
+  Occupied: 0
+  _walkable: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeWalkable:
+    m_PersistentCalls:
+      m_Calls: []
   verticalOffset: 0.8
 --- !u!65 &1974976893
 BoxCollider:
@@ -15636,7 +16369,17 @@ MonoBehaviour:
   ConnectedNodes:
   - {fileID: 0}
   - {fileID: 0}
-  Walkable: 1
+  Occupied: 0
+  _walkable: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeWalkable:
+    m_PersistentCalls:
+      m_Calls: []
   verticalOffset: 0.2
 --- !u!4 &2010486025
 Transform:
@@ -15703,7 +16446,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
-  Walkable: 1
+  Occupied: 0
+  _walkable: 1
+  onEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onChangeWalkable:
+    m_PersistentCalls:
+      m_Calls: []
   verticalOffset: 0.8
 --- !u!65 &2045072759
 BoxCollider:

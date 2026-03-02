@@ -2,13 +2,28 @@ using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Node : MonoBehaviour
 {
     public Direction CurrentDirection = Direction.UP;
-    public List<Node> ConnectedNodes;
-    public bool Walkable = true;
+    public List<Node> ConnectedNodes = new();
     public bool Occupied;
+
+    [SerializeField] private bool _walkable = true;
+    public bool Walkable
+    {
+        get => _walkable;
+        set
+        {
+            _walkable = value;
+            onChangeWalkable.Invoke(value);
+        }
+    }
+
+    public UnityEvent onEnter;
+    public UnityEvent onExit;
+    public UnityEvent<bool> onChangeWalkable;
 
 
     public Vector3 Position
@@ -37,6 +52,7 @@ public class Node : MonoBehaviour
         Gizmos.color = Walkable && !Occupied ? Color.green : Color.red;
         Gizmos.DrawSphere(Position, 0.2f);
 
+        if (ConnectedNodes.Count == 0) return;
         foreach (var neighbour in ConnectedNodes)
         {
             if (!neighbour) continue;
