@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 
 public static class NodeBank
 {
@@ -34,6 +35,7 @@ public static class NodeBank
                     continue;
 
                 baseNode.ConnectedNodes.Add(comparerNode);
+                baseNode.onRebuild.Invoke();
             }
         }
     }

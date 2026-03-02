@@ -23,6 +23,7 @@ public class Node : MonoBehaviour
 
     public UnityEvent onEnter;
     public UnityEvent onExit;
+    public UnityEvent onRebuild;
     public UnityEvent<bool> onChangeWalkable;
 
 
