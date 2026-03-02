@@ -8,9 +8,10 @@ namespace Framework.Enemies
     {
         [SerializeField] private NodePath path;
         [SerializeField] private NodeWalker nodeWalker;
+        
+        public Node _target;
     
         private Camera _camera;
-        private Node _target;
         private Node _tempNode;
 
         private void Start()

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Framework.Enemies;
 using UnityEngine;
 using UnityEngine.Events;
 using Yakanashe.Yautl;
@@ -80,7 +81,9 @@ public class NodeWalker : MonoBehaviour
         }
         else
         {
-            OnPathComplete.Invoke(path[nextNodeIndex]);  
+            OnPathComplete.Invoke(path[nextNodeIndex]);
+            var a = GetComponent<EnemyController>()._target;
+            path[nextNodeIndex].onExit.AddListener(() => MoveTo(a));
         }
     }
 }
