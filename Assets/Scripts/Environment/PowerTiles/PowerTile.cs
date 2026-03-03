@@ -80,13 +80,14 @@ public class PowerTile : MonoBehaviour
 
     private void Start()
     {
-        _node.onChangeWalkable.AddListener((value) => IsPowered = false);
+        _node.onChangeWalkable.AddListener((value) => UpdatePowerTiles(false));
         IsEmitter = startEmitter;
     }
 
 
     public void UpdatePowerTiles(bool newIsPowered, List<Node> checkedNodes = null)
     {
+        if (newIsPowered == false && IsEmitter) return;
         if (checkedNodes != null && checkedNodes.Contains(_node)) return;
         IsPowered = newIsPowered;
 
