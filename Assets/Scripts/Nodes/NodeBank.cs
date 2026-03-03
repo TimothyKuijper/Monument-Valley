@@ -35,9 +35,11 @@ public static class NodeBank
                     continue;
 
                 baseNode.ConnectedNodes.Add(comparerNode);
-                baseNode.onRebuild.Invoke();
             }
         }
+
+        // AFTER updating the whole grid, every nodes send their rebuild event (ALWAYS perform after, since midgen events can cause false positives)
+        foreach (var baseNode in SceneNodes) baseNode.onRebuild.Invoke();
     }
 
     public static bool CanReach(this Node current, Node target, Camera camera)

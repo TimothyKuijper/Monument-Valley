@@ -1,12 +1,23 @@
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 [ExecuteAlways]
 [RequireComponent(typeof(Node))]
 public class PowerTile : MonoBehaviour
 {
-    [SerializeField] private bool startEmitter;
+    [SerializeField][Tooltip("Start as an emitter of power that activates other tiles")] private bool startEmitter;
+
+    private enum OccupyMode
+    {
+        Off,
+        OnPower,
+        OffPower,
+        Always,
+        Never
+    }
+    [SerializeField][Tooltip("If should set occupied on power")] private OccupyMode occupyMode = OccupyMode.Off;
 
     private bool _isEmitter;
     public bool IsEmitter
@@ -16,10 +27,46 @@ public class PowerTile : MonoBehaviour
         {
             _isEmitter = value;
             UpdatePowerTiles(value);
+
+            if (_node == null) return;
+            if (value == true)
+            {
+                _node.onRebuild.AddListener(() => UpdatePowerTiles(true));
+                return;
+            }
+            _node.onRebuild.RemoveListener(() => UpdatePowerTiles(true));
         }
     }
 
-    public bool IsPowered = false;
+    private bool _isPowered = false;
+    public bool IsPowered
+    {
+        get => _isPowered;
+        set
+        {
+            _isPowered = value;
+            onPowered.Invoke(value);
+
+            if (_node == null) return;
+            switch (occupyMode)
+            {
+                case OccupyMode.Off: break;
+                case OccupyMode.OnPower: 
+                    _node.Occupied = value;
+                    break;
+                case OccupyMode.OffPower: 
+                    _node.Occupied = !value;
+                    break;
+                case OccupyMode.Always: 
+                    _node.Occupied = true;
+                    break;
+                case OccupyMode.Never:
+                    _node.Occupied = false;
+                    break;
+            }
+        }
+    }
+    public UnityEvent<bool> onPowered;
 
     private Node _node;
 
@@ -34,33 +81,23 @@ public class PowerTile : MonoBehaviour
     private void Start()
     {
         _node.onChangeWalkable.AddListener((value) => IsPowered = false);
-
-        if (startEmitter == false) return;
-        _node.Occupied = true;
-        IsEmitter = true;
-
-        _node.onRebuild.AddListener(() => UpdatePowerTiles(true));
+        IsEmitter = startEmitter;
     }
 
 
     public void UpdatePowerTiles(bool newIsPowered, List<Node> checkedNodes = null)
     {
+        if (checkedNodes != null && checkedNodes.Contains(_node)) return;
         IsPowered = newIsPowered;
 
-        var connectedNodes = _node.ConnectedNodes;
-        foreach (var adjacentNode in connectedNodes)
+        if (checkedNodes != null) checkedNodes = new List<Node>(checkedNodes);
+        else checkedNodes = new List<Node>();
+        checkedNodes.Add(_node);
+
+        foreach (var adjacentNode in _node.ConnectedNodes)
         {
-            if (checkedNodes != null && checkedNodes.Contains(adjacentNode)) continue;
-
             PowerTile tile;
-            if (adjacentNode.TryGetComponent<PowerTile>(out tile))
-            {
-                if (checkedNodes != null) checkedNodes = new List<Node>(checkedNodes);
-                else checkedNodes = new List<Node>();
-
-                checkedNodes.Add(adjacentNode);
-                tile.UpdatePowerTiles(newIsPowered, checkedNodes);
-            }
+            if (adjacentNode.TryGetComponent<PowerTile>(out tile)) tile.UpdatePowerTiles(newIsPowered, checkedNodes);
         }
     }
 
