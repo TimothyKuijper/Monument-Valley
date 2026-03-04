@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 
 public static class NodeBank
 {
@@ -36,6 +37,9 @@ public static class NodeBank
                 baseNode.ConnectedNodes.Add(comparerNode);
             }
         }
+
+        // AFTER updating the whole grid, every nodes send their rebuild event (ALWAYS perform after, since midgen events can cause false positives)
+        foreach (var baseNode in SceneNodes) baseNode.onRebuild.Invoke();
     }
 
     public static bool CanReach(this Node current, Node target, Camera camera)
