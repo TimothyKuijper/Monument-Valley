@@ -324,8 +324,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes:
-  - {fileID: 1483884469}
   - {fileID: 706812511}
+  - {fileID: 1483884469}
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
@@ -487,6 +488,7 @@ MonoBehaviour:
   ConnectedNodes:
   - {fileID: 997746678}
   - {fileID: 1947838727}
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
@@ -982,8 +984,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes:
-  - {fileID: 1309908525}
   - {fileID: 627190746}
+  - {fileID: 1309908525}
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
@@ -1126,8 +1129,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes:
-  - {fileID: 676425543}
   - {fileID: 1034629652}
+  - {fileID: 676425543}
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
@@ -1397,8 +1401,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes:
-  - {fileID: 676425543}
   - {fileID: 1034629652}
+  - {fileID: 676425543}
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
@@ -1532,6 +1537,7 @@ MonoBehaviour:
   CurrentDirection: 0
   ConnectedNodes:
   - {fileID: 1034629652}
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
@@ -1770,6 +1776,7 @@ MonoBehaviour:
   ConnectedNodes:
   - {fileID: 1491823555}
   - {fileID: 1249532742}
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
@@ -1908,8 +1915,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes:
-  - {fileID: 361458260}
   - {fileID: 1961230406}
+  - {fileID: 361458260}
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
@@ -2057,8 +2065,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes:
-  - {fileID: 394858171}
   - {fileID: 494598153}
+  - {fileID: 394858171}
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
@@ -2492,6 +2501,7 @@ MonoBehaviour:
   CurrentDirection: 0
   ConnectedNodes:
   - {fileID: 145260217}
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
@@ -2877,6 +2887,7 @@ MonoBehaviour:
   ConnectedNodes:
   - {fileID: 1491823555}
   - {fileID: 1249532742}
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
@@ -3246,8 +3257,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes:
-  - {fileID: 154989738}
   - {fileID: 1029236953}
+  - {fileID: 154989738}
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
@@ -3329,7 +3341,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f82856bb9f94d1347990534d259cee92, type: 2}
+  - {fileID: 2100000, guid: b975fb778e01e6549abbe9dbde925f08, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3391,6 +3403,7 @@ MonoBehaviour:
   CurrentDirection: 0
   ConnectedNodes:
   - {fileID: 997746678}
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
@@ -3553,10 +3566,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes:
-  - {fileID: 521305639}
-  - {fileID: 1483364607}
-  - {fileID: 394858171}
   - {fileID: 494598153}
+  - {fileID: 1483364607}
+  - {fileID: 521305639}
+  - {fileID: 394858171}
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
@@ -3792,8 +3806,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes:
-  - {fileID: 1731872357}
   - {fileID: 1641645766}
+  - {fileID: 1731872357}
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
@@ -3920,8 +3935,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes:
-  - {fileID: 2076977781}
   - {fileID: 2099447363}
+  - {fileID: 2076977781}
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
@@ -4081,6 +4097,8 @@ MonoBehaviour:
   ConnectedNodes:
   - {fileID: 915594862}
   - {fileID: 587046020}
+  ignoreChildren:
+  - {fileID: 513896217}
   Occupied: 1
   _walkable: 1
   onEnter:
@@ -4295,6 +4313,7 @@ MonoBehaviour:
   ConnectedNodes:
   - {fileID: 361458260}
   - {fileID: 1399440710}
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
@@ -4706,6 +4725,7 @@ MonoBehaviour:
   ConnectedNodes:
   - {fileID: 1760989957}
   - {fileID: 1546037260}
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
@@ -4772,6 +4792,7 @@ MonoBehaviour:
   ConnectedNodes:
   - {fileID: 1309908525}
   - {fileID: 1892160035}
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
@@ -4995,6 +5016,7 @@ MonoBehaviour:
   ConnectedNodes:
   - {fileID: 1483884469}
   - {fileID: 1546037260}
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
@@ -5322,6 +5344,7 @@ MonoBehaviour:
   CurrentDirection: 0
   ConnectedNodes:
   - {fileID: 1034629652}
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
@@ -5545,6 +5568,7 @@ MonoBehaviour:
   ConnectedNodes:
   - {fileID: 1411025321}
   - {fileID: 145260217}
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
@@ -5630,6 +5654,7 @@ MonoBehaviour:
   - {fileID: 1738291556}
   - {fileID: 915594862}
   - {fileID: 587046020}
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
@@ -5867,8 +5892,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes:
-  - {fileID: 1731872357}
   - {fileID: 1961230406}
+  - {fileID: 1731872357}
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
@@ -5934,6 +5960,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
@@ -6172,8 +6199,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes:
-  - {fileID: 1369339562}
   - {fileID: 1411025321}
+  - {fileID: 1369339562}
+  ignoreChildren: []
   Occupied: 1
   _walkable: 1
   onEnter:
@@ -6205,7 +6233,19 @@ MonoBehaviour:
   occupyMode: 2
   onPowered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1778512520}
+        m_TargetAssemblyTypeName: PathPlatform, Assembly-CSharp
+        m_MethodName: SendDisableEvent
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1556368708
 GameObject:
   m_ObjectHideFlags: 0
@@ -6389,6 +6429,7 @@ MonoBehaviour:
   CurrentDirection: 0
   ConnectedNodes:
   - {fileID: 1738291556}
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
@@ -6628,6 +6669,7 @@ MonoBehaviour:
   ConnectedNodes:
   - {fileID: 2116088369}
   - {fileID: 1054585836}
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
@@ -6904,6 +6946,7 @@ MonoBehaviour:
   ConnectedNodes:
   - {fileID: 1503951423}
   - {fileID: 1054585836}
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
@@ -6969,8 +7012,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes:
-  - {fileID: 1568797121}
   - {fileID: 1491823555}
+  - {fileID: 1568797121}
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
@@ -7208,8 +7252,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes:
-  - {fileID: 1369339562}
   - {fileID: 1947838727}
+  - {fileID: 1369339562}
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
@@ -7341,6 +7386,7 @@ MonoBehaviour:
   CurrentDirection: 0
   ConnectedNodes:
   - {fileID: 1920119585}
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
@@ -7498,6 +7544,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren:
+  - {fileID: 636209319}
   Occupied: 1
   _walkable: 1
   onEnter:
@@ -7579,6 +7627,7 @@ MonoBehaviour:
   CurrentDirection: 0
   ConnectedNodes:
   - {fileID: 1399440710}
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
@@ -7724,8 +7773,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes:
-  - {fileID: 2076977781}
   - {fileID: 1861394125}
+  - {fileID: 2076977781}
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
@@ -7963,6 +8013,7 @@ MonoBehaviour:
   ConnectedNodes:
   - {fileID: 1760989957}
   - {fileID: 154989738}
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
@@ -8107,6 +8158,7 @@ MonoBehaviour:
   ConnectedNodes:
   - {fileID: 1503951423}
   - {fileID: 627190746}
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
@@ -8420,6 +8472,7 @@ MonoBehaviour:
   ConnectedNodes:
   - {fileID: 1920119585}
   - {fileID: 1183228504}
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
@@ -8563,6 +8616,7 @@ MonoBehaviour:
   CurrentDirection: 0
   ConnectedNodes:
   - {fileID: 1183228504}
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
@@ -8799,6 +8853,7 @@ MonoBehaviour:
   CurrentDirection: 0
   ConnectedNodes:
   - {fileID: 1641645766}
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
