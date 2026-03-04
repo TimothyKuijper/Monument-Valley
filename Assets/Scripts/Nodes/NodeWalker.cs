@@ -90,15 +90,6 @@ public class NodeWalker : MonoBehaviour
 
 
 
-    public void DirectSetNode(Node newNode)
-    {
-        _currentNode = newNode;
-        transform.position = newNode.Position;
-        transform.parent = newNode.transform;
-    }
-
-
-
     private void ResetMovement(bool isWalkable)
     {
         if (isWalkable) return;
