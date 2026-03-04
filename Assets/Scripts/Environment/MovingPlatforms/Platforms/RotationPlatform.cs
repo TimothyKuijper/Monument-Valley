@@ -37,7 +37,11 @@ public class RotationPlatform : MovingPlatform
     {
         if ((transform.rotation.eulerAngles == _nextRotation.eulerAngles || _time >= dragTime) && _isStraight == false)
         {
+            if (isMoving == false) return;
             isMoving = false;
+
+            transform.rotation = _nextRotation;
+            NodeBank.RebuildGraph(_camera);
             return;
         }
 

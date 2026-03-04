@@ -670,6 +670,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NodeWalker
   moveSpeed: 0.3
+  rebuildOnStart: 1
   OnPathComplete:
     m_PersistentCalls:
       m_Calls: []

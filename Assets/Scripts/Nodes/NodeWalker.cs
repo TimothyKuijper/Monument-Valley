@@ -4,11 +4,13 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 using Yakanashe.Yautl;
 
 public class NodeWalker : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 0.3f;
+    [SerializeField] private bool rebuildOnStart;
 
     private Node _currentNode;
     private Camera _camera;
@@ -22,6 +24,19 @@ public class NodeWalker : MonoBehaviour
         _currentNode = transform.FindClosestNode();
         transform.position = _currentNode.Position;
     }
+
+
+    private void Start()
+    {
+        if (rebuildOnStart) StartCoroutine(DelayStart());
+    }
+
+    private IEnumerator DelayStart() // Build graph when scene is fully loaded
+    {
+        yield return 0;
+        NodeBank.RebuildGraph(_camera);
+    }
+
 
     public void MoveTo(Node destination)
     {
