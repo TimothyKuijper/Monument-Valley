@@ -28,12 +28,15 @@ public class MovingPlatform : MonoBehaviour
     }
 
     public UnityEvent<bool> onWalkOn = new UnityEvent<bool>();
+    
+    protected Camera _camera; // Used to rebuild Nodegraph when moved
 
 
 
     private void Awake()
     {
         SetDisableOnEnter();
+        _camera = FindFirstObjectByType<Camera>();
     }
 
     private void SetDisableOnEnter()
