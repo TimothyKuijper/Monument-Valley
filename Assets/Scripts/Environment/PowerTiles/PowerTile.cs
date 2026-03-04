@@ -51,13 +51,16 @@ public class PowerTile : MonoBehaviour
             switch (occupyMode)
             {
                 case OccupyMode.Off: break;
-                case OccupyMode.OnPower: 
+                case OccupyMode.OnPower:
+                    if (value) _node.SetChildrenToAdjacentNode();
                     _node.Occupied = value;
                     break;
-                case OccupyMode.OffPower: 
+                case OccupyMode.OffPower:
+                    if (!value) _node.SetChildrenToAdjacentNode();
                     _node.Occupied = !value;
                     break;
-                case OccupyMode.Always: 
+                case OccupyMode.Always:
+                    _node.SetChildrenToAdjacentNode();
                     _node.Occupied = true;
                     break;
                 case OccupyMode.Never:
