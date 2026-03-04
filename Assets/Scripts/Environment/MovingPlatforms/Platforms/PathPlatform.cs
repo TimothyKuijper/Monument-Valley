@@ -46,6 +46,7 @@ public class PathPlatform : MovingPlatform
         {
             transform.position = _nextPosition;
             isMoving = false;
+            NodeBank.RebuildGraph(_camera);
             return;
         }
         isMoving = true;

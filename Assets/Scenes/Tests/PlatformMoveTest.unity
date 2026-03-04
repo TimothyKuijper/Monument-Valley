@@ -258,12 +258,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRebuild:
     m_PersistentCalls:
       m_Calls: []
   onChangeWalkable:
@@ -397,12 +401,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRebuild:
     m_PersistentCalls:
       m_Calls: []
   onChangeWalkable:
@@ -726,12 +734,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRebuild:
     m_PersistentCalls:
       m_Calls: []
   onChangeWalkable:
@@ -865,12 +877,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRebuild:
     m_PersistentCalls:
       m_Calls: []
   onChangeWalkable:
@@ -1004,12 +1020,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRebuild:
     m_PersistentCalls:
       m_Calls: []
   onChangeWalkable:
@@ -1065,12 +1085,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRebuild:
     m_PersistentCalls:
       m_Calls: []
   onChangeWalkable:
@@ -1580,12 +1604,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRebuild:
     m_PersistentCalls:
       m_Calls: []
   onChangeWalkable:
@@ -1704,6 +1732,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NodeWalker
   moveSpeed: 0.3
+  rebuildOnStart: 1
   OnPathComplete:
     m_PersistentCalls:
       m_Calls: []
@@ -1864,12 +1893,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRebuild:
     m_PersistentCalls:
       m_Calls: []
   onChangeWalkable:
@@ -2338,12 +2371,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRebuild:
     m_PersistentCalls:
       m_Calls: []
   onChangeWalkable:
@@ -2477,12 +2514,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRebuild:
     m_PersistentCalls:
       m_Calls: []
   onChangeWalkable:
@@ -2616,12 +2657,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRebuild:
     m_PersistentCalls:
       m_Calls: []
   onChangeWalkable:
@@ -2945,12 +2990,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRebuild:
     m_PersistentCalls:
       m_Calls: []
   onChangeWalkable:
@@ -3377,12 +3426,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRebuild:
     m_PersistentCalls:
       m_Calls: []
   onChangeWalkable:
@@ -3783,12 +3836,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRebuild:
     m_PersistentCalls:
       m_Calls: []
   onChangeWalkable:
@@ -3922,12 +3979,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRebuild:
     m_PersistentCalls:
       m_Calls: []
   onChangeWalkable:
@@ -4061,12 +4122,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRebuild:
     m_PersistentCalls:
       m_Calls: []
   onChangeWalkable:
@@ -4278,12 +4343,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRebuild:
     m_PersistentCalls:
       m_Calls: []
   onChangeWalkable:
@@ -4339,12 +4408,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRebuild:
     m_PersistentCalls:
       m_Calls: []
   onChangeWalkable:
@@ -4556,12 +4629,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRebuild:
     m_PersistentCalls:
       m_Calls: []
   onChangeWalkable:
@@ -4675,12 +4752,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRebuild:
     m_PersistentCalls:
       m_Calls: []
   onChangeWalkable:
@@ -4926,12 +5007,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRebuild:
     m_PersistentCalls:
       m_Calls: []
   onChangeWalkable:
@@ -5065,12 +5150,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRebuild:
     m_PersistentCalls:
       m_Calls: []
   onChangeWalkable:
@@ -5283,12 +5372,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRebuild:
     m_PersistentCalls:
       m_Calls: []
   onChangeWalkable:
@@ -5666,12 +5759,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRebuild:
     m_PersistentCalls:
       m_Calls: []
   onChangeWalkable:
@@ -5883,12 +5980,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRebuild:
     m_PersistentCalls:
       m_Calls: []
   onChangeWalkable:
@@ -6022,12 +6123,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRebuild:
     m_PersistentCalls:
       m_Calls: []
   onChangeWalkable:
@@ -6083,12 +6188,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRebuild:
     m_PersistentCalls:
       m_Calls: []
   onChangeWalkable:
@@ -6411,12 +6520,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRebuild:
     m_PersistentCalls:
       m_Calls: []
   onChangeWalkable:
@@ -6550,12 +6663,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRebuild:
     m_PersistentCalls:
       m_Calls: []
   onChangeWalkable:
@@ -7134,12 +7251,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRebuild:
     m_PersistentCalls:
       m_Calls: []
   onChangeWalkable:
@@ -7448,12 +7569,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRebuild:
     m_PersistentCalls:
       m_Calls: []
   onChangeWalkable:
@@ -7831,12 +7956,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRebuild:
     m_PersistentCalls:
       m_Calls: []
   onChangeWalkable:
@@ -8048,12 +8177,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRebuild:
     m_PersistentCalls:
       m_Calls: []
   onChangeWalkable:
@@ -8299,12 +8432,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRebuild:
     m_PersistentCalls:
       m_Calls: []
   onChangeWalkable:
@@ -8663,12 +8800,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRebuild:
     m_PersistentCalls:
       m_Calls: []
   onChangeWalkable:
@@ -8914,12 +9055,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRebuild:
     m_PersistentCalls:
       m_Calls: []
   onChangeWalkable:
@@ -8975,12 +9120,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRebuild:
     m_PersistentCalls:
       m_Calls: []
   onChangeWalkable:
@@ -9192,12 +9341,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRebuild:
     m_PersistentCalls:
       m_Calls: []
   onChangeWalkable:
@@ -9253,12 +9406,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRebuild:
     m_PersistentCalls:
       m_Calls: []
   onChangeWalkable:
@@ -9460,12 +9617,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRebuild:
     m_PersistentCalls:
       m_Calls: []
   onChangeWalkable:
@@ -9599,12 +9760,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRebuild:
     m_PersistentCalls:
       m_Calls: []
   onChangeWalkable:
@@ -10094,12 +10259,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRebuild:
     m_PersistentCalls:
       m_Calls: []
   onChangeWalkable:
@@ -10345,12 +10514,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRebuild:
     m_PersistentCalls:
       m_Calls: []
   onChangeWalkable:
@@ -10616,12 +10789,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRebuild:
     m_PersistentCalls:
       m_Calls: []
   onChangeWalkable:
@@ -10755,12 +10932,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRebuild:
     m_PersistentCalls:
       m_Calls: []
   onChangeWalkable:
@@ -10972,12 +11153,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRebuild:
     m_PersistentCalls:
       m_Calls: []
   onChangeWalkable:
@@ -11033,12 +11218,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRebuild:
     m_PersistentCalls:
       m_Calls: []
   onChangeWalkable:
@@ -11250,12 +11439,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRebuild:
     m_PersistentCalls:
       m_Calls: []
   onChangeWalkable:
@@ -11311,12 +11504,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRebuild:
     m_PersistentCalls:
       m_Calls: []
   onChangeWalkable:
@@ -11695,12 +11892,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRebuild:
     m_PersistentCalls:
       m_Calls: []
   onChangeWalkable:
@@ -11912,12 +12113,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRebuild:
     m_PersistentCalls:
       m_Calls: []
   onChangeWalkable:
@@ -11973,12 +12178,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRebuild:
     m_PersistentCalls:
       m_Calls: []
   onChangeWalkable:
@@ -12190,12 +12399,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRebuild:
     m_PersistentCalls:
       m_Calls: []
   onChangeWalkable:
@@ -12251,12 +12464,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRebuild:
     m_PersistentCalls:
       m_Calls: []
   onChangeWalkable:
@@ -12390,12 +12607,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRebuild:
     m_PersistentCalls:
       m_Calls: []
   onChangeWalkable:
@@ -12607,12 +12828,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRebuild:
     m_PersistentCalls:
       m_Calls: []
   onChangeWalkable:
@@ -12800,12 +13025,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRebuild:
     m_PersistentCalls:
       m_Calls: []
   onChangeWalkable:
@@ -12939,12 +13168,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRebuild:
     m_PersistentCalls:
       m_Calls: []
   onChangeWalkable:
@@ -13078,12 +13311,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRebuild:
     m_PersistentCalls:
       m_Calls: []
   onChangeWalkable:
@@ -13295,12 +13532,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRebuild:
     m_PersistentCalls:
       m_Calls: []
   onChangeWalkable:
@@ -13600,12 +13841,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRebuild:
     m_PersistentCalls:
       m_Calls: []
   onChangeWalkable:
@@ -13739,12 +13984,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRebuild:
     m_PersistentCalls:
       m_Calls: []
   onChangeWalkable:
@@ -13956,12 +14205,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRebuild:
     m_PersistentCalls:
       m_Calls: []
   onChangeWalkable:
@@ -14017,12 +14270,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRebuild:
     m_PersistentCalls:
       m_Calls: []
   onChangeWalkable:
@@ -14288,12 +14545,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRebuild:
     m_PersistentCalls:
       m_Calls: []
   onChangeWalkable:
@@ -14505,12 +14766,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRebuild:
     m_PersistentCalls:
       m_Calls: []
   onChangeWalkable:
@@ -15033,12 +15298,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRebuild:
     m_PersistentCalls:
       m_Calls: []
   onChangeWalkable:
@@ -15284,12 +15553,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRebuild:
     m_PersistentCalls:
       m_Calls: []
   onChangeWalkable:
@@ -15423,12 +15696,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRebuild:
     m_PersistentCalls:
       m_Calls: []
   onChangeWalkable:
@@ -15694,12 +15971,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRebuild:
     m_PersistentCalls:
       m_Calls: []
   onChangeWalkable:
@@ -15911,12 +16192,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRebuild:
     m_PersistentCalls:
       m_Calls: []
   onChangeWalkable:
@@ -16050,12 +16335,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRebuild:
     m_PersistentCalls:
       m_Calls: []
   onChangeWalkable:
@@ -16111,12 +16400,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRebuild:
     m_PersistentCalls:
       m_Calls: []
   onChangeWalkable:
@@ -16369,12 +16662,16 @@ MonoBehaviour:
   ConnectedNodes:
   - {fileID: 0}
   - {fileID: 0}
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRebuild:
     m_PersistentCalls:
       m_Calls: []
   onChangeWalkable:
@@ -16446,12 +16743,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Node
   CurrentDirection: 0
   ConnectedNodes: []
+  ignoreChildren: []
   Occupied: 0
   _walkable: 1
   onEnter:
     m_PersistentCalls:
       m_Calls: []
   onExit:
+    m_PersistentCalls:
+      m_Calls: []
+  onRebuild:
     m_PersistentCalls:
       m_Calls: []
   onChangeWalkable:

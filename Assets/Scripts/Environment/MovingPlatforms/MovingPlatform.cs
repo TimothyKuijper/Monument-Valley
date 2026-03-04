@@ -28,12 +28,15 @@ public class MovingPlatform : MonoBehaviour
     }
 
     public UnityEvent<bool> onWalkOn = new UnityEvent<bool>();
+    
+    protected Camera _camera; // Used to rebuild Nodegraph when moved
 
 
 
     private void Awake()
     {
         SetDisableOnEnter();
+        _camera = FindFirstObjectByType<Camera>();
     }
 
     private void SetDisableOnEnter()
@@ -51,4 +54,8 @@ public class MovingPlatform : MonoBehaviour
             }
         }
     }
+
+
+    // Use this to send disable from the outside, possibly with a UnityEvent. WARNING: If this platform has _disableOnPlatform enabled, this will always override the status
+    public void SendDisableEvent(bool disable) => onWalkOn.Invoke(disable); 
 }
