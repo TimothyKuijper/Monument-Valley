@@ -51,8 +51,4 @@ public class MovingPlatform : MonoBehaviour
             }
         }
     }
-
-
-    // Use this to send disable from the outside, possibly with a UnityEvent. WARNING: If this platform has _disableOnPlatform enabled, this will always override the status
-    public void SendDisableEvent(bool disable) => onWalkOn.Invoke(disable); 
 }
