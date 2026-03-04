@@ -85,12 +85,24 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Texture2D:
+        m_Texture: {fileID: 2800000, guid: 27d21f5eb7833e849be7179b2e22d70f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture2D_1:
+        m_Texture: {fileID: 2800000, guid: feefb96d8b1bf8a46afc630d009d7bf1, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture2D_2:
+        m_Texture: {fileID: 2800000, guid: 45f4766b9e128674f80c5cf74288d93c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _base_color:
-        m_Texture: {fileID: 2800000, guid: 439b3b623ef48794fa374afc23de2919, type: 3}
+        m_Texture: {fileID: 2800000, guid: 859dfba6436da6845b854a20f642fca8, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _emission:
-        m_Texture: {fileID: 2800000, guid: 2443d865b2dc1b64ea98390f88888544, type: 3}
+        m_Texture: {fileID: 2800000, guid: 7deb1b77a0f8527489523ccd66cce85a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _metal:
@@ -98,11 +110,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _patarn:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 028c20b196a9a8244852e77a4bf737eb, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _patarn2:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 483fd027dada8cc43a3686cd13d39150, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -134,6 +146,9 @@ Material:
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
+    - _Float: 3.73
+    - _Float_1: 0
+    - _Float_2: -1.18
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
@@ -143,7 +158,7 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _SPEED2: 0.71
+    - _SPEED2: 1.82
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -154,14 +169,22 @@ Material:
     - _WorkflowMode: 1
     - _XRMotionVectorsPass: 1
     - _ZWrite: 1
-    - _emisionstrengt: 0.96
-    - _speed: 1.01
+    - _emisionstrengt: 0.91
+    - _speed: 0.65
     - _tilling_vor: 0.49
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 0, g: 0.9009434, b: 0.6476944, a: 1}
+    - _Color: {r: 0.15294118, g: 0.8509804, b: 0.7729187, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - _Vector2: {r: 0, g: 2, b: 0, a: 0}
+    - _Vector2_1: {r: 0, g: 2, b: 0, a: 0}
+    - _Vector2_2: {r: 0, g: 1, b: 0, a: 0}
+    - _bubble_speed: {r: 0, g: 1.81, b: 0, a: 0}
     - _color2: {r: 1, g: 1, b: 1, a: 1}
+    - _speed_1: {r: 0, g: 0.9, b: 0, a: 0}
+    - _speedv2: {r: 0, g: 2, b: 0, a: 0}
+    - _speedv3: {r: 0, g: 1, b: 0, a: 0}
+    - _speedv4: {r: 0, g: 2, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
