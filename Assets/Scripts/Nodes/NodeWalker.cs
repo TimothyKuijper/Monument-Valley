@@ -16,7 +16,11 @@ public class NodeWalker : MonoBehaviour
     private Camera _camera;
     private Coroutine _moveRoutine;
 
+    public Vector3 Direction = new Vector3();
+
     public UnityEvent OnStartMoving = new();
+    public UnityEvent OnEnter = new();
+    public UnityEvent OnExit = new();
     public UnityEvent<Node> OnPathComplete = new();
     
     private void Awake()
@@ -41,13 +45,13 @@ public class NodeWalker : MonoBehaviour
 
     public void MoveTo(Node destination)
     {
-        OnStartMoving.Invoke();
         _currentNode.Occupied = false;
 
         NodeBank.RebuildGraph(_camera);
 
         var path = NodeUtils.BFS(_currentNode, destination);
         if (path == null) return;
+        OnStartMoving.Invoke();
 
         if (_moveRoutine != null) StopCoroutine(_moveRoutine);
         TweenRunner.Instance.KillAllFrom(transform);
@@ -64,11 +68,15 @@ public class NodeWalker : MonoBehaviour
             
             if (!_currentNode.CanReach(node, _camera)) break;
             
+            Direction = _currentNode.Position - node.Position;
+
             transform.parent = node.transform;
+            OnExit.Invoke();
             _currentNode.Occupied = false;
             _currentNode.onExit.Invoke();
             _currentNode.onChangeWalkable.RemoveListener(ResetMovement);
 
+            OnEnter.Invoke();
             _currentNode = node;
             _currentNode.Occupied = true;
             _currentNode.onEnter.Invoke();
