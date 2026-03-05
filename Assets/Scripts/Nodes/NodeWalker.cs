@@ -71,7 +71,7 @@ public class NodeWalker : MonoBehaviour
             if (canReach == NodeBank.CanReachType.Overlap) break;
             else if (canReach == NodeBank.CanReachType.Unwalkable)
             {
-                if (index == 0) break;
+                if (index < 2) break;
                 OnNextOccupied.Invoke();
                 break;
             }
