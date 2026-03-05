@@ -669,7 +669,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NodeWalker
   moveSpeed: 0.3
   rebuildOnStart: 1
+  Direction: {x: 0, y: 0, z: 0}
   OnStartMoving:
+    m_PersistentCalls:
+      m_Calls: []
+  OnEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnExit:
     m_PersistentCalls:
       m_Calls: []
   OnPathComplete:
@@ -719,6 +726,7 @@ MonoBehaviour:
   animator: {fileID: 1182903194}
   nodeWalker: {fileID: 296001221}
   modelTransform: {fileID: 1182903193}
+  turnSpeed: 0.12
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -2510,15 +2518,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3d0e350b09f70c5408e1e3fc4049857c, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3d0e350b09f70c5408e1e3fc4049857c, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3d0e350b09f70c5408e1e3fc4049857c, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3d0e350b09f70c5408e1e3fc4049857c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

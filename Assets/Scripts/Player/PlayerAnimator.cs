@@ -1,3 +1,5 @@
+using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using Yakanashe.Yautl;
 
@@ -7,7 +9,7 @@ public class PlayerAnimator : MonoBehaviour
     [SerializeField] private NodeWalker nodeWalker;
     [SerializeField] private Transform modelTransform;
 
-    [SerializeField] private float turnSpeed = 0.25f;
+    [SerializeField] private float turnSpeed = 0.12f;
 
     private float _lastAngle;
 
@@ -25,13 +27,27 @@ public class PlayerAnimator : MonoBehaviour
     private void SetDirection()
     {
         var direction = nodeWalker.Direction;
-        var angle = Vector3.SignedAngle(-Vector3.forward, direction, Vector3.up);
-
-        if (angle == _lastAngle) return;
-        print(angle);
+        var angle = Vector3.SignedAngle(Vector3.forward, direction, Vector3.up) + 180f;
         print(direction);
+        if (angle == _lastAngle) return;
 
         _lastAngle = angle;
-        modelTransform.RotateTo(new Vector3(0, angle, 0), turnSpeed, EaseType.Linear);
+        StopAllCoroutines();
+        StartCoroutine(Turn(angle));
+    }
+
+    private IEnumerator Turn(float angle)
+    {
+        var elapsedTime = 0f;
+        var startRotation = modelTransform.rotation;
+
+        while (elapsedTime < turnSpeed)
+        {
+            modelTransform.rotation = Quaternion.Lerp(startRotation, Quaternion.Euler(0, angle, 0), elapsedTime / turnSpeed);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        modelTransform.rotation = Quaternion.Euler(0, angle, 0);
     }
 }
