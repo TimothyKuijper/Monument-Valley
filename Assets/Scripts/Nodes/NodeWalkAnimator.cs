@@ -1,9 +1,7 @@
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
-using Yakanashe.Yautl;
 
-public class PlayerAnimator : MonoBehaviour
+public class NodeWalkAnimator : MonoBehaviour
 {
     [SerializeField] private Animator animator;
     [SerializeField] private NodeWalker nodeWalker;
@@ -14,14 +12,32 @@ public class PlayerAnimator : MonoBehaviour
     private float _lastAngle;
 
     private const string IsWalkingBoolName = "Walking";
+    private const string ShockBoolName = "Shock";
 
 
     private void Start()
     {
-        nodeWalker.OnStartMoving.AddListener(() => animator.SetBool(IsWalkingBoolName, true));
-        nodeWalker.OnPathComplete.AddListener((value) => animator.SetBool(IsWalkingBoolName, false));
+        nodeWalker.OnNextOccupied.AddListener(() => Shock());
+        nodeWalker.OnStartMoving.AddListener(() => Walk(true));
+        nodeWalker.OnPathComplete.AddListener((value) => Walk(false));
+
         nodeWalker.OnExit.AddListener(SetDirection);
         SetDirection();
+    }
+
+
+    private void Shock()
+    {
+        animator.SetBool(ShockBoolName, true);
+        animator.SetBool(IsWalkingBoolName, false);
+    }
+
+    private void Walk(bool isWalking)
+    {
+        if (isWalking == false && animator.GetBool(ShockBoolName) == true) return; 
+
+        animator.SetBool(IsWalkingBoolName, isWalking);
+        animator.SetBool(ShockBoolName, false);
     }
 
 

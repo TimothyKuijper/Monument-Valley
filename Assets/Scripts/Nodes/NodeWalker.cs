@@ -19,6 +19,7 @@ public class NodeWalker : MonoBehaviour
     public Vector3 Direction = new Vector3();
 
     public UnityEvent OnStartMoving = new();
+    public UnityEvent OnNextOccupied = new();
     public UnityEvent OnEnter = new();
     public UnityEvent OnExit = new();
     public UnityEvent<Node> OnPathComplete = new();
@@ -65,8 +66,15 @@ public class NodeWalker : MonoBehaviour
             var node = path[index];
             var currentY = transform.position.y;
             var targetY = node.Position.y;
-            
-            if (!_currentNode.CanReach(node, _camera)) break;
+
+            var canReach = _currentNode.CanReach(node, _camera);
+            if (canReach == NodeBank.CanReachType.Overlap) break;
+            else if (canReach == NodeBank.CanReachType.Unwalkable)
+            {
+                if (index == 0) break;
+                OnNextOccupied.Invoke();
+                break;
+            }
             
             if (node != _currentNode) Direction = _currentNode.Position - node.Position; // Do not change direction to current node
 
