@@ -4,11 +4,13 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 using Yakanashe.Yautl;
 
 public class NodeWalker : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 0.3f;
+    [SerializeField] private bool rebuildOnStart;
 
     private Node _currentNode;
     private Camera _camera;
@@ -22,6 +24,19 @@ public class NodeWalker : MonoBehaviour
         _currentNode = transform.FindClosestNode();
         transform.position = _currentNode.Position;
     }
+
+
+    private void Start()
+    {
+        if (rebuildOnStart) StartCoroutine(DelayStart());
+    }
+
+    private IEnumerator DelayStart() // Build graph when scene is fully loaded
+    {
+        yield return 0;
+        NodeBank.RebuildGraph(_camera);
+    }
+
 
     public void MoveTo(Node destination)
     {
@@ -49,9 +64,14 @@ public class NodeWalker : MonoBehaviour
             
             transform.parent = node.transform;
             _currentNode.Occupied = false;
+            _currentNode.onExit.Invoke();
+            _currentNode.onChangeWalkable.RemoveListener(ResetMovement);
+
             _currentNode = node;
             _currentNode.Occupied = true;
-            
+            _currentNode.onEnter.Invoke();
+            _currentNode.onChangeWalkable.AddListener(ResetMovement);
+
             if (Mathf.Abs(currentY - targetY) > 0.01f)
             {
                 var currentScreen = _camera.WorldToViewportPoint(transform.position);
@@ -68,6 +88,7 @@ public class NodeWalker : MonoBehaviour
             {
                 transform.MoveTo(node.Position, moveSpeed, EaseType.Linear);
                 yield return new WaitForSeconds(moveSpeed);
+                transform.position = node.Position;
             }
         }
 
@@ -78,7 +99,27 @@ public class NodeWalker : MonoBehaviour
         }
         else
         {
-            OnPathComplete.Invoke(path[nextNodeIndex]);  
+            OnPathComplete.Invoke(path[nextNodeIndex]);
         }
+    }
+
+
+
+    public void DirectSetNode(Node newNode)
+    {
+        _currentNode = newNode;
+        transform.position = newNode.Position;
+        transform.parent = newNode.transform;
+    }
+
+
+
+    private void ResetMovement(bool isWalkable)
+    {
+        if (isWalkable) return;
+
+        if (_moveRoutine != null) StopCoroutine(_moveRoutine);
+        TweenRunner.Instance.KillAllFrom(transform);
+        transform.position = _currentNode.Position;
     }
 }
