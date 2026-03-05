@@ -21,6 +21,7 @@ public class PlayerAnimator : MonoBehaviour
         nodeWalker.OnStartMoving.AddListener(() => animator.SetBool(IsWalkingBoolName, true));
         nodeWalker.OnPathComplete.AddListener((value) => animator.SetBool(IsWalkingBoolName, false));
         nodeWalker.OnExit.AddListener(SetDirection);
+        SetDirection();
     }
 
 
@@ -28,7 +29,7 @@ public class PlayerAnimator : MonoBehaviour
     {
         var direction = nodeWalker.Direction;
         var angle = Vector3.SignedAngle(Vector3.forward, direction, Vector3.up) + 180f;
-        print(direction);
+
         if (angle == _lastAngle) return;
 
         _lastAngle = angle;

@@ -68,7 +68,7 @@ public class NodeWalker : MonoBehaviour
             
             if (!_currentNode.CanReach(node, _camera)) break;
             
-            Direction = _currentNode.Position - node.Position;
+            if (node != _currentNode) Direction = _currentNode.Position - node.Position; // Do not change direction to current node
 
             transform.parent = node.transform;
             OnExit.Invoke();
@@ -131,5 +131,6 @@ public class NodeWalker : MonoBehaviour
         if (_moveRoutine != null) StopCoroutine(_moveRoutine);
         TweenRunner.Instance.KillAllFrom(transform);
         transform.position = _currentNode.Position;
+        OnPathComplete.Invoke(_currentNode);
     }
 }
