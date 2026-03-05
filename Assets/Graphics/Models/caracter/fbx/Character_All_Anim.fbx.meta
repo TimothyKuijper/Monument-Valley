@@ -32,7 +32,7 @@ ModelImporter:
     clipAnimations:
     - serializedVersion: 16
       name: idle
-      takeName: Armature|Armature.002Action
+      takeName: Armature.002|Armature.002Action
       internalID: 5138602965388526686
       firstFrame: 1
       lastFrame: 43
@@ -61,7 +61,7 @@ ModelImporter:
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: walk
-      takeName: Armature|Armature.002Action
+      takeName: Armature.002|Armature.002Action
       internalID: -7152837364041773070
       firstFrame: 100
       lastFrame: 185
@@ -90,7 +90,7 @@ ModelImporter:
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
       name: shock
-      takeName: Armature|Armature.002Action
+      takeName: Armature.002|Armature.002Action
       internalID: 601325763720565998
       firstFrame: 200
       lastFrame: 204
@@ -179,7 +179,7 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     globalScale: 1
-    rootMotionBoneName: 
+    rootMotionBoneName: Head.001
     hasTranslationDoF: 0
     hasExtraRoot: 1
     skeletonHasParents: 1
