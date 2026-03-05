@@ -4858,6 +4858,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   nodeWalker: {fileID: 924769951}
+  touchIndicator: {fileID: 1669127124}
 --- !u!1 &936039940
 GameObject:
   m_ObjectHideFlags: 0
@@ -8121,6 +8122,74 @@ Transform:
   - {fileID: 1817679522}
   m_Father: {fileID: 559827663}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!1001 &1669127123
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6933800958501949439, guid: 41eb89d129091d0438caaa387fabc6e8, type: 3}
+      propertyPath: m_Name
+      value: TouchIndicator
+      objectReference: {fileID: 0}
+    - target: {fileID: 7625075720695580097, guid: 41eb89d129091d0438caaa387fabc6e8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.55817
+      objectReference: {fileID: 0}
+    - target: {fileID: 7625075720695580097, guid: 41eb89d129091d0438caaa387fabc6e8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7625075720695580097, guid: 41eb89d129091d0438caaa387fabc6e8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.32167
+      objectReference: {fileID: 0}
+    - target: {fileID: 7625075720695580097, guid: 41eb89d129091d0438caaa387fabc6e8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7625075720695580097, guid: 41eb89d129091d0438caaa387fabc6e8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7625075720695580097, guid: 41eb89d129091d0438caaa387fabc6e8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7625075720695580097, guid: 41eb89d129091d0438caaa387fabc6e8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7625075720695580097, guid: 41eb89d129091d0438caaa387fabc6e8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7625075720695580097, guid: 41eb89d129091d0438caaa387fabc6e8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7625075720695580097, guid: 41eb89d129091d0438caaa387fabc6e8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 41eb89d129091d0438caaa387fabc6e8, type: 3}
+--- !u!114 &1669127124 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6623234169837101719, guid: 41eb89d129091d0438caaa387fabc6e8, type: 3}
+  m_PrefabInstance: {fileID: 1669127123}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27a39104c5f4b254ea24052e0ff690b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TouchIndicator
 --- !u!1 &1673957287
 GameObject:
   m_ObjectHideFlags: 0
@@ -11177,3 +11246,4 @@ SceneRoots:
   - {fileID: 1908221323}
   - {fileID: 924769950}
   - {fileID: 639589261}
+  - {fileID: 1669127123}
