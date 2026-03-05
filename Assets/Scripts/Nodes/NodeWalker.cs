@@ -16,6 +16,7 @@ public class NodeWalker : MonoBehaviour
     private Camera _camera;
     private Coroutine _moveRoutine;
 
+    public UnityEvent OnStartMoving = new();
     public UnityEvent<Node> OnPathComplete = new();
     
     private void Awake()
@@ -40,6 +41,7 @@ public class NodeWalker : MonoBehaviour
 
     public void MoveTo(Node destination)
     {
+        OnStartMoving.Invoke();
         _currentNode.Occupied = false;
 
         NodeBank.RebuildGraph(_camera);
