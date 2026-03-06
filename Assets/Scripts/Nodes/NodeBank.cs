@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 
 public static class NodeBank
 {
@@ -18,12 +19,12 @@ public static class NodeBank
 
         foreach (var baseNode in SceneNodes)
         {
-            if (!IsWalkable(baseNode)) continue;
+            if (!IsWalkable(baseNode, true)) continue;
             var flatBase = baseNode.Position.Flatten(camera.transform);
 
             foreach (var comparerNode in SceneNodes)
             {
-                if (baseNode == comparerNode || !IsWalkable(comparerNode)) continue;
+                if (baseNode == comparerNode || !IsWalkable(comparerNode, true)) continue; 
 
                 var flatComparer = comparerNode.Position.Flatten(camera.transform);
                 var delta = comparerNode.Position - baseNode.Position;
@@ -34,25 +35,34 @@ public static class NodeBank
                     continue;
 
                 baseNode.ConnectedNodes.Add(comparerNode);
-                Debug.DrawLine(baseNode.Position, comparerNode.Position, Color.green, 1f);
             }
         }
+
+        // AFTER updating the whole grid, every nodes send their rebuild event (ALWAYS perform after, since midgen events can cause false positives)
+        foreach (var baseNode in SceneNodes) baseNode.onRebuild.Invoke();
     }
 
-    public static bool CanReach(this Node current, Node target, Camera camera)
+    public enum CanReachType
     {
-        if (!IsWalkable(target)) return false;
+        Unwalkable,
+        Overlap,
+        Free
+    }
+
+    public static CanReachType CanReach(this Node current, Node target, Camera camera)
+    {
+        if (!IsWalkable(target)) return CanReachType.Unwalkable;
 
         var flatA = current.Position.Flatten(camera.transform);
         var flatB = target.Position.Flatten(camera.transform);
         var planarDistance = Vector2.Distance(new Vector2(flatA.x, flatA.z), new Vector2(flatB.x, flatB.z));
         
-        return planarDistance < overlapTolerance;
+        return planarDistance < overlapTolerance ? CanReachType.Free : CanReachType.Overlap;
     }
 
-    private static bool IsWalkable(Node node)
+    private static bool IsWalkable(Node node, bool omitOccupancy = false)
     {
-        if (node == null || !node.gameObject.activeInHierarchy || !node.Walkable) return false;
+        if (node == null || !node.gameObject.activeInHierarchy || !node.Walkable || (!omitOccupancy && node.Occupied)) return false;
 
         return node.CurrentDirection == Direction.UP;
     }
