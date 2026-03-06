@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private NodeWalker nodeWalker;
+    [SerializeField] private TouchIndicator touchIndicator;
     
     private Camera _camera;
 
@@ -20,5 +21,6 @@ public class PlayerMovement : MonoBehaviour
 
         NodeBank.RebuildGraph(_camera);
         nodeWalker.MoveTo(target);
+        touchIndicator.Highlight(target);
     }
 }
