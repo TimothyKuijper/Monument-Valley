@@ -170,6 +170,7 @@ Material:
     - _XRMotionVectorsPass: 1
     - _ZWrite: 1
     - _emisionstrengt: 0.91
+    - _emissionstrengt: 1.19
     - _speed: 0.65
     - _tilling_vor: 0.49
     m_Colors:

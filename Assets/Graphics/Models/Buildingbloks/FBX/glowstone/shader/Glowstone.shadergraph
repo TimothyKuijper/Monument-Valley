@@ -1221,10 +1221,10 @@
                 "m_Id": "e1e5992270184953906f6e82244d2da8"
             },
             {
-                "m_Id": "dda33cb36c1d4a38ad8256a521b31a99"
+                "m_Id": "e40fd42701e94fa6aaffc30eea76e7f2"
             },
             {
-                "m_Id": "e40fd42701e94fa6aaffc30eea76e7f2"
+                "m_Id": "dda33cb36c1d4a38ad8256a521b31a99"
             }
         ]
     },
@@ -2429,7 +2429,7 @@
     "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
     "m_ObjectId": "20cda7a7d44b4679aa03508235271d44",
     "m_Id": 0,
-    "m_DisplayName": "emisionstrengt",
+    "m_DisplayName": "emissionstrengt",
     "m_SlotType": 1,
     "m_Hidden": false,
     "m_ShaderOutputName": "Out",
@@ -5350,10 +5350,10 @@
     "promotedFromAssetID": "",
     "promotedFromCategoryName": "",
     "promotedOrdering": -1,
-    "m_Name": "emisionstrengt",
+    "m_Name": "emissionstrengt",
     "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "emisionstrengt",
-    "m_DefaultReferenceName": "_emisionstrengt",
+    "m_RefNameGeneratedByDisplayName": "emissionstrengt",
+    "m_DefaultReferenceName": "_emissionstrengt",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
     "m_UseCustomSlotLabel": false,
@@ -7152,8 +7152,8 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": 331.0,
-            "y": 1059.5,
+            "x": 326.5,
+            "y": 1061.0,
             "width": 152.5,
             "height": 34.0
         }
@@ -9500,10 +9500,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": 0.0,
-            "y": 0.0,
-            "width": 0.0,
-            "height": 0.0
+            "x": 1124.5,
+            "y": 626.5000610351563,
+            "width": 200.0,
+            "height": 41.0
         }
     },
     "m_Slots": [
