@@ -142,7 +142,7 @@ Material:
     - _ZWrite: 1
     - _emisionstrengt: 1
     - _gradiant: 24.39
-    - _speed: 8.24
+    - _speed: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 0.70980394, g: 0.9960785, b: 0.76470596, a: 1}
