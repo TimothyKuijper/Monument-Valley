@@ -84,6 +84,7 @@ public class PowerTile : MonoBehaviour
     private void Start()
     {
         _node.onChangeWalkable.AddListener((value) => UpdatePowerTiles(false));
+        onPowered.AddListener(GetComponent<PowerTileColor>().OnPowered);
         IsEmitter = startEmitter;
     }
 

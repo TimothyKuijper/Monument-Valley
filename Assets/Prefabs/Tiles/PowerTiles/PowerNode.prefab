@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3237574409267052108}
   - component: {fileID: 5713950393851638478}
   - component: {fileID: 6696709951077042295}
+  - component: {fileID: 5175013665757555807}
   m_Layer: 0
   m_Name: PowerNode
   m_TagString: Untagged
@@ -27,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7718303716870471677}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -104,6 +105,19 @@ MonoBehaviour:
   onPowered:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &5175013665757555807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7718303716870471677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2eb44827b0b9664a881028fa9a140ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PowerTileColor
+  propertyName: _EmissionPatternMultiplier
 --- !u!1001 &4234503761349506281
 PrefabInstance:
   m_ObjectHideFlags: 0
