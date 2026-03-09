@@ -44,13 +44,14 @@ public class NodeWalkAnimator : MonoBehaviour
     private void SetDirection()
     {
         var direction = nodeWalker.Direction;
-        var angle = Vector3.SignedAngle(Vector3.forward, direction, Vector3.up) + 180f;
+        var angle = Vector3.SignedAngle(Vector3.forward, direction, Vector3.up) + RotUtil.HalfRotation;
+        var finalAngle = RotUtil.GetNearestRotation(angle);
 
-        if (angle == _lastAngle) return;
+        if (finalAngle == _lastAngle) return;
 
-        _lastAngle = angle;
+        _lastAngle = finalAngle;
         StopAllCoroutines();
-        StartCoroutine(Turn(angle));
+        StartCoroutine(Turn(finalAngle));
     }
 
     private IEnumerator Turn(float angle)
