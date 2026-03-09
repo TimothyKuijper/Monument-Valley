@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class RotationPlatform : MovingPlatform
 {
-    [Header("Rotating")]
-    [SerializeField] private float straightRotationSpeed = 12f;
-
     public enum PlatformRotation
     {
         X, Y, Z
@@ -22,8 +19,10 @@ public class RotationPlatform : MovingPlatform
     private bool _isStraight;
     private Quaternion _nextRotation;
     private float _currentValue = 0;
+    private float _previousNewRotation = 0;
 
     private int[] RoundRotations = new int[4] { 0, 90, 180, 270 };
+    private const float MaxRotation = 360f;
 
 
     private void Start()
@@ -48,7 +47,7 @@ public class RotationPlatform : MovingPlatform
         isMoving = true;
         if (_isStraight)
         {
-            transform.rotation = Quaternion.Lerp(transform.rotation, _nextRotation, Time.deltaTime * straightRotationSpeed);
+            transform.rotation = _nextRotation;
             return;
         }
 
@@ -59,26 +58,36 @@ public class RotationPlatform : MovingPlatform
     }
 
 
-    public void SetNewPlatformRotation(float newRotation, bool rounded = false)
+    public void SetNewPlatformRotation(float newRotation, bool add, bool rounded = false)
     {
+        var rotation = newRotation;
+        if (add == true && rounded == false)
+        {
+            if (newRotation == _previousNewRotation) return;
+
+            var currentRotation = GetPlatformRotation(transform.rotation);
+            rotation = Mathf.Repeat(_currentValue + (newRotation < _previousNewRotation ? 1 : -1), MaxRotation);
+            _previousNewRotation = newRotation;
+        }
+
         _time = Time.deltaTime;
         _isStraight = !rounded;
-        _currentValue = rounded ? GetNearestRotation(newRotation) : newRotation;
+        _currentValue = rounded ? GetNearestRotation(rotation) : rotation;
         _nextRotation = GetPlatformQuaternion(_currentValue);
 
-        foreach (var platform in unisonPlatforms) platform.SetNewPlatformRotation(newRotation, rounded);
-        foreach (var platform in oppositePlatforms) platform.SetNewPlatformRotation(-newRotation, rounded);
+        foreach (var platform in unisonPlatforms) platform.SetNewPlatformRotation(newRotation, true, rounded);
+        foreach (var platform in oppositePlatforms) platform.SetNewPlatformRotation(-newRotation, true, rounded);
     }
 
-    public void SnapRotate() => SetNewPlatformRotation(_currentValue + 90, true);
+    public void SnapRotate() => SetNewPlatformRotation(_currentValue + 90, false, true);
 
-    public void FinalizePlatformRotation() => SetNewPlatformRotation(_currentValue, true);
+    public void FinalizePlatformRotation() => SetNewPlatformRotation(_currentValue, false, true);
 
 
 
     public float GetNearestRotation(float rotation)
     {
-        if (rotation >= 360f) return 0;
+        if (rotation >= MaxRotation) return 0;
         return RoundRotations.OrderBy(x => Mathf.Abs(rotation - x)).First();
     }
 
