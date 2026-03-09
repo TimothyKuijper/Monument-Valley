@@ -5,6 +5,7 @@ public class PlatformGrabber : PlatformInteractable
     private PathPlatform platform;
     private PathPlatform.PlatformDirection direction;
 
+    private const float defaultProjectionSize = 15f;
 
     private void Start()
     {
@@ -25,16 +26,17 @@ public class PlatformGrabber : PlatformInteractable
         if (currentInteractable != this) return;
 
         var mousePos = Input.mousePosition - _camera.WorldToScreenPoint(transform.position);
+        var finalPos = mousePos / defaultProjectionSize * _camera.orthographicSize;
         switch (direction)
         {
             case PathPlatform.PlatformDirection.Left:
-                platform.SetNewPlatformPosition(mousePos.x);
+                platform.SetNewPlatformPosition(finalPos.x);
                 break;
             case PathPlatform.PlatformDirection.Up:
-                platform.SetNewPlatformPosition(mousePos.y);
+                platform.SetNewPlatformPosition(finalPos.y);
                 break;
             case PathPlatform.PlatformDirection.Right:
-                platform.SetNewPlatformPosition(-mousePos.x);
+                platform.SetNewPlatformPosition(-finalPos.x);
                 break;
         }
     }
