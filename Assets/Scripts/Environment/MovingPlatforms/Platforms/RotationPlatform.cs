@@ -65,7 +65,7 @@ public class RotationPlatform : MovingPlatform
             if (newRotation == _previousNewRotation) return;
 
             var currentRotation = GetPlatformRotation(transform.rotation);
-            rotation = Mathf.Repeat(_currentValue + ((newRotation < _previousNewRotation ? rotationSpeed : -rotationSpeed)), RotUtil.MaxRotation);
+            rotation = Mathf.Repeat(_currentValue + (newRotation < _previousNewRotation ? rotationSpeed : -rotationSpeed), RotUtil.MaxRotation);
             _previousNewRotation = newRotation;
         }
 
