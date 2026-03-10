@@ -17,12 +17,8 @@ public class MovingPlatform : MonoBehaviour
         {
             if (value == moving) return;
 
-            for (int childIdx = 0; childIdx < transform.childCount; childIdx++)
-            {
-                var child = transform.GetChild(childIdx);
-                Node childNode;
-                if (child.gameObject.TryGetComponent<Node>(out childNode)) childNode.Walkable = !value;
-            }
+            var nodes = GetComponentsInChildren<Node>();
+            foreach (var node in nodes) node.Walkable = !value;
             moving = value;
         }
     }
