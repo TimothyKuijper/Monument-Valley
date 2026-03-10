@@ -119,7 +119,7 @@ public class PathPlatform : MovingPlatform
 
     private Vector3 GetPositionAlongPath(float value = 1, bool rounded = false)
     {
-        var usedValue = rounded ? (int)value : value;
+        var usedValue = rounded ? Mathf.RoundToInt(value) : value;
         var clampedValue = Mathf.Clamp(usedValue, -minDirection, maxDirection);
         var position = GetDirectionPosition(_startPosition, clampedValue);
         return position;

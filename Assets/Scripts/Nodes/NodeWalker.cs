@@ -16,6 +16,12 @@ public class NodeWalker : MonoBehaviour
     private Camera _camera;
     private Coroutine _moveRoutine;
 
+    public Vector3 Direction = new Vector3();
+
+    public UnityEvent OnStartMoving = new();
+    public UnityEvent OnNextOccupied = new();
+    public UnityEvent OnEnter = new();
+    public UnityEvent OnExit = new();
     public UnityEvent<Node> OnPathComplete = new();
     
     private void Awake()
@@ -46,6 +52,7 @@ public class NodeWalker : MonoBehaviour
 
         var path = NodeUtils.BFS(_currentNode, destination);
         if (path == null) return;
+        OnStartMoving.Invoke();
 
         if (_moveRoutine != null) StopCoroutine(_moveRoutine);
         TweenRunner.Instance.KillAllFrom(transform);
@@ -59,14 +66,25 @@ public class NodeWalker : MonoBehaviour
             var node = path[index];
             var currentY = transform.position.y;
             var targetY = node.Position.y;
+
+            var canReach = _currentNode.CanReach(node, _camera);
+            if (canReach == NodeBank.CanReachType.Overlap) break;
+            else if (canReach == NodeBank.CanReachType.Unwalkable)
+            {
+                if (index < 2) break;
+                OnNextOccupied.Invoke();
+                break;
+            }
             
-            if (!_currentNode.CanReach(node, _camera)) break;
-            
+            if (node != _currentNode) Direction = _currentNode.Position - node.Position; // Do not change direction to current node
+
             transform.parent = node.transform;
+            OnExit.Invoke();
             _currentNode.Occupied = false;
             _currentNode.onExit.Invoke();
             _currentNode.onChangeWalkable.RemoveListener(ResetMovement);
 
+            OnEnter.Invoke();
             _currentNode = node;
             _currentNode.Occupied = true;
             _currentNode.onEnter.Invoke();
@@ -121,5 +139,6 @@ public class NodeWalker : MonoBehaviour
         if (_moveRoutine != null) StopCoroutine(_moveRoutine);
         TweenRunner.Instance.KillAllFrom(transform);
         transform.position = _currentNode.Position;
+        OnPathComplete.Invoke(_currentNode);
     }
 }

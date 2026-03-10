@@ -30,29 +30,39 @@ public class PlatformRotator : PlatformInteractable
         if (clickRotate) return;
         if (currentInteractable != this) return;
 
-        var rotateAxis = _camera.WorldToScreenPoint(transform.position + platform.GetPlatformVectorDir());
-        var targetPos = Input.mousePosition - _camera.WorldToScreenPoint(transform.position);
+        var center = _collider.center + transform.position;
+        var rotateAxis = _camera.WorldToScreenPoint(center + platform.GetPlatformVectorDir());
+        var targetPos = Input.mousePosition - _camera.WorldToScreenPoint(center);
         var dotProduct = Vector2.Dot(rotateAxis, platform.GetPlatformVectorDir());
         var angle = Vector2.SignedAngle(rotateAxis, targetPos) + 180f;
 
-        platform.SetNewPlatformRotation(angle);
+        platform.SetNewPlatformRotation(angle, true);
     }
 
 
 
     private new void OnDrawGizmos()
     {
-        base.OnDrawGizmos();
+        if (Application.isPlaying == false)
+        {
+            base.OnDrawGizmos();
+            return;
+        }
+
+        var center = _collider.center + transform.position;
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawSphere(center, DebugGizmoSize);
 
         if (clickRotate) return;
         if (currentInteractable != this) return;
 
         Gizmos.color = Color.deepPink;
+
         var targetPos = _camera.ScreenToWorldPoint(Input.mousePosition);
         var selfDir = rotation == RotationPlatform.PlatformRotation.Y ? Vector3.forward : Vector3.up;
         var dir = transform.position + selfDir * 4;
 
-        Gizmos.DrawLine(transform.position, targetPos);
-        Gizmos.DrawLine(transform.position, dir);
+        Gizmos.DrawLine(center, targetPos);
+        Gizmos.DrawLine(center, dir);
     }
 }

@@ -9,18 +9,20 @@ public class PlatformInteractable : MonoBehaviour, IPointerDownHandler, IPointer
     public UnityEvent startInteractEvent;
     public UnityEvent stopInteractEvent;
 
+    protected BoxCollider _collider;
     protected Camera _camera;
 
     public bool canDrag = true;
 
-    private const string StandardLayer = "Grab Interactable";
-    private const float DebugGizmoSize = .5f;
+    protected const string StandardLayer = "Grab Interactable";
+    protected const float DebugGizmoSize = .5f;
 
 
     private void Awake()
     {
         gameObject.layer = LayerMask.NameToLayer(StandardLayer);
         _camera = FindAnyObjectByType<Camera>();
+        _collider = GetComponent<BoxCollider>();
     }
 
     public void OnPointerDown(PointerEventData eventData)

@@ -42,15 +42,22 @@ public static class NodeBank
         foreach (var baseNode in SceneNodes) baseNode.onRebuild.Invoke();
     }
 
-    public static bool CanReach(this Node current, Node target, Camera camera)
+    public enum CanReachType
     {
-        if (!IsWalkable(target)) return false;
+        Unwalkable,
+        Overlap,
+        Free
+    }
+
+    public static CanReachType CanReach(this Node current, Node target, Camera camera)
+    {
+        if (!IsWalkable(target)) return CanReachType.Unwalkable;
 
         var flatA = current.Position.Flatten(camera.transform);
         var flatB = target.Position.Flatten(camera.transform);
         var planarDistance = Vector2.Distance(new Vector2(flatA.x, flatA.z), new Vector2(flatB.x, flatB.z));
         
-        return planarDistance < overlapTolerance;
+        return planarDistance < overlapTolerance ? CanReachType.Free : CanReachType.Overlap;
     }
 
     private static bool IsWalkable(Node node, bool omitOccupancy = false)
