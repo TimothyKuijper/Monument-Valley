@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class RotationPlatform : MovingPlatform
@@ -23,9 +22,6 @@ public class RotationPlatform : MovingPlatform
     private Quaternion _nextRotation;
     private float _currentValue = 0;
     private float _previousNewRotation = 0;
-
-    private int[] RoundRotations = new int[4] { 0, 90, 180, 270 };
-    private const float MaxRotation = 360f;
 
 
     private void Start()
@@ -75,7 +71,7 @@ public class RotationPlatform : MovingPlatform
 
         _time = Time.deltaTime;
         _isStraight = !rounded;
-        _currentValue = rounded ? GetNearestRotation(rotation) : rotation;
+        _currentValue = rounded ? RotUtil.GetNearestRotation(rotation) : rotation;
         _nextRotation = GetPlatformQuaternion(_currentValue);
 
         foreach (var platform in unisonPlatforms) platform.SetNewPlatformRotation(newRotation, true, rounded);
@@ -86,13 +82,6 @@ public class RotationPlatform : MovingPlatform
 
     public void FinalizePlatformRotation() => SetNewPlatformRotation(_currentValue, false, true);
 
-
-
-    public float GetNearestRotation(float rotation)
-    {
-        if (rotation >= MaxRotation) return 0;
-        return RoundRotations.OrderBy(x => Mathf.Abs(rotation - x)).First();
-    }
 
     public Quaternion GetPlatformQuaternion(float rotation)
     {
