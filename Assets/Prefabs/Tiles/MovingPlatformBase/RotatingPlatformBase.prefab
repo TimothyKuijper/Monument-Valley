@@ -49,7 +49,7 @@ MonoBehaviour:
   onWalkOn:
     m_PersistentCalls:
       m_Calls: []
-  straightRotationSpeed: 12
+  rotationSpeed: 3.6
   rotationDir: 1
   unisonPlatforms: []
   oppositePlatforms: []

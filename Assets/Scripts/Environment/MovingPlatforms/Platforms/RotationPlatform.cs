@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class RotationPlatform : MovingPlatform
 {
+    [Header("Rotating")]
+    [SerializeField] private float rotationSpeed = 3.6f;
+
     public enum PlatformRotation
     {
         X, Y, Z
@@ -66,7 +69,7 @@ public class RotationPlatform : MovingPlatform
             if (newRotation == _previousNewRotation) return;
 
             var currentRotation = GetPlatformRotation(transform.rotation);
-            rotation = Mathf.Repeat(_currentValue + (newRotation < _previousNewRotation ? 1 : -1), MaxRotation);
+            rotation = Mathf.Repeat(_currentValue + ((newRotation < _previousNewRotation ? rotationSpeed : -rotationSpeed)), RotUtil.MaxRotation);
             _previousNewRotation = newRotation;
         }
 

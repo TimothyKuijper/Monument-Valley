@@ -37,19 +37,19 @@ public class PathPlatform : MovingPlatform
     {
         if (transform.position == _nextPosition) return;
 
-        _time = Time.deltaTime * dragTime;
-        var positionLerp = Vector3.Lerp(transform.position, _nextPosition, _time);
-
-        transform.position = positionLerp;
-
+        isMoving = true;
         if (Vector3.Distance(transform.position, _nextPosition) < pathSnapDistance && _nextPosition == GetPositionAlongPath(_currentValue, true))
         {
-            transform.position = _nextPosition;
             isMoving = false;
+            transform.position = _nextPosition;
+
             NodeBank.RebuildGraph(_camera);
             return;
         }
-        isMoving = true;
+        _time = dragTime * Time.deltaTime;
+        var positionLerp = Vector3.Lerp(transform.position, _nextPosition, _time);
+
+        transform.position = positionLerp;
     }
 
     public void SetNewPlatformPosition(float value, bool rounded = false)
