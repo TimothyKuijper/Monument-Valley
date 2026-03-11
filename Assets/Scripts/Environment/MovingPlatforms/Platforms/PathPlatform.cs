@@ -22,8 +22,12 @@ public class PathPlatform : MovingPlatform
     [SerializeField] private List<PathPlatform> oppositePlatforms = new List<PathPlatform>();
 
     private Vector3 _startPosition;
+    public Vector3 StartPosition => _startPosition;
+
     private Vector3 _nextPosition;
+    private bool _isDone = false;
     private float _currentValue = 0;
+
 
 
     private void Start()
@@ -33,29 +37,39 @@ public class PathPlatform : MovingPlatform
     }
 
 
-    private void Update()
+    private void FixedUpdate()
     {
-        if (transform.position == _nextPosition) return;
-
-        isMoving = true;
+        if (_isDone == true) return;
         if (Vector3.Distance(transform.position, _nextPosition) < pathSnapDistance && _nextPosition == GetPositionAlongPath(_currentValue, true))
         {
+            _isDone = true;
             isMoving = false;
             transform.position = _nextPosition;
 
             NodeBank.RebuildGraph(_camera);
             return;
         }
-        _time = dragTime * Time.deltaTime;
+
+        _time = dragTime * Time.fixedDeltaTime;
         var positionLerp = Vector3.Lerp(transform.position, _nextPosition, _time);
 
         transform.position = positionLerp;
     }
 
+
+
+
     public void SetNewPlatformPosition(float value, bool rounded = false)
     {
+        isMoving = true;
         _currentValue = value;
+
+        _isDone = !rounded;
         _nextPosition = GetPositionAlongPath(_currentValue, rounded);
+        if (rounded == false)
+        {
+            transform.position = _nextPosition;
+        }
 
         foreach (var platform in unisonPlatforms) platform.SetNewPlatformPosition(value, rounded);
         foreach (var platform in oppositePlatforms) platform.SetNewPlatformPosition(-value, rounded);

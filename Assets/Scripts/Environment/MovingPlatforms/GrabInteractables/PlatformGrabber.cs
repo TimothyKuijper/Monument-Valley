@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 
 public class PlatformGrabber : PlatformInteractable
@@ -5,7 +6,6 @@ public class PlatformGrabber : PlatformInteractable
     private PathPlatform _platform;
     private PathPlatform.PlatformDirection _direction;
 
-    private const float _defaultProjectionSize = 15f;
 
 
     private void Start()
@@ -22,22 +22,25 @@ public class PlatformGrabber : PlatformInteractable
         _platform.onWalkOn.AddListener(SetWalkOn);
     }
 
-    private void Update()
+    private void LateUpdate()
     {
         if (currentInteractable != this) return;
 
-        var mousePos = Input.mousePosition - _camera.WorldToScreenPoint(transform.position);
-        var finalPos = mousePos / _defaultProjectionSize * _camera.orthographicSize;
+        var plane = new Plane(Vector3.up, transform.position);
+        var finalPos = Vector3.zero;
+        var ray = _camera.ScreenPointToRay(Input.mousePosition);
+        if (plane.Raycast(ray, out var distance)) finalPos = _platform.StartPosition - ray.GetPoint(distance) + transform.localPosition;
+        print(finalPos);
         switch (_direction)
         {
             case PathPlatform.PlatformDirection.Left:
-                _platform.SetNewPlatformPosition(finalPos.x);
+                _platform.SetNewPlatformPosition(-finalPos.x);
                 break;
             case PathPlatform.PlatformDirection.Up:
-                _platform.SetNewPlatformPosition(finalPos.y);
+                _platform.SetNewPlatformPosition(-finalPos.x + -finalPos.z);
                 break;
             case PathPlatform.PlatformDirection.Right:
-                _platform.SetNewPlatformPosition(-finalPos.x);
+                _platform.SetNewPlatformPosition(-finalPos.z);
                 break;
         }
     }
