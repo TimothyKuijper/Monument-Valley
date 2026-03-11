@@ -25,7 +25,7 @@ public class PlatformRotator : PlatformInteractable
 
 
 
-    private void FixedUpdate() // Consistent addup across framerates
+    private void LateUpdate()
     {
         if (clickRotate) return;
         if (currentInteractable != this) return;
@@ -36,7 +36,7 @@ public class PlatformRotator : PlatformInteractable
         var dotProduct = Vector2.Dot(rotateAxis, _platform.GetPlatformVectorDir());
         var angle = Vector2.SignedAngle(rotateAxis, targetPos) + 180f;
 
-        _platform.SetNewPlatformRotation(angle, true);
+        _platform.SetNewPlatformRotation(angle, false);
     }
 
 

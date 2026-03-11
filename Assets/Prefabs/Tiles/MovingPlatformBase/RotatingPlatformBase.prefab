@@ -44,12 +44,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb7cee09137722342a578f88eac0a286, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RotationPlatform
-  dragTime: 0.06
+  dragTime: 0.6
   _disableOnPlatform: 1
   onWalkOn:
     m_PersistentCalls:
       m_Calls: []
-  rotationSpeed: 3.6
+  rotationSpeed: 270
   rotationDir: 1
   unisonPlatforms: []
   oppositePlatforms: []
