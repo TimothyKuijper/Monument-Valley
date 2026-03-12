@@ -10,7 +10,7 @@ public class EasySceneTransition : MonoBehaviour
 
     private void Start()
     {
-        transition.Out();
+        transition.Out(0.1f);
     }
 
     public void Transition()
