@@ -1,4 +1,3 @@
-#if UNITY_EDITOR
 using System;
 using System.Collections;
 using UnityEditor;
@@ -20,9 +19,10 @@ namespace Yakanashe.Wiper
         private static readonly int _progress = Shader.PropertyToID("_Progress");
         private static readonly int _direction = Shader.PropertyToID("_Direction");
         
+#if UNITY_EDITOR
         private const string DefaultMaterialPath = "Assets/Yakanashe/Wiper/Materials/WiperMaterial.mat";
         private const string DefaultTransitionCollectionPath = "Assets/Yakanashe/Wiper/ScriptableObjects/DefaultTransitionCollection.asset";
-
+#endif
         public void Out(float delay = 0f, Action onComplete = null, EaseType ease = EaseType.Linear)
         {
             TransitionMaterial.SetFloat(_progress, 0);
@@ -84,11 +84,12 @@ namespace Yakanashe.Wiper
             onComplete?.Invoke();
         }
 
+        #if UNITY_EDITOR
         private void Reset()
         {
             TransitionMaterial = AssetDatabase.LoadAssetAtPath<Material>(DefaultMaterialPath);
             transitionCollection = AssetDatabase.LoadAssetAtPath<TransitionCollection>(DefaultTransitionCollectionPath);
         }
+        #endif
     }
 }
-#endif
