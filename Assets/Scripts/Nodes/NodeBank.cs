@@ -2,9 +2,15 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public static class NodeBank
 {
+    static NodeBank()
+    {
+        SceneManager.sceneLoaded += (_, _) => ResetNodeCache();
+    }
+    
     public static List<Node> SceneNodes => cachedNodes ??= Object.FindObjectsByType<Node>(FindObjectsSortMode.None).ToList();
     private static List<Node> cachedNodes;
     
