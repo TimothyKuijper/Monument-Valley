@@ -3,6 +3,9 @@ using UnityEngine;
 
 public class RotationPlatform : MovingPlatform
 {
+    [Header("Rotating")]
+    [SerializeField] private float rotationSpeed = 270f;
+
     public enum PlatformRotation
     {
         X, Y, Z
@@ -15,7 +18,7 @@ public class RotationPlatform : MovingPlatform
     [SerializeField] private List<RotationPlatform> unisonPlatforms = new List<RotationPlatform>();
     [SerializeField] private List<RotationPlatform> oppositePlatforms = new List<RotationPlatform>();
 
-    private bool _isStraight;
+    private bool _isDone;
     private Quaternion _nextRotation;
     private float _currentValue = 0;
     private float _previousNewRotation = 0;
@@ -28,9 +31,10 @@ public class RotationPlatform : MovingPlatform
 
 
 
-    private void Update()
+    private void FixedUpdate()
     {
-        if ((transform.rotation.eulerAngles == _nextRotation.eulerAngles || _time >= dragTime) && _isStraight == false)
+        if (_isDone == true) return;
+        if (_time >= dragTime)
         {
             if (isMoving == false) return;
             isMoving = false;
@@ -39,45 +43,43 @@ public class RotationPlatform : MovingPlatform
             NodeBank.RebuildGraph(_camera);
             return;
         }
-
-        isMoving = true;
-        if (_isStraight)
-        {
-            transform.rotation = _nextRotation;
-            return;
-        }
-
-        _time += Time.deltaTime * dragTime;
+        _time += Time.fixedDeltaTime / dragTime;
         var rotationLerp = Quaternion.Lerp(transform.rotation, _nextRotation, _time);
 
         transform.rotation = rotationLerp;
     }
 
 
-    public void SetNewPlatformRotation(float newRotation, bool add, bool rounded = false)
+    public void SetNewPlatformRotation(float newRotation, bool rounded = false)
     {
+        isMoving = true;
         var rotation = newRotation;
-        if (add == true && rounded == false)
+        if (rounded == false)
         {
             if (newRotation == _previousNewRotation) return;
 
-            var currentRotation = GetPlatformRotation(transform.rotation);
-            rotation = Mathf.Repeat(_currentValue + (newRotation < _previousNewRotation ? 1 : -1), RotUtil.MaxRotation);
+            _currentValue = Mathf.Repeat(_currentValue + (newRotation < _previousNewRotation ? rotationSpeed : -rotationSpeed) * Time.deltaTime, RotUtil.MaxRotation);
+            _nextRotation = GetPlatformQuaternion(_currentValue);
             _previousNewRotation = newRotation;
+            
+            _isDone = true;
+            transform.rotation = _nextRotation;
+        }
+        else
+        {
+            _isDone = false;
+            _time = 0;
+            _currentValue = RotUtil.GetNearestRotation(rotation);
+            _nextRotation = GetPlatformQuaternion(_currentValue);
         }
 
-        _time = Time.deltaTime;
-        _isStraight = !rounded;
-        _currentValue = rounded ? RotUtil.GetNearestRotation(rotation) : rotation;
-        _nextRotation = GetPlatformQuaternion(_currentValue);
-
-        foreach (var platform in unisonPlatforms) platform.SetNewPlatformRotation(newRotation, true, rounded);
-        foreach (var platform in oppositePlatforms) platform.SetNewPlatformRotation(-newRotation, true, rounded);
+        foreach (var platform in unisonPlatforms) platform.SetNewPlatformRotation(newRotation, rounded);
+        foreach (var platform in oppositePlatforms) platform.SetNewPlatformRotation(-newRotation, rounded);
     }
 
-    public void SnapRotate() => SetNewPlatformRotation(_currentValue + 90, false, true);
+    public void SnapRotate() => SetNewPlatformRotation(_currentValue + 90, true);
 
-    public void FinalizePlatformRotation() => SetNewPlatformRotation(_currentValue, false, true);
+    public void FinalizePlatformRotation() => SetNewPlatformRotation(_currentValue, true);
 
 
     public Quaternion GetPlatformQuaternion(float rotation)
