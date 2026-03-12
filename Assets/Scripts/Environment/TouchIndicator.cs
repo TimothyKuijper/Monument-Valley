@@ -5,9 +5,8 @@ public class TouchIndicator : MonoBehaviour
 {
     public SpriteRenderer IndicatorRenderer;
 
-    [SerializeField] private Vector3 offWorldPosition;
-
     private readonly Color _clearColor = new(1, 1, 1, 0);
+    private readonly Vector3 offWorldPosition = new(-200, 100, -100);
 
     private void Awake()
     {
