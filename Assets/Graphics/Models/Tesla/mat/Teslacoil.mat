@@ -86,7 +86,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _emission:
-        m_Texture: {fileID: 2800000, guid: e69b99afe6087784f9024fb689b15e27, type: 3}
+        m_Texture: {fileID: 2800000, guid: 778856ac73f0ebd4297a5075906a7256, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _metal:
