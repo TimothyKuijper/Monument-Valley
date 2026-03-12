@@ -644,7 +644,7 @@ Transform:
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
   m_LocalRotation: {x: 0.27984518, y: 0.3647056, z: -0.11591566, w: 0.88047725}
-  m_LocalPosition: {x: -6.7, y: 6.7, z: -6.7}
+  m_LocalPosition: {x: -6.21, y: 9.99, z: -3.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2815,6 +2815,78 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 953785126}
   m_Mesh: {fileID: -2228417370725966487, guid: dfad67a77465db7429d0748f62d9289e, type: 3}
+--- !u!1001 &961033466
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1754957916318172174, guid: cf96edcb76b3d1f4ca00985097ae6f62, type: 3}
+      propertyPath: m_Name
+      value: Transition
+      objectReference: {fileID: 0}
+    - target: {fileID: 1963465027331133847, guid: cf96edcb76b3d1f4ca00985097ae6f62, type: 3}
+      propertyPath: sceneName
+      value: W2L2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2663463479734477546, guid: cf96edcb76b3d1f4ca00985097ae6f62, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 22.69665
+      objectReference: {fileID: 0}
+    - target: {fileID: 2663463479734477546, guid: cf96edcb76b3d1f4ca00985097ae6f62, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -25.77999
+      objectReference: {fileID: 0}
+    - target: {fileID: 2663463479734477546, guid: cf96edcb76b3d1f4ca00985097ae6f62, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -42.05244
+      objectReference: {fileID: 0}
+    - target: {fileID: 2663463479734477546, guid: cf96edcb76b3d1f4ca00985097ae6f62, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2663463479734477546, guid: cf96edcb76b3d1f4ca00985097ae6f62, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2663463479734477546, guid: cf96edcb76b3d1f4ca00985097ae6f62, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2663463479734477546, guid: cf96edcb76b3d1f4ca00985097ae6f62, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2663463479734477546, guid: cf96edcb76b3d1f4ca00985097ae6f62, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2663463479734477546, guid: cf96edcb76b3d1f4ca00985097ae6f62, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2663463479734477546, guid: cf96edcb76b3d1f4ca00985097ae6f62, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cf96edcb76b3d1f4ca00985097ae6f62, type: 3}
+--- !u!114 &961033467 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1963465027331133847, guid: cf96edcb76b3d1f4ca00985097ae6f62, type: 3}
+  m_PrefabInstance: {fileID: 961033466}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a99566d82df1bae47acfe6bbcba8899a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EasySceneTransition
 --- !u!4 &977465681 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5360746958132302573, guid: 12bcdbb1c316e4442afa98117582faca, type: 3}
@@ -4938,23 +5010,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1756525596666492309, guid: 8b415341d656a5944ae273316b3cb39a, type: 3}
       propertyPath: onEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1756525596666492309, guid: 8b415341d656a5944ae273316b3cb39a, type: 3}
       propertyPath: onEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1926470234}
+      objectReference: {fileID: 961033467}
     - target: {fileID: 1756525596666492309, guid: 8b415341d656a5944ae273316b3cb39a, type: 3}
       propertyPath: onEnter.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1756525596666492309, guid: 8b415341d656a5944ae273316b3cb39a, type: 3}
       propertyPath: onEnter.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: switchScene
+      value: Transition
       objectReference: {fileID: 0}
     - target: {fileID: 1756525596666492309, guid: 8b415341d656a5944ae273316b3cb39a, type: 3}
       propertyPath: onEnter.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: EndNodeHit, Assembly-CSharp
+      value: EasySceneTransition, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1756525596666492309, guid: 8b415341d656a5944ae273316b3cb39a, type: 3}
       propertyPath: onEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
@@ -5625,3 +5697,4 @@ SceneRoots:
   - {fileID: 1836321472}
   - {fileID: 1969595136993937835}
   - {fileID: 543675220}
+  - {fileID: 961033466}
